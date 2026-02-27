@@ -23,7 +23,7 @@ export default function Header() {
           <Link href="/login" className="hidden md:flex items-center justify-center px-5 py-3 text-[24px] font-medium font-[family-name:var(--font-roboto)] text-[#001407] hover:bg-black/5 rounded-full transition-colors" style={{ fontVariationSettings: "'wdth' 100" }}>
             Login
           </Link>
-          <button className="flex h-[60px] w-[230px] shrink-0 items-center justify-center overflow-clip rounded-[24px] bg-[#001407] px-[38px] py-[15px] hover:opacity-90 transition-opacity cursor-pointer">
+          <button className="flex h-[50px] w-[200px] shrink-0 items-center justify-center overflow-clip rounded-[24px] bg-[#001407] px-[38px] py-[15px] hover:opacity-90 transition-opacity cursor-pointer">
             <span className="font-medium leading-normal text-white text-[24px] font-[family-name:var(--font-roboto)]" style={{ fontVariationSettings: "'wdth' 100" }}>
               Get started
             </span>

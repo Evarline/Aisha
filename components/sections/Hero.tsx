@@ -26,16 +26,16 @@ export default function Hero() {
       <div className="flex gap-[3px] h-[444px] items-center justify-between w-full max-w-[1360px] mx-auto">
 
         {/* Hero Right */}
-        <div className="flex flex-col gap-[50px] h-[440px] items-start justify-center overflow-clip shrink-0 w-[680px]">
+        <div className="flex flex-col gap-[40px] h-[440px] items-start justify-center overflow-clip shrink-0 w-[680px]">
           <div
             className="font-extrabold leading-normal text-[#001407] text-[60px] whitespace-nowrap"
             style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wdth' 100" }}
           >
             <p className="mb-0">Your 24/7 WhatsApp</p>
-            <p>sales Assistant</p>
+            <p className="mb-0">sales Assistant</p>
           </div>
           <p
-            className="font-medium h-[32px] leading-normal text-[#001407] text-[20px] w-[611px]"
+            className="font-medium leading-normal text-[#001407] text-[20px] w-[611px]"
             style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wdth' 100" }}
           >
             Karibu to effortless client care, Aisha handles the hustle and lets you&nbsp; focus on what you love
@@ -318,17 +318,17 @@ export default function Hero() {
             
             {/* Ring 4 — Ellipse 18 exported SVG (r≈110, #00FF88 dashed), counter-clockwise slow */}
             <div className="absolute h-[221px] left-0 top-[33.5px] w-[221px]">
-              <img src="/Ellipse 18.svg" alt="" className="absolute size-full animate-[spin_32s_linear_infinite_reverse]" />
+              <img src="/Ellipse 18.svg" alt="" className="absolute size-full animate-[spin_90s_linear_infinite_reverse]" />
             </div>
 
             {/* Ring 3 — inline dashed ring, clockwise slow */}
             <div className="absolute h-[205px] left-[8px] top-[41.5px] w-[205px]">
-              <div className="absolute border-[#D2FF00] border-[1px] border-dashed h-full opacity-35 rounded-full w-full animate-[spin_24s_linear_infinite]" />
+              <div className="absolute border-[#D2FF00] border-[1px] border-dashed h-full opacity-35 rounded-full w-full animate-[spin_70s_linear_infinite]" />
             </div>
 
             {/* Ring 2 — Ellipse 17 exported SVG (dashed), clockwise */}
             <div className="absolute h-[205px] left-[8px] top-[41.5px] w-[205px]">
-              <img src="/Ellipse 17.svg" alt="" className="absolute size-full animate-[spin_18s_linear_infinite]" />
+              <img src="/Ellipse 17.svg" alt="" className="absolute size-full animate-[spin_55s_linear_infinite]" />
             </div>
 
             {/* Ring 1 — Ellipse 16 exported SVG (dark filled center disk) */}
