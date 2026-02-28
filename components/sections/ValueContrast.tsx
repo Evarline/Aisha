@@ -24,7 +24,7 @@ export default function ValueContrast() {
         </div>
         {/* VS badge — absolutely centered at the boundary of the two cards */}
         <img
-          src="/VS_Wrapper(1).svg"
+          src="/Images/VS_Wrapper(1).svg"
           alt="VS"
           width={79}
           height={78}

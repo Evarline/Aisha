@@ -27,7 +27,7 @@ function LogoSet() {
       <div className="flex h-[80px] w-[220px] shrink-0 items-center justify-center">
         <div className="h-[60px] w-[63px] rounded-[100px] overflow-hidden">
           <img
-            src="/Tech%20Hut%20logo.png"
+            src="/Images/Tech%20Hut%20logo.png"
             alt="Tech Hut"
             className="h-full w-full object-cover"
           />

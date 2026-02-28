@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
 import SocialProof from "@/components/sections/SocialProof";
 import ValueContrast from "@/components/sections/ValueContrast";
+import Features from "@/components/sections/Features";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         
         <SocialProof />
         <ValueContrast />
+        <Features />
       </main>
     </div>
   );

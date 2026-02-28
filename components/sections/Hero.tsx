@@ -1,6 +1,6 @@
 const imgUser3 = "https://www.figma.com/api/mcp/asset/b48917ad-fa7e-48b1-8a46-1296e44e6460";
 const imgWhatsAppImage20250923At163932RemovebgPreview13 = "https://www.figma.com/api/mcp/asset/f4fb0fa1-7d38-4df9-86b5-ef6823304c88";
-const imgAisha = "/WhatsApp%20Image%202025-09-23%20at%2016.39.32%204.png";
+const imgAisha = "/Images/WhatsApp%20Image%202025-09-23%20at%2016.39.32%204.png";
 const imgWallpaper = "https://www.figma.com/api/mcp/asset/be9f6aca-a4b6-4728-8333-544487f5cd99";
 const imgVector13 = "https://www.figma.com/api/mcp/asset/9e9c0cb7-caf3-4597-93db-5bd609653bb2";
 const imgVector15 = "https://www.figma.com/api/mcp/asset/526a8170-e893-4189-90b3-54743d4fe9fa";
@@ -22,11 +22,11 @@ const imgDynamicIsland = "https://www.figma.com/api/mcp/asset/15ec94df-a64d-4fdf
 
 export default function Hero() {
   return (
-    <section className="flex w-full overflow-hidden px-[40px] py-[88px]">
-      <div className="flex gap-[3px] h-[444px] items-center justify-between w-full max-w-[1360px] mx-auto">
+    <section className="flex justify-center w-full px-[40px] py-[88px]">
+      <div className="flex gap-[20px] h-[444px] items-center w-full max-w-[1360px]">
 
-        {/* Hero Right */}
-        <div className="flex flex-col gap-[40px] h-[440px] items-start justify-center overflow-clip shrink-0 w-[680px]">
+        {/* Hero Left */}
+        <div className="flex flex-col gap-[40px] h-[440px] items-start justify-center flex-1 min-w-0">
           <div
             className="font-extrabold leading-normal text-[#001407] text-[60px] whitespace-nowrap"
             style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wdth' 100" }}
@@ -65,7 +65,8 @@ export default function Hero() {
         </div>
 
         {/* Visual Ecosystem */}
-        <div className="h-[440px] relative shrink-0 w-[680px] pointer-events-none select-none">
+        <div className="flex-1 min-w-0 h-[440px] flex items-center justify-center pointer-events-none select-none">
+          <div className="relative shrink-0 w-[680px] h-[440px]" style={{ transform: 'scale(0.92)', transformOrigin: 'center center' }}>
 
           {/* Vector 14 — single thin data path with lime glow */}
           <svg
@@ -305,7 +306,7 @@ export default function Hero() {
           <div className="absolute bg-[#1d2621] border-[#b8c4b9] border-[1.526px] border-solid h-[170px] left-[460px] overflow-clip rounded-[36.613px] top-[33px] w-[175px]">
             <div className="absolute bg-[#2c3e50] h-[186px] left-[-1.53px] rounded-[36.613px] top-[-20.53px] w-[175px]" />
             <div className="absolute h-[175.056px] left-[-1.53px] top-[-1.53px] w-[200.227px]">
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute inset-0 overflow-hidden pointee to the her-events-none">
                 <img alt="" className="absolute h-[85.75%] left-[-30.14%] max-w-none top-[10.69%] w-[112.46%]" src={imgUser3} />
               </div>
             </div>
@@ -318,7 +319,7 @@ export default function Hero() {
             
             {/* Ring 4 — Ellipse 18 exported SVG (r≈110, #00FF88 dashed), counter-clockwise slow */}
             <div className="absolute h-[221px] left-0 top-[33.5px] w-[221px]">
-              <img src="/Ellipse 18.svg" alt="" className="absolute size-full animate-[spin_90s_linear_infinite_reverse]" />
+              <img src="/Images/Ellipse%2018.svg" alt="" className="absolute size-full animate-[spin_90s_linear_infinite_reverse]" />
             </div>
 
             {/* Ring 3 — inline dashed ring, clockwise slow */}
@@ -328,12 +329,12 @@ export default function Hero() {
 
             {/* Ring 2 — Ellipse 17 exported SVG (dashed), clockwise */}
             <div className="absolute h-[205px] left-[8px] top-[41.5px] w-[205px]">
-              <img src="/Ellipse 17.svg" alt="" className="absolute size-full animate-[spin_55s_linear_infinite]" />
+              <img src="/Images/Ellipse%2017.svg" alt="" className="absolute size-full animate-[spin_55s_linear_infinite]" />
             </div>
 
             {/* Ring 1 — Ellipse 16 exported SVG (dark filled center disk) */}
             <div className="absolute h-[185px] left-[18px] top-[51.5px] w-[185px]">
-              <img src="/Ellipse 16.svg" alt="" className="absolute size-full" />
+              <img src="/Images/Ellipse%2016.svg" alt="" className="absolute size-full" />
             </div>
 
             {/* Rectangle 54 — hidden, backdrop handled by the circle div above */}
@@ -356,7 +357,8 @@ export default function Hero() {
           {/* Left Data Packet 2 */}
           <div className="absolute z-[20] bg-[#D2FF00] rounded-full shadow-[0px_0px_4px_2px_rgba(210,255,0,1),0px_0px_14px_4px_rgba(210,255,0,0.85),0px_0px_28px_8px_rgba(210,255,0,0.45),0px_0px_6px_3px_rgba(0,0,0,0.6)] animate-pulse" style={{ left: '209.5px', top: '215.5px', width: '7px', height: '7px', animationDelay: '0.7s' }} />
 
-        </div>
+          </div>{/* end inner 680×440 scaled div */}
+        </div>{/* end outer flex-1 wrapper */}
       </div>
     </section>
   );
