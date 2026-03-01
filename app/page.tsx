@@ -4,7 +4,8 @@ import SocialProof from "@/components/sections/SocialProof";
 import ValueContrast from "@/components/sections/ValueContrast";
 import Features from "@/components/sections/Features";
 import DashboardDemo from "@/components/sections/DashboardDemo";
-
+import Setup from "@/components/sections/Setup";
+import PerformanceProof from "@/components/sections/PerformanceProof";
 export default function Home() {
   return (
     /* 
@@ -20,7 +21,7 @@ export default function Home() {
       <Header />
       
       {/* Main Content Area - Vertical Auto Layout, 0 gap between sections */}
-      <main className="flex w-full flex-col items-start pt-[90px]">
+      <div className="flex w-full flex-col items-start pt-[90px]">
         
         <Hero />
         
@@ -28,8 +29,10 @@ export default function Home() {
         <ValueContrast />
         <Features />
         <DashboardDemo />
-      </main>
+        <Setup />
+        <PerformanceProof />
     </div>
+    </div>
+  
   );
 }
-

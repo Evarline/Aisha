@@ -52,7 +52,7 @@ export default function DashboardDemo() {
           style={{ paddingLeft: 40, paddingRight: 40, paddingTop: 10, paddingBottom: 10 }}
         >
           <h2
-            className="text-center text-[#001407]"th
+            className="text-center text-[#001407]"
             style={{
               fontSize: 32,
               fontFamily: "'Inter', sans-serif",
