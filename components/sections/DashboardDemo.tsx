@@ -52,7 +52,7 @@ export default function DashboardDemo() {
           style={{ paddingLeft: 40, paddingRight: 40, paddingTop: 10, paddingBottom: 10 }}
         >
           <h2
-            className="text-center text-[#001407]"
+            className="text-center text-[#001407]"th
             style={{
               fontSize: 32,
               fontFamily: "'Inter', sans-serif",
@@ -69,6 +69,8 @@ export default function DashboardDemo() {
               color: "rgba(0, 20, 7, 0.70)",
               fontSize: 16,
               fontFamily: "'Roboto', sans-serif",
+
+              
               fontWeight: 500,
               letterSpacing: 2.4,
               wordWrap: "break-word",
@@ -154,8 +156,8 @@ export default function DashboardDemo() {
                       className="w-full h-full object-contain"
                       style={{
                         filter: item.active
-                          ? "invert(14%) sepia(50%) saturate(700%) hue-rotate(100deg) brightness(40%)"
-                          : "invert(1)",
+                          ? "brightness(0) saturate(100%)"
+                          : "brightness(0) invert(1)",
                       }}
                     />
                   </div>
@@ -181,10 +183,9 @@ export default function DashboardDemo() {
                 left: 258,
                 top: 0,
                 width: 942,
-                paddingLeft: 3,
-                paddingRight: 3,
-                paddingTop: 15,
-                paddingBottom: 15,
+                height: 70,
+                paddingLeft: 24,
+                paddingRight: 70,
                 background: "#001407",
                 gap: 63,
                 outline: "1px rgba(255,255,255,0.05) solid",
@@ -202,7 +203,7 @@ export default function DashboardDemo() {
                 }}
               >
                 &ldquo;Hi Sharleen! 👋<br />
-                Aisha handled 15 chats in your absence. Karibu!&rdquo;
+                <span className="whitespace-nowrap">Aisha handled 15 chats in your absence. Karibu!&rdquo;</span>
               </p>
 
               {/* Search bar */}
@@ -232,27 +233,27 @@ export default function DashboardDemo() {
                 </span>
                 <div
                   className="absolute flex items-center justify-center"
-                  style={{ left: 302, top: 5, width: 24, height: 24 }}
+                  style={{ right: 6, top: 6, width: 24, height: 24 }}
                 >
                   <img
                     src="/Icons/MagnifyingGlass.svg"
                     alt="Search"
-                    className="w-[18px] h-[18px] object-contain"
-                    style={{ filter: "invert(1)" }}
+                    className="w-[24px] h-[24px] object-contain"
+                    style={{ filter: "brightness(0) invert(1)" }}
                   />
                 </div>
               </div>
 
               {/* User Avatar */}
               <div
-                className="shrink-0 flex items-center justify-center overflow-hidden"
+                className="shrink-0 flex items-center justify-center"
                 style={{ width: 40, height: 40 }}
               >
                 <img
                   src="/Icons/UserCircle.svg"
                   alt="User"
                   className="w-full h-full object-contain"
-                  style={{ filter: "invert(1)" }}
+                  style={{ filter: "brightness(0) invert(1)" }}
                 />
               </div>
             </div>
