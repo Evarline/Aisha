@@ -209,6 +209,7 @@ function TestimonialCard({
 export default function PerformanceProof() {
   return (
     <section
+      id="about"
       style={{
         width: '100%',
         paddingLeft: 44,

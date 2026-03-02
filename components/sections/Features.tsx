@@ -40,6 +40,7 @@ const features = [
 export default function Features() {
   return (
     <section
+      id="features"
       style={{
         width: "100%",
         paddingLeft: 44,

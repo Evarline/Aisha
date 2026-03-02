@@ -60,7 +60,7 @@ function LogoSet() {
 
 export default function SocialProof() {
   return (
-    <section className="bg-white flex flex-col gap-[50px] items-center justify-center py-[88px] w-full overflow-hidden">
+    <section id="testimonials" className="bg-white flex flex-col gap-[50px] items-center justify-center py-[88px] w-full overflow-hidden">
 
       {/* Headline */}
       <p

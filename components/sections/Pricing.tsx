@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Pricing() {
   return (
-    <section className="w-full py-24 px-4 md:px-8 bg-[#f5f5f5] flex flex-col items-center">
+    <section id="pricing" className="w-full py-24 px-4 md:px-8 bg-[#f5f5f5] flex flex-col items-center">
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center mb-10">
         <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-[#001407] mb-4 tracking-wide">
