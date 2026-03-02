@@ -1,334 +1,132 @@
-import Image from 'next/image';
+"use client";
+
+import Image from "next/image";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const steps = [
   {
-    image: '/Images/Register Business.png',
+    image: "/Images/Register Business.png",
     imageWidth: 100,
     imageHeight: 117,
-    number: '01',
-    title: 'Register Business',
-    description: 'Full legal registration ensures you can focus on growing your business',
-    titleStyle: {} as React.CSSProperties,
-    descStyle: { fontFamily: 'Roboto Slab', fontWeight: 500, color: '#001407', fontSize: 16, alignSelf: 'stretch' } as React.CSSProperties,
+    number: "01",
+    title: "Register Business",
+    description:
+      "Full legal registration ensures you can focus on growing your business",
   },
   {
-    image: '/Images/Connect.png',
+    image: "/Images/Connect.png",
     imageWidth: 176,
     imageHeight: 117,
-    number: '02',
-    title: 'Connect and customize',
-    description: "Link your WhatsApp Business & customize Aisha's features",
-    titleStyle: { alignSelf: 'stretch' } as React.CSSProperties,
-    descStyle: { fontFamily: 'Roboto Slab', fontWeight: 500, color: '#001407', fontSize: 16, width: 189 } as React.CSSProperties,
+    number: "02",
+    title: "Connect and customize",
+    description:
+      "Link your WhatsApp Business & customize Aisha\u2019s features",
   },
   {
-    image: '/Images/Automate(1).png',
+    image: "/Images/Automate(1).png",
     imageWidth: 108,
     imageHeight: 117,
-    number: '03',
-    title: 'Automate',
-    description: 'Let Aisha do the heavy lifting. It manages logistics while you create',
-    titleStyle: { whiteSpace: 'nowrap' } as React.CSSProperties,
-    descStyle: { fontFamily: 'Roboto Slab', fontWeight: 500, color: '#001407', fontSize: 16, alignSelf: 'stretch' } as React.CSSProperties,
+    number: "03",
+    title: "Automate",
+    description:
+      "Let Aisha do the heavy lifting. It manages logistics while you create",
   },
   {
-    image: '/Images/Focus and grow.png',
+    image: "/Images/Focus and grow.png",
     imageWidth: 150,
     imageHeight: 117,
-    number: '04',
-    title: 'Focus and grow',
+    number: "04",
+    title: "Focus and grow",
     description:
-      'Reclaim 10+ hours/week to focus on your craft. Scale your revenue with data-driven surgical insights.',
-    titleStyle: {} as React.CSSProperties,
-    descStyle: { fontFamily: 'Roboto Slab', fontWeight: 500, color: '#001407', fontSize: 16, alignSelf: 'stretch' } as React.CSSProperties,
+      "Reclaim 10+ hours/week to focus on your craft. Scale your revenue with data-driven surgical insights.",
   },
 ];
 
 export default function Setup() {
   return (
-    <section
-      style={{
-        width: '100%',
-        paddingLeft: 44,
-        paddingRight: 44,
-        paddingTop: 88,
-        paddingBottom: 88,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        gap: 15,
-      }}
-    >
+    <section className="w-full section-padding flex flex-col items-center gap-4">
       {/* Header */}
-      <div
-        style={{
-          padding: 10,
-          overflow: 'hidden',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-          gap: 25,
-        }}
-      >
-        <h2
-          style={{
-            alignSelf: 'stretch',
-            textAlign: 'right',
-            color: '#04340E',
-            fontSize: 36,
-            fontFamily: 'Inter',
-            fontWeight: 700,
-            wordWrap: 'break-word',
-            margin: 0,
-          }}
-        >
-          From Setup to Scale in 4 Precise Steps
-        </h2>
-        <p
-          style={{
-            alignSelf: 'stretch',
-            textAlign: 'center',
-            color: 'rgba(4, 52, 14, 0.60)',
-            fontSize: 15,
-            fontFamily: 'Roboto',
-            fontWeight: 500,
-            wordWrap: 'break-word',
-            margin: 0,
-          }}
-        >
-          See how AISHA is built, trained, and unleashed—all in a process that&apos;s as smart as she is
-        </p>
-      </div>
+      <ScrollReveal variant="fadeUp">
+        <div className="flex flex-col items-center gap-6 px-4 py-2.5 text-center">
+          <h2 className="text-[#04340E] text-[28px] md:text-[36px] font-bold font-[family-name:var(--font-inter)]">
+            From Setup to Scale in 4 Precise Steps
+          </h2>
+          <p className="text-[rgba(4,52,14,0.60)] text-[14px] md:text-[15px] font-medium font-[family-name:var(--font-roboto)] max-w-[600px]">
+            See how AISHA is built, trained, and unleashed—all in a process
+            that&apos;s as smart as she is
+          </p>
+        </div>
+      </ScrollReveal>
 
       {/* Steps container */}
-      <div
-        style={{
-          alignSelf: 'stretch',
-          paddingLeft: 40,
-          paddingRight: 40,
-          paddingTop: 20,
-          paddingBottom: 20,
-          overflow: 'hidden',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-          gap: 20,
-        }}
-      >
-        {/* Top connector line */}
-        <div
-          style={{
-            height: 40,
-            overflow: 'hidden',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
+      <div className="w-full flex flex-col items-center gap-5 px-4 md:px-10 py-5 overflow-hidden">
+        {/* Top connector line — hidden on mobile */}
+        <div className="hidden md:flex items-center justify-center h-10 overflow-hidden">
+          <div className="w-5 h-5 bg-[#D2FF00] rounded-full border-[3px] border-[#001407] shrink-0" />
           <div
+            className="flex-1 max-w-[787px] h-[1px] shrink-0"
             style={{
-              width: 20,
-              height: 20,
-              background: '#D2FF00',
-              borderRadius: 9999,
-              border: '3px #001407 solid',
-              flexShrink: 0,
-            }}
-          />
-          <div
-            style={{
-              width: 787,
-              height: 1,
               background:
-                'repeating-linear-gradient(to right, rgba(0,20,7,0.50) 0px, rgba(0,20,7,0.50) 8px, transparent 8px, transparent 13px)',
-              flexShrink: 0,
+                "repeating-linear-gradient(to right, rgba(0,20,7,0.50) 0px, rgba(0,20,7,0.50) 8px, transparent 8px, transparent 13px)",
             }}
           />
-          <div
-            style={{
-              width: 20,
-              height: 20,
-              background: '#D2FF00',
-              borderRadius: 9999,
-              border: '3px #001407 solid',
-              flexShrink: 0,
-            }}
-          />
+          <div className="w-5 h-5 bg-[#D2FF00] rounded-full border-[3px] border-[#001407] shrink-0" />
         </div>
 
         {/* Step cards */}
-        <div
-          style={{
-            width: 1440,
-            height: 490,
-            paddingLeft: 40,
-            paddingRight: 40,
-            paddingTop: 20,
-            paddingBottom: 20,
-            overflow: 'hidden',
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: 50,
-          }}
-        >
-          {steps.map((step) => (
-            <div
+        <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 lg:gap-[50px] px-0 md:px-4 py-5">
+          {steps.map((step, i) => (
+            <ScrollReveal
               key={step.number}
-              style={{
-                width: 250,
-                height: 450,
-                padding: 30,
-                overflow: 'hidden',
-                borderRadius: 24,
-                outline: '1px rgba(4, 52, 14, 0.10) solid',
-                outlineOffset: '-1px',
-                flexShrink: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'flex-start',
-                alignItems: 'center',
-                gap: 30,
-              }}
+              variant="popUp"
+              delay={i * 0.12}
+              className="w-full max-w-[300px] md:max-w-[250px]"
             >
-              <Image
-                src={step.image}
-                alt={step.title}
-                width={step.imageWidth}
-                height={step.imageHeight}
-                style={{ objectFit: 'contain' }}
-              />
-              <div
-                style={{
-                  width: 91,
-                  height: 30,
-                  padding: 20,
-                  background: '#001407',
-                  overflow: 'hidden',
-                  borderRadius: 100,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  gap: 10,
-                }}
-              >
-                <span
-                  style={{
-                    color: '#D2FF00',
-                    fontSize: 16,
-                    fontFamily: 'Roboto Slab',
-                    fontWeight: 600,
-                    wordWrap: 'break-word',
-                  }}
-                >
-                  {step.number}
-                </span>
+              <div className="w-full h-auto md:h-[450px] p-6 md:p-[30px] rounded-[24px] border border-[rgba(4,52,14,0.10)] flex flex-col items-center gap-6 md:gap-[30px] hover:shadow-[0_8px_40px_-8px_rgba(0,20,7,0.12)] transition-shadow duration-500">
+                <Image
+                  src={step.image}
+                  alt={step.title}
+                  width={step.imageWidth}
+                  height={step.imageHeight}
+                  className="object-contain"
+                />
+                <div className="w-[91px] h-[30px] p-5 bg-[#001407] rounded-full flex items-center justify-center">
+                  <span className="text-[#D2FF00] text-base font-semibold font-[family-name:var(--font-roboto-slab)]">
+                    {step.number}
+                  </span>
+                </div>
+                <div className="text-[#001407] text-xl md:text-2xl font-bold font-[family-name:var(--font-roboto-slab)] text-center">
+                  {step.title}
+                </div>
+                <div className="text-[#001407] text-sm md:text-base font-medium font-[family-name:var(--font-roboto-slab)] text-center">
+                  {step.description}
+                </div>
               </div>
-              <div
-                style={{
-                  color: '#001407',
-                  fontSize: 24,
-                  fontFamily: 'Roboto Slab',
-                  fontWeight: 700,
-                  wordWrap: 'break-word',
-                  ...step.titleStyle,
-                }}
-              >
-                {step.title}
-              </div>
-              <div
-                style={{
-                  color: '#001407',
-                  fontSize: 16,
-                  fontWeight: 500,
-                  wordWrap: 'break-word',
-                  ...step.descStyle,
-                }}
-              >
-                {step.description}
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
-        {/*Bottom connector line*/}
-        <div
-          style={{
-            height: 40,
-            overflow: 'hidden',
-            display: 'flex',
-            justifyContent: 'flex-end',
-            alignItems: 'center',
-          }}
-        >
+        {/* Bottom connector line — hidden on mobile */}
+        <div className="hidden md:flex items-center justify-center h-10 overflow-hidden">
+          <div className="w-5 h-5 bg-[#D2FF00] rounded-full border-[3px] border-[#001407] shrink-0" />
           <div
+            className="flex-1 max-w-[787px] h-[1px] shrink-0"
             style={{
-              width: 20,
-              height: 20,
-              background: '#D2FF00',
-              borderRadius: 9999,
-              border: '3px #001407 solid',
-              flexShrink: 0,
-            }}
-          />
-          <div
-            style={{
-              width: 787,
-              height: 1,
               background:
-                'repeating-linear-gradient(to right, rgba(0,20,7,0.50) 0px, rgba(0,20,7,0.50) 8px, transparent 8px, transparent 13px)',
-              flexShrink: 0,
+                "repeating-linear-gradient(to right, rgba(0,20,7,0.50) 0px, rgba(0,20,7,0.50) 8px, transparent 8px, transparent 13px)",
             }}
           />
-          <div
-            style={{
-              width: 20,
-              height: 20,
-              background: '#D2FF00',
-              borderRadius: 9999,
-              border: '3px #001407 solid',
-              flexShrink: 0,
-            }}
-          />
+          <div className="w-5 h-5 bg-[#D2FF00] rounded-full border-[3px] border-[#001407] shrink-0" />
         </div>
 
         {/* CTA Button */}
-        <button
-          style={{
-            width: 230,
-            height: 60,
-            paddingLeft: 38.53,
-            paddingRight: 38.53,
-            paddingTop: 15.65,
-            paddingBottom: 15.65,
-            background: '#001407',
-            overflow: 'hidden',
-            borderRadius: 24.08,
-            display: 'flex',
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            gap: 12.04,
-            border: 'none',
-            cursor: 'pointer',
-          }}
-        >
-          <span
-            style={{
-              color: '#D2FF00',
-              fontSize: 24.08,
-              fontFamily: 'Roboto',
-              fontWeight: 500,
-              wordWrap: 'break-word',
-            }}
-          >
-            Start free trial
-          </span>
-        </button>
+        <ScrollReveal variant="fadeUp" delay={0.5}>
+          <button className="w-[230px] h-[60px] px-10 py-4 bg-[#001407] rounded-[24px] flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity">
+            <span className="text-[#D2FF00] text-xl md:text-2xl font-medium font-[family-name:var(--font-roboto)]">
+              Start free trial
+            </span>
+          </button>
+        </ScrollReveal>
       </div>
     </section>
   );

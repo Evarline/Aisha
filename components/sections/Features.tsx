@@ -1,3 +1,7 @@
+"use client";
+
+import ScrollReveal, { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
+
 const features = [
   {
     icon: "/Icons/ChatCircleDots.svg",
@@ -41,80 +45,31 @@ export default function Features() {
   return (
     <section
       id="features"
-      style={{
-        width: "100%",
-        paddingLeft: 44,
-        paddingRight: 44,
-        paddingTop: 88,
-        paddingBottom: 88,
-        background: "#F5F5F5",
-        overflow: "hidden",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        gap: 50,
-      }}
+      className="w-full px-5 md:px-11 py-16 md:py-[88px] bg-[#F5F5F5] overflow-hidden flex flex-col justify-start items-center gap-10 md:gap-[50px]"
     >
       {/* Header */}
-      <div
-        style={{
-          maxWidth: 1190,
-          width: "100%",
-          overflow: "hidden",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignItems: "center",
-          gap: 24,
-        }}
-      >
-        <h2
-          style={{
-            color: "#001407",
-            fontSize: 24,
-            fontFamily: "Inter, sans-serif",
-            fontWeight: 800,
-            letterSpacing: 2.4,
-            wordWrap: "break-word",
-            textAlign: "center",
-            margin: 0,
-          }}
-        >
-          Aisha: Designed for creators like you, since your vision deserves
-          precision
-        </h2>
-        <p
-          style={{
-            color: "rgba(0, 19, 7, 0.70)",
-            fontSize: 15,
-            fontFamily: "Roboto, sans-serif",
-            fontWeight: 500,
-            letterSpacing: 3.2,
-            wordWrap: "break-word",
-            textAlign: "center",
-            margin: 0,
-          }}
-        >
-          Experience the power of Aisha surgical features
-        </p>
-      </div>
+      <ScrollReveal variant="fadeUp">
+        <div className="max-w-[1190px] w-full overflow-hidden flex flex-col justify-start items-center gap-4 md:gap-6">
+          <h2 className="text-[#001407] text-[18px] md:text-[24px] font-extrabold font-[family-name:var(--font-inter)] tracking-[2.4px] text-center">
+            Aisha: Designed for creators like you, since your vision deserves precision
+          </h2>
+          <p className="text-[rgba(0,19,7,0.70)] text-[13px] md:text-[15px] font-medium font-[family-name:var(--font-roboto)] tracking-[3.2px] text-center">
+            Experience the power of Aisha surgical features
+          </p>
+        </div>
+      </ScrollReveal>
 
-      {/* Cards Grid — 3 columns × 2 rows */}
-      <div
-        style={{
-          width: "100%",
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 419px)",
-          justifyContent: "center",
-          columnGap: 20,
-          rowGap: 40,
-        }}
+      {/* Cards Grid — responsive: 1 col mobile, 2 col tablet, 3 col desktop */}
+      <StaggerContainer
+        className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-x-5 md:gap-y-10 max-w-[1300px] mx-auto"
+        stagger={0.1}
       >
         {features.map((feature) => (
-          <FeatureCard key={feature.title} {...feature} />
+          <StaggerItem key={feature.title} variant="zoomIn">
+            <FeatureCard {...feature} />
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
     </section>
   );
 }
@@ -129,79 +84,27 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div
-      style={{
-        width: 419,
-        height: 235,
-        paddingLeft: 30,
-        paddingRight: 30,
-        paddingTop: 72,
-        paddingBottom: 72,
-        background: "#001407",
-        boxShadow: "0px 4px 0.5px 1px white inset",
-        overflow: "hidden",
-        borderRadius: 30,
-        outline: "2px solid white",
-        outlineOffset: "-2px",
-        display: "inline-flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "flex-start",
-        gap: 21,
-      }}
-    >
+    <div className="w-full h-auto min-h-[200px] md:min-h-[235px] px-6 md:px-[30px] py-12 md:py-[72px] bg-[#001407] shadow-[0px_4px_0.5px_1px_white_inset] overflow-hidden rounded-[30px] outline-2 outline-white -outline-offset-2 flex flex-col justify-center items-start gap-5 md:gap-[21px] hover:scale-[1.02] transition-transform duration-300">
       {/* Icon Box */}
-      <div
-        style={{
-          width: 40,
-          height: 40,
-          position: "relative",
-          background: "#D2FF00",
-          overflow: "hidden",
-          borderRadius: 10,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexShrink: 0,
-        }}
-      >
+      <div className="w-10 h-10 relative bg-[#D2FF00] overflow-hidden rounded-[10px] flex items-center justify-center shrink-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={icon}
           alt={title}
           width={24}
           height={24}
-          style={{ objectFit: "contain" }}
+          className="object-contain"
         />
       </div>
 
       {/* Title */}
-      <h3
-        style={{
-          textAlign: "left",
-          color: "white",
-          fontSize: 24,
-          fontFamily: "Roboto, sans-serif",
-          fontWeight: 600,
-          wordWrap: "break-word",
-          margin: 0,
-        }}
-      >
+      <h3 className="text-left text-white text-[20px] md:text-[24px] font-semibold font-[family-name:var(--font-roboto)]">
         {title}
       </h3>
 
       {/* Description */}
       <p
-        style={{
-          alignSelf: "stretch",
-          color: "white",
-          fontSize: 16,
-          fontFamily: "Roboto, sans-serif",
-          fontWeight: 600,
-          wordWrap: "break-word",
-          margin: 0,
-          lineHeight: 1.5,
-        }}
+        className="self-stretch text-white text-[14px] md:text-[16px] font-semibold font-[family-name:var(--font-roboto)] leading-relaxed"
         dangerouslySetInnerHTML={{ __html: description }}
       />
     </div>

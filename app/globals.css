@@ -1,31 +1,244 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════════
+   AISHA AI — Universal Style Rulebook
+   $50,000 Design System · Apple-Inspired · Tailwind + shadcn
+   ═══════════════════════════════════════════════════ */
+
+/* ── Base ── */
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Remove default link underlines globally */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Smooth image rendering */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Selection style ── */
+::selection {
+  background: rgba(210, 255, 0, 0.3);
+  color: #001407;
+}
+
+/* ── Scrollbar (WebKit) ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 20, 7, 0.2);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 20, 7, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════
+   KEYFRAMES — Marquee, Pulse, Glow, Breathe
+   ═══════════════════════════════════════════════════ */
 
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px 2px rgba(210, 255, 0, 0.4); }
+  50%      { box-shadow: 0 0 20px 6px rgba(210, 255, 0, 0.7); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.02); }
+}
+
+/* ═══════════════════════════════════════════════════
+   THEME TOKENS
+   ═══════════════════════════════════════════════════ */
+
 @theme {
-  
-  --color-brand-deep: #001407;      
-  --color-brand-lime: #D2FF00;      
-  --color-brand-white: #F5F5F5;     
-  --color-brand-mask: #2C3E50;      
-  --color-brand-surface: #FFFFFF;   
-  --color-brand-error: #FF4D4D;     
+  /* --- COLORS --- */
+  --color-brand-deep: #001407;
+  --color-brand-lime: #D2FF00;
+  --color-brand-white: #F5F5F5;
+  --color-brand-mask: #2C3E50;
+  --color-brand-surface: #FFFFFF;
+  --color-brand-error: #FF4D4D;
+  --color-brand-forest: #04340E;
+  --color-brand-muted: rgba(0, 20, 7, 0.7);
 
   /* --- TYPOGRAPHY --- */
   --font-heading: var(--font-inter);
   --font-body: var(--font-roboto);
 
+  /* --- BORDER RADII --- */
+  --radius-card: 24px;
+  --radius-button: 24px;
+  --radius-pill: 9999px;
+
   /* --- SHADOWS --- */
   --shadow-clean: 0 4px 20px -2px rgba(0, 20, 7, 0.08);
   --shadow-neon: 0 0 20px -5px rgba(210, 255, 0, 0.6);
+  --shadow-elevated: 0 8px 40px -8px rgba(0, 20, 7, 0.12);
+  --shadow-card: 0 2px 12px -2px rgba(0, 20, 7, 0.06);
 
   /* --- ANIMATIONS --- */
   --animate-marquee: marquee 18s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.5s ease-in-out infinite;
+  --animate-breathe: breathe 4s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE SECTION SPACING
+   Mobile-first, generous whitespace — Apple style
+   ═══════════════════════════════════════════════════ */
+
+.section-padding {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-left: 44px;
+    padding-right: 44px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   UTILITY CLASSES — Glass, Glow, Gradients
+   ═══════════════════════════════════════════════════ */
+
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(0, 20, 7, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.neon-glow {
+  box-shadow:
+    0 0 8px 2px rgba(210, 255, 0, 0.4),
+    0 0 20px 6px rgba(210, 255, 0, 0.2);
+}
+
+.neon-text {
+  text-shadow:
+    0 0 10px rgba(210, 255, 0, 0.5),
+    0 0 20px rgba(210, 255, 0, 0.3);
+}
+
+.gradient-lime {
+  background: linear-gradient(135deg, #D2FF00 0%, #9FCC00 100%);
+}
+
+.gradient-deep {
+  background: linear-gradient(180deg, #001407 0%, #04340E 100%);
+}
+
+/* Shimmer loading effect */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(210, 255, 0, 0) 0%,
+    rgba(210, 255, 0, 0.15) 50%,
+    rgba(210, 255, 0, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE TYPOGRAPHY — Fluid scaling
+   ═══════════════════════════════════════════════════ */
+
+.heading-xl {
+  font-size: clamp(32px, 5vw, 60px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.heading-lg {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.heading-md {
+  font-size: clamp(20px, 2.5vw, 32px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.body-lg {
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.body-md {
+  font-size: clamp(14px, 1.4vw, 16px);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.label-sm {
+  font-size: clamp(11px, 1.2vw, 15px);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }

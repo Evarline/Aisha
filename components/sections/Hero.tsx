@@ -1,3 +1,7 @@
+"use client";
+
+import ScrollReveal from "@/components/ui/ScrollReveal";
+
 const imgUser3 = "https://www.figma.com/api/mcp/asset/b48917ad-fa7e-48b1-8a46-1296e44e6460";
 const imgWhatsAppImage20250923At163932RemovebgPreview13 = "https://www.figma.com/api/mcp/asset/f4fb0fa1-7d38-4df9-86b5-ef6823304c88";
 const imgAisha = "/Images/WhatsApp%20Image%202025-09-23%20at%2016.39.32%204.png";
@@ -22,51 +26,58 @@ const imgDynamicIsland = "https://www.figma.com/api/mcp/asset/15ec94df-a64d-4fdf
 
 export default function Hero() {
   return (
-    <section className="flex justify-center w-full px-[40px] py-[88px]">
-      <div className="flex gap-[20px] h-[444px] items-center w-full max-w-[1360px]">
+    <section className="flex justify-center w-full px-5 md:px-[40px] py-12 md:py-[88px]">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-[20px] lg:h-[444px] items-center w-full max-w-[1360px]">
 
         {/* Hero Left */}
-        <div className="flex flex-col gap-[40px] h-[440px] items-start justify-center flex-1 min-w-0">
-          <div
-            className="font-extrabold leading-normal text-[#001407] text-[60px] whitespace-nowrap"
-            style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wdth' 100" }}
-          >
-            <p className="mb-0">Your 24/7 WhatsApp</p>
-            <p className="mb-0">sales Assistant</p>
-          </div>
-          <p
-            className="font-medium leading-normal text-[#001407] text-[20px] w-[611px]"
-            style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wdth' 100" }}
-          >
-            Karibu to effortless client care, Aisha handles the hustle and lets you&nbsp; focus on what you love
-          </p>
-          <div className="flex gap-[50px] items-center">
-            <button
-              className="bg-[#001407] flex h-[60px] items-center justify-center overflow-clip px-[38px] py-[15px] rounded-[24px] shrink-0 w-[230px] hover:opacity-90 transition-opacity cursor-pointer"
+        <ScrollReveal variant="fadeUp" duration={0.8}>
+          <div className="flex flex-col gap-6 md:gap-[40px] items-center lg:items-start justify-center flex-1 min-w-0">
+            <div
+              className="font-extrabold leading-[1.1] text-[#001407] text-[32px] sm:text-[44px] md:text-[52px] lg:text-[60px] text-center lg:text-left"
+              style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wdth' 100" }}
             >
-              <span
-                className="font-medium leading-normal text-[#d2ff00] text-[24px]"
+              <p className="mb-0">Your 24/7 WhatsApp</p>
+              <p className="mb-0">sales Assistant</p>
+            </div>
+            <ScrollReveal variant="fadeUp" delay={0.2}>
+              <p
+                className="font-medium leading-normal text-[#001407] text-[16px] md:text-[20px] max-w-[611px] text-center lg:text-left"
                 style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wdth' 100" }}
               >
-                Start free trial
-              </span>
-            </button>
-            <button
-              className="bg-[#f5f5f5] border-[#001407] border-[3.6px] border-solid flex h-[60px] items-center justify-center overflow-clip px-[21px] py-[15px] rounded-[24px] shrink-0 w-[230px] hover:bg-gray-200 transition-colors cursor-pointer"
-            >
-              <span
-                className="font-medium leading-normal text-[#001407] text-[24px]"
-                style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wdth' 100" }}
-              >
-                See how it works
-              </span>
-            </button>
+                Karibu to effortless client care, Aisha handles the hustle and lets you&nbsp; focus on what you love
+              </p>
+            </ScrollReveal>
+            <ScrollReveal variant="popUp" delay={0.4}>
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-[50px] items-center">
+                <button
+                  className="bg-[#001407] flex h-[52px] md:h-[60px] items-center justify-center overflow-clip px-8 md:px-[38px] py-[15px] rounded-[24px] shrink-0 w-full sm:w-[230px] hover:opacity-90 transition-opacity cursor-pointer"
+                >
+                  <span
+                    className="font-medium leading-normal text-[#d2ff00] text-[18px] md:text-[24px]"
+                    style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wdth' 100" }}
+                  >
+                    Start free trial
+                  </span>
+                </button>
+                <button
+                  className="bg-[#f5f5f5] border-[#001407] border-[3.6px] border-solid flex h-[52px] md:h-[60px] items-center justify-center overflow-clip px-5 md:px-[21px] py-[15px] rounded-[24px] shrink-0 w-full sm:w-[230px] hover:bg-gray-200 transition-colors cursor-pointer"
+                >
+                  <span
+                    className="font-medium leading-normal text-[#001407] text-[18px] md:text-[24px]"
+                    style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wdth' 100" }}
+                  >
+                    See how it works
+                  </span>
+                </button>
+              </div>
+            </ScrollReveal>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Visual Ecosystem */}
-        <div className="flex-1 min-w-0 h-[440px] flex items-center justify-center pointer-events-none select-none">
-          <div className="relative shrink-0 w-[680px] h-[440px]" style={{ transform: 'scale(0.92)', transformOrigin: 'center center' }}>
+        <ScrollReveal variant="zoomIn" delay={0.3} duration={1}>
+        <div className="flex-1 min-w-0 h-[300px] sm:h-[360px] lg:h-[440px] flex items-center justify-center pointer-events-none select-none">
+          <div className="relative shrink-0 w-[480px] sm:w-[580px] lg:w-[680px] h-[300px] sm:h-[360px] lg:h-[440px]" style={{ transform: 'scale(0.7)', transformOrigin: 'center center' }}>
 
           {/* Vector 14 — single thin data path with lime glow */}
           <svg
@@ -359,6 +370,7 @@ export default function Hero() {
 
           </div>{/* end inner 680×440 scaled div */}
         </div>{/* end outer flex-1 wrapper */}
+        </ScrollReveal>
       </div>
     </section>
   );

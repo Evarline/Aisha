@@ -1,3 +1,7 @@
+"use client";
+
+import ScrollReveal from "@/components/ui/ScrollReveal";
+
 const navItems = [
   {
     label: "Dashboard",
@@ -41,57 +45,42 @@ const statsCards = [
 export default function DashboardDemo() {
   return (
     <section
-      className="flex justify-center w-full overflow-hidden"
-      style={{ paddingLeft: 40, paddingRight: 40, paddingTop: 88, paddingBottom: 88 }}
+      className="flex justify-center w-full overflow-hidden px-5 md:px-10 py-16 md:py-[88px]"
     >
       <div className="flex flex-col items-center gap-[30px] w-full max-w-[1360px]">
 
         {/* Section Header */}
+        <ScrollReveal variant="fadeUp">
         <div
-          className="flex flex-col items-center gap-[15px]"
-          style={{ paddingLeft: 40, paddingRight: 40, paddingTop: 10, paddingBottom: 10 }}
+          className="flex flex-col items-center gap-[15px] px-4 md:px-10 py-2.5"
         >
           <h2
-            className="text-center text-[#001407]"
-            style={{
-              fontSize: 32,
-              fontFamily: "'Inter', sans-serif",
-              fontWeight: 800,
-              letterSpacing: 3.2,
-              wordWrap: "break-word",
-            }}
+            className="text-center text-[#001407] text-[24px] md:text-[32px] font-extrabold font-[family-name:var(--font-inter)] tracking-[3.2px]"
           >
             See Aisha In Action
           </h2>
           <p
-            className="text-center max-w-[700px]"
-            style={{
-              color: "rgba(0, 20, 7, 0.70)",
-              fontSize: 16,
-              fontFamily: "'Roboto', sans-serif",
-
-              
-              fontWeight: 500,
-              letterSpacing: 2.4,
-              wordWrap: "break-word",
-            }}
+            className="text-center max-w-[700px] text-[rgba(0,20,7,0.70)] text-[14px] md:text-[16px] font-medium font-[family-name:var(--font-roboto)] tracking-[2.4px]"
           >
             Monitor live conversations, improve AISHA&apos;s responses, and watch your
             conversion metrics climb—all in real time.
           </p>
         </div>
+        </ScrollReveal>
 
         {/* Dashboard Mockup — scaled to fit within the section */}
+        <ScrollReveal variant="revealScale" duration={1}>
         <div className="w-full overflow-x-auto flex justify-center">
-          <div
-            className="shrink-0 relative bg-[#001407] overflow-hidden"
-            style={{
-              width: 1200,
-              height: 600,
-              borderRadius: 32,
-              boxShadow: "0px 0px 10px 6px rgba(4, 52, 14, 0.20)",
-            }}
-          >
+          <div className="shrink-0 relative block" style={{ width: 1200, height: 600 }}>
+            <div
+              className="absolute inset-0 bg-[#001407] overflow-hidden"
+              style={{
+                borderRadius: 32,
+                boxShadow: "0px 0px 10px 6px rgba(4, 52, 14, 0.20)",
+                transform: "scale(var(--dashboard-scale, 1))",
+                transformOrigin: "top center",
+              }}
+            >
 
             {/* ── Sidebar ── */}
             <div
@@ -352,6 +341,8 @@ export default function DashboardDemo() {
           </div>
         </div>
 
+      </div>
+      </ScrollReveal>
       </div>
     </section>
   );

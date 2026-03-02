@@ -60,10 +60,10 @@ export default function Footer() {
               Data logs
             </h3>
             <ul className="flex flex-col gap-2">
-              <li><a href="#" className="text-white text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Security Audit</a></li>
-              <li><a href="#" className="text-white text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">System changelog</a></li>
-              <li><a href="#" className="text-white text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">API documentation</a></li>
-              <li><a href="#" className="text-white text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Evolution Roadmap</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Security Audit</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">System changelog</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">API documentation</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Evolution Roadmap</a></li>
             </ul>
           </div>
 
@@ -73,11 +73,11 @@ export default function Footer() {
               Solution
             </h3>
             <ul className="flex flex-col gap-2">
-              <li><a href="#" className="text-white text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For Content Autonomy</a></li>
-              <li><a href="#" className="text-white text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For Builders</a></li>
-              <li><a href="#" className="text-white text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For Scalable Commerce</a></li>
-              <li><a href="#" className="text-white text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For consultants</a></li>
-              <li><a href="#" className="text-white text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Custom Protocols</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For Content Autonomy</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For Builders</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For Scalable Commerce</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For consultants</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Custom Protocols</a></li>
             </ul>
           </div>
 
@@ -87,9 +87,9 @@ export default function Footer() {
               Company
             </h3>
             <ul className="flex flex-col gap-2">
-              <li><a href="#" className="text-white text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Global network</a></li>
-              <li><a href="#" className="text-white text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Lead Architect</a></li>
-              <li><a href="#" className="text-white text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">The Vision</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Global network</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Lead Architect</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">The Vision</a></li>
             </ul>
           </div>
 
@@ -104,16 +104,16 @@ export default function Footer() {
             
             <div className="flex items-start">
               <div className="flex flex-col gap-2 w-[94px]">
-                <span className="text-white text-base font-medium font-['Roboto'] leading-[30px]">STATUS:</span>
-                <span className="text-white text-base font-medium font-['Roboto'] leading-[30px]">LATENCY:</span>
-                <span className="text-white text-base font-medium font-['Roboto'] leading-[30px]">UPTIME:</span>
+                <span className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px]">STATUS:</span>
+                <span className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px]">LATENCY:</span>
+                <span className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px]">UPTIME:</span>
               </div>
               <div className="flex flex-col gap-2 w-[69px]">
                 <span className="text-[#D2FF00] text-base font-medium font-['Roboto'] leading-[30px]">
                   OPTIMAL
                 </span>
-                <span className="text-white text-base font-medium font-['Roboto'] leading-[30px]">12ms</span>
-                <span className="text-white text-base font-medium font-['Roboto'] leading-[30px]">99.99%</span>
+                <span className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px]">12ms</span>
+                <span className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px]">99.99%</span>
               </div>
             </div>
           </div>
@@ -136,13 +136,13 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap justify-center md:justify-end items-center gap-4 sm:gap-8">
-            <a href="#" className="text-white text-[11px] font-light font-['Roboto'] hover:text-[#D2FF00] transition-colors">Privacy policy</a>
-            <span className="text-white/30 text-[11px]">/</span>
-            <a href="#" className="text-white text-[11px] font-light font-['Roboto'] hover:text-[#D2FF00] transition-colors">Terms of service</a>
-            <span className="text-white/30 text-[11px]">/</span>
-            <a href="#" className="text-white text-[11px] font-light font-['Roboto'] hover:text-[#D2FF00] transition-colors">Cookie policy</a>
-            <span className="text-white/30 text-[11px]">/</span>
-            <a href="#" className="text-white text-[11px] font-light font-['Roboto'] hover:text-[#D2FF00] transition-colors">Contact us</a>
+            <a href="#" className="text-[#F4F1EA] text-[11px] font-light font-['Roboto'] hover:text-[#D2FF00] transition-colors">Privacy policy</a>
+            <span className="text-[#F4F1EA]/30 text-[11px]">/</span>
+            <a href="#" className="text-[#F4F1EA] text-[11px] font-light font-['Roboto'] hover:text-[#D2FF00] transition-colors">Terms of service</a>
+            <span className="text-[#F4F1EA]/30 text-[11px]">/</span>
+            <a href="#" className="text-[#F4F1EA] text-[11px] font-light font-['Roboto'] hover:text-[#D2FF00] transition-colors">Cookie policy</a>
+            <span className="text-[#F4F1EA]/30 text-[11px]">/</span>
+            <a href="#" className="text-[#F4F1EA] text-[11px] font-light font-['Roboto'] hover:text-[#D2FF00] transition-colors">Contact us</a>
           </div>
 
         </div>
