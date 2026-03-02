@@ -6,6 +6,9 @@ import Features from "@/components/sections/Features";
 import DashboardDemo from "@/components/sections/DashboardDemo";
 import Setup from "@/components/sections/Setup";
 import PerformanceProof from "@/components/sections/PerformanceProof";
+import Pricing from "@/components/sections/Pricing";
+import FinalCTA from "@/components/sections/FinalCTA";
+import Footer from "@/components/layout/Footer";
 export default function Home() {
   return (
     /* 
@@ -31,6 +34,9 @@ export default function Home() {
         <DashboardDemo />
         <Setup />
         <PerformanceProof />
+        <Pricing />
+        <FinalCTA />
+        <Footer />
     </div>
     </div>
   

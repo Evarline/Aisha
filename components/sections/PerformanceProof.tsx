@@ -20,7 +20,7 @@ const testimonials = [
   {
     avatar: '/Images/Client.png', // Update this path for the third image when ready
     name: 'Sarah Chen',
-    role: 'Freelance Developer',
+    role: 'Product Manager',
     rating: 4.5,
     quote:
       "As an Independent Product Engineer, Aisha manages client inquiries, project timelines, and milestone payments. I've reduced administrative time by 80% and doubled my client capacity",
