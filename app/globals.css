@@ -8,6 +8,7 @@
 /* ── Base ── */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -24,9 +25,11 @@ body {
 }
 
 /* Remove default link underlines globally */
-a {
-  text-decoration: none;
-  color: inherit;
+@layer base {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 /* Smooth image rendering */

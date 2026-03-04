@@ -23,7 +23,7 @@ export default function Footer() {
             <h2 className="text-white text-4xl font-bold font-['Nunito'] drop-shadow-[0_0_10px_rgba(255,255,255,0.80)]">
               Aisha
             </h2>
-            <p className="text-[#D8DED7] text-base font-medium font-['Roboto']">
+            <p className="text-[#D8DED7] text-sm font-medium font-['Roboto']">
               Join thousands of creators who chose to automate.
             </p>
           </div>
@@ -56,47 +56,47 @@ export default function Footer() {
           
           {/* Column 1: Data logs */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-[#D2FF00] text-xl font-medium font-['Roboto'] leading-[30px]">
+            <h3 className="text-[#D2FF00] text-sm font-medium font-['Roboto'] leading-[30px]">
               Data logs
             </h3>
             <ul className="flex flex-col gap-2">
-              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Security Audit</a></li>
-              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">System changelog</a></li>
-              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">API documentation</a></li>
-              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Evolution Roadmap</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Security Audit</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">System changelog</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">API documentation</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Evolution Roadmap</a></li>
             </ul>
           </div>
 
           {/* Column 2: Solution */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-[#D2FF00] text-xl font-medium font-['Roboto'] leading-[30px]">
+            <h3 className="text-[#D2FF00] text-sm font-medium font-['Roboto'] leading-[30px]">
               Solution
             </h3>
             <ul className="flex flex-col gap-2">
-              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For Content Autonomy</a></li>
-              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For Builders</a></li>
-              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For Scalable Commerce</a></li>
-              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For consultants</a></li>
-              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Custom Protocols</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For Content Autonomy</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For Builders</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For Scalable Commerce</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">For consultants</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Custom Protocols</a></li>
             </ul>
           </div>
 
           {/* Column 3: Company */}
           <div className="flex flex-col gap-4 w-[128px]">
-            <h3 className="text-[#D2FF00] text-xl font-medium font-['Roboto'] leading-[30px]">
+            <h3 className="text-[#D2FF00] text-sm font-medium font-['Roboto'] leading-[30px]">
               Company
             </h3>
             <ul className="flex flex-col gap-2">
-              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Global network</a></li>
-              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Lead Architect</a></li>
-              <li><a href="#" className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">The Vision</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Global network</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">Lead Architect</a></li>
+              <li><a href="#" className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px] hover:text-[#D2FF00] transition-colors">The Vision</a></li>
             </ul>
           </div>
 
           {/* Column 4: System Status */}
           <div className="flex flex-col w-[227px] pl-0 lg:pl-4">
             <div className="flex items-center gap-[15px] mb-4">
-              <h3 className="text-[#D2FF00] text-xl font-medium font-['Roboto'] leading-[30px]">
+              <h3 className="text-[#D2FF00] text-sm font-medium font-['Roboto'] leading-[30px]">
                 System Status
               </h3>
               <div className="w-5 h-5 bg-[#D2FF00] rounded-full shadow-[0_0_10px_#D2FF00] border-2 border-[#D2FF00] animate-pulse" />
@@ -104,16 +104,16 @@ export default function Footer() {
             
             <div className="flex items-start">
               <div className="flex flex-col gap-2 w-[94px]">
-                <span className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px]">STATUS:</span>
-                <span className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px]">LATENCY:</span>
-                <span className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px]">UPTIME:</span>
+                <span className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px]">STATUS:</span>
+                <span className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px]">LATENCY:</span>
+                <span className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px]">UPTIME:</span>
               </div>
               <div className="flex flex-col gap-2 w-[69px]">
-                <span className="text-[#D2FF00] text-base font-medium font-['Roboto'] leading-[30px]">
+                <span className="text-[#D2FF00] text-sm font-medium font-['Roboto'] leading-[30px]">
                   OPTIMAL
                 </span>
-                <span className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px]">12ms</span>
-                <span className="text-[#F4F1EA] text-base font-medium font-['Roboto'] leading-[30px]">99.99%</span>
+                <span className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px]">12ms</span>
+                <span className="text-[#F4F1EA] text-sm font-medium font-['Roboto'] leading-[30px]">99.99%</span>
               </div>
             </div>
           </div>

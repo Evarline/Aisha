@@ -2,7 +2,6 @@
 
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-const imgUser3 = "https://www.figma.com/api/mcp/asset/b48917ad-fa7e-48b1-8a46-1296e44e6460";
 const imgWhatsAppImage20250923At163932RemovebgPreview13 = "https://www.figma.com/api/mcp/asset/f4fb0fa1-7d38-4df9-86b5-ef6823304c88";
 const imgAisha = "/Images/WhatsApp%20Image%202025-09-23%20at%2016.39.32%204.png";
 const imgWallpaper = "https://www.figma.com/api/mcp/asset/be9f6aca-a4b6-4728-8333-544487f5cd99";
@@ -314,13 +313,8 @@ export default function Hero() {
           <div className="absolute z-[20] bg-[#D2FF00] rounded-full shadow-[0px_0px_4px_2px_rgba(210,255,0,1),0px_0px_14px_4px_rgba(210,255,0,0.85),0px_0px_28px_8px_rgba(210,255,0,0.45),0px_0px_6px_3px_rgba(0,0,0,0.6)] animate-pulse" style={{ left: '453.5px', top: '151.5px', width: '7px', height: '7px' }} />
 
           {/* Client card (top right) */}
-          <div className="absolute bg-[#1d2621] border-[#b8c4b9] border-[1.526px] border-solid h-[170px] left-[460px] overflow-clip rounded-[36.613px] top-[33px] w-[175px]">
-            <div className="absolute bg-[#2c3e50] h-[186px] left-[-1.53px] rounded-[36.613px] top-[-20.53px] w-[175px]" />
-            <div className="absolute h-[175.056px] left-[-1.53px] top-[-1.53px] w-[200.227px]">
-              <div className="absolute inset-0 overflow-hidden pointee to the her-events-none">
-                <img alt="" className="absolute h-[85.75%] left-[-30.14%] max-w-none top-[10.69%] w-[112.46%]" src={imgUser3} />
-              </div>
-            </div>
+          <div className="absolute border-[#b8c4b9] border-[1.526px] border-solid h-[170px] left-[460px] overflow-clip rounded-[36.613px] top-[33px] w-[175px]">
+            <img alt="Client" className="absolute inset-0 w-full h-full object-cover" src="/Images/Client(1).png" />
           </div>
 
           {/* AI Logo (bottom left) — 4 concentric rings + Aisha image + blinking data packets */}

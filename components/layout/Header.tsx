@@ -7,8 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { label: "Home", href: "/", sectionId: "" },
   { label: "Features", href: "#features", sectionId: "features" },
-  { label: "Testimonials", href: "#testimonials", sectionId: "testimonials" },
-  { label: "About us", href: "#about", sectionId: "about" },
+  { label: "Testimonials", href: "#about", sectionId: "about" },
   { label: "Pricing", href: "#pricing", sectionId: "pricing" },
 ];
 
@@ -21,13 +20,7 @@ export default function Header() {
   const handleScroll = useCallback(() => {
     setScrolled(window.scrollY > 10);
 
-    const scrollPos = window.scrollY + 120;
-
-    // If near the top → Home
-    if (scrollPos < 300) {
-      setActiveSection("");
-      return;
-    }
+    const scrollPos = window.scrollY + 140;
 
     const sections = navLinks
       .filter((l) => l.sectionId)
@@ -35,16 +28,23 @@ export default function Header() {
         id: l.sectionId,
         el: document.getElementById(l.sectionId),
       }))
-      .filter((s) => s.el);
+      .filter((s) => s.el)
+      // Sort by actual DOM position top-to-bottom so iteration is correct
+      .map((s) => ({
+        ...s,
+        top: s.el!.getBoundingClientRect().top + window.scrollY,
+      }))
+      .sort((a, b) => a.top - b.top);
 
+    // Walk from bottom section upward; first one whose top <= scrollPos wins
+    let active = "";
     for (let i = sections.length - 1; i >= 0; i--) {
-      const el = sections[i].el!;
-      if (el.offsetTop <= scrollPos) {
-        setActiveSection(sections[i].id);
-        return;
+      if (sections[i].top <= scrollPos) {
+        active = sections[i].id;
+        break;
       }
     }
-    setActiveSection("");
+    setActiveSection(active);
   }, []);
 
   useEffect(() => {
@@ -61,8 +61,7 @@ export default function Header() {
     }
     const el = document.getElementById(sectionId);
     if (el) {
-      const offset = el.getBoundingClientRect().top + window.scrollY - 100;
-      window.scrollTo({ top: offset, behavior: "smooth" });
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
