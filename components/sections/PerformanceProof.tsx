@@ -105,9 +105,9 @@ export default function PerformanceProof() {
       </ScrollReveal>
 
       {/* Cards */}
-      <div className="w-full flex flex-col md:flex-row items-center md:items-stretch justify-center gap-8 md:gap-12 lg:gap-[88px] px-4 md:px-10 py-5 flex-wrap">
+      <div className="w-full flex flex-col md:flex-row items-center md:items-stretch justify-center gap-8 md:gap-12 lg:gap-[88px] px-4 md:px-10 py-5 md:flex-nowrap">
         {testimonials.map((t, i) => (
-          <ScrollReveal key={i} variant="popUp" delay={i * 0.15}>
+          <ScrollReveal key={i} variant="popUp" delay={i * 0.15} className="w-full md:w-auto shrink-0">
             <TestimonialCard
               avatar={t.avatar}
               name={t.name}

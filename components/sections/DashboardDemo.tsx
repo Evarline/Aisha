@@ -70,15 +70,21 @@ export default function DashboardDemo() {
 
         {/* Dashboard Mockup — scaled to fit within the section */}
         <ScrollReveal variant="revealScale" duration={1}>
-        <div className="w-full overflow-x-auto flex justify-center">
-          <div className="shrink-0 relative block" style={{ width: 1200, height: 600 }}>
+        {/*
+          Responsive scale trick:
+          - Outer div: flex + overflow-hidden + explicit height matching (600 × scale)
+          - Inner canvas: shrink-0 at full 1200×600, scaled visually via transform
+          - justify-center keeps the canvas horizontally centered before/after scaling
+        */}
+        <div className="w-full overflow-hidden flex justify-center items-start h-[192px] sm:h-[312px] md:h-[420px] lg:h-[495px] xl:h-[600px]">
+          <div
+            className="shrink-0 relative w-[1200px] h-[600px] origin-top scale-[0.32] sm:scale-[0.52] md:scale-[0.7] lg:scale-[0.825] xl:scale-100"
+          >
             <div
               className="absolute inset-0 bg-[#001407] overflow-hidden"
               style={{
                 borderRadius: 32,
                 boxShadow: "0px 0px 10px 6px rgba(4, 52, 14, 0.20)",
-                transform: "scale(var(--dashboard-scale, 1))",
-                transformOrigin: "top center",
               }}
             >
 
@@ -339,9 +345,8 @@ export default function DashboardDemo() {
             </button>
 
           </div>
+          </div>
         </div>
-
-      </div>
       </ScrollReveal>
       </div>
     </section>

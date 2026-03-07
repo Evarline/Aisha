@@ -53,10 +53,10 @@ export default function Pricing() {
       </div>
 
       {/* Pricing Cards */}
-      <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 w-full max-w-6xl mb-16">
+      <div className="flex flex-col md:flex-row md:items-stretch items-center justify-center gap-8 w-full max-w-6xl mb-16">
         
         {/* Basic Plan */}
-        <div className="flex flex-col w-full max-w-sm rounded-[24px] border border-white/20 bg-white/40 backdrop-blur-md p-8 pt-10 text-center relative hover:shadow-lg transition-all duration-300 pb-8 hover:-translate-y-1">
+        <div className="flex flex-col w-full md:w-[360px] max-w-sm rounded-[24px] border border-white/20 bg-white/40 backdrop-blur-md p-8 pt-10 text-center relative hover:shadow-lg transition-all duration-300 pb-8 hover:-translate-y-1">
           <h3 className="text-3xl font-bold text-[#001407] mb-2">Basic</h3>
           <div className="mb-8">
             <span className="text-4xl font-bold text-[#001407]">{prices.basic}</span>
@@ -77,7 +77,7 @@ export default function Pricing() {
 
         {/* Premium Plan */}
         <div
-          className="flex flex-col w-full max-w-sm rounded-[24px]  bg-[#001407] p-8 pt-10 text-center relative shadow-lg transform lg:-translate-y-4 pb-8 transition-all duration-300 hover:shadow-[0_0_18px_5px_rgba(210,255,0,0.35),0_4px_20px_rgba(0,0,0,0.2)]"
+          className="flex flex-col w-full md:w-[360px] max-w-sm rounded-[24px]  bg-[#001407] p-8 pt-10 text-center relative shadow-lg transform md:-translate-y-4 pb-8 transition-all duration-300 hover:shadow-[0_0_18px_5px_rgba(210,255,0,0.35),0_4px_20px_rgba(0,0,0,0.2)]"
         >
           <div className="absolute top-0 right-0 overflow-hidden w-[120px] h-[120px] rounded-tr-[24px]">
             <div className="absolute top-[25px] -right-[35px] w-[160px] bg-[#D2FF00] text-[#001407] font-bold py-1 px-4 transform rotate-45 text-center text-[10px] sm:text-xs tracking-wider border-y-2 border-[#D2FF00]">
@@ -107,7 +107,7 @@ export default function Pricing() {
         </div>
 
         {/* Enterprise Plan */}
-        <div className="flex flex-col w-full max-w-sm rounded-[24px] border border-white/20 bg-white/40 backdrop-blur-md p-8 pt-10 text-center relative hover:shadow-lg transition-all duration-300 pb-8 hover:-translate-y-1">
+        <div className="flex flex-col w-full md:w-[360px] max-w-sm rounded-[24px] border border-white/20 bg-white/40 backdrop-blur-md p-8 pt-10 text-center relative hover:shadow-lg transition-all duration-300 pb-8 hover:-translate-y-1">
           <div className="mb-2">
             <h3 className="text-3xl font-bold text-[#001407]">Enterprise</h3>
             <p className="text-[#001407] text-sm mt-1 font-medium">For larger teams & custom workflows</p>
