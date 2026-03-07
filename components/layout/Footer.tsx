@@ -10,12 +10,12 @@ export default function Footer() {
         <div className="w-[390px] h-[330px] bg-gradient-to-bl from-[#D2FF00]/20 to-transparent blur-3xl rounded-full" />
       </div>
 
-      {/* Floating System Boundary Accent Line (Exact Figma spacing: 19px from top) */}
-      <div className="absolute top-[19px] left-0 right-0 w-full hidden md:flex justify-center px-6 md:px-10 z-20">
+      {/* Floating System Boundary Accent Line — visible on all screen sizes */}
+      <div className="absolute top-[19px] left-0 right-0 w-full flex justify-center px-6 md:px-10 z-20">
         <div className="w-full max-w-[1360px] h-[4px] bg-[#D2FF00] shadow-[0_0_4px_#D2FF00]" />
       </div>
 
-      <div className="w-full max-w-[1360px] mx-auto px-6 md:px-10 pb-16 flex flex-col lg:flex-row justify-center items-start lg:gap-32 z-10">
+      <div className="w-full max-w-[1360px] mx-auto px-6 md:px-10 pb-16 flex flex-col gap-10 md:gap-16 lg:flex-row lg:justify-center lg:items-start lg:gap-32 z-10">
         
         {/* Left Section (Brand & Socials) */}
         <div className="flex flex-col justify-start items-start gap-8 w-full lg:w-fit shrink-0 max-w-[368px]">
@@ -51,8 +51,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Right Section (Links Grid) */}
-        <div className="flex flex-wrap lg:flex-nowrap justify-start lg:justify-center items-start gap-10 lg:gap-14 w-fit shrink-0">
+        {/* Right Section (Links Grid) — 2×2 on mobile, row on md+ */}
+        <div className="grid grid-cols-2 gap-x-4 gap-y-10 w-full md:flex md:flex-row md:flex-wrap lg:flex-nowrap md:justify-start lg:justify-center md:items-start md:gap-14 shrink-0">
           
           {/* Column 1: Data logs */}
           <div className="flex flex-col gap-4">

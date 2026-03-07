@@ -60,11 +60,11 @@ export default function DashboardDemo() {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal variant="revealScale" duration={1}>
+        <ScrollReveal variant="revealScale" duration={1} className="w-full">
 
           {/* ── Mobile & Tablet Layout (< lg) ── */}
           <div
-            className="lg:hidden w-full bg-[#001407] overflow-hidden"
+            className="lg:hidden w-full flex flex-col bg-[#001407] overflow-hidden"
             style={{ borderRadius: 24, boxShadow: "0px 0px 10px 6px rgba(4, 52, 14, 0.20)" }}
           >
             {/* Top Bar */}
@@ -120,8 +120,8 @@ export default function DashboardDemo() {
               ))}
             </div>
 
-            {/* Stats Cards — 2-col grid */}
-            <div className="grid grid-cols-2 gap-3 px-5 sm:px-6 py-4">
+            {/* Stats Cards — stacked single column on mobile */}
+            <div className="grid grid-cols-1 gap-4 px-5 sm:px-6 py-4">
               {statsCards.map((card) => (
                 <div
                   key={card.label}
