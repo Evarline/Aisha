@@ -18,7 +18,7 @@ export default function Home() {
       - Gap: 0 (no gap between children - sections stack directly)
       - Alignment: items-start
     */
-    <div className="flex min-h-screen flex-col items-start bg-[#f5f5f5]">
+    <div className="flex min-h-screen flex-col items-start bg-[#f5f5f5] overflow-x-hidden w-full">
       
       {/* Header Section - 90px height, full width */}
       <Header />

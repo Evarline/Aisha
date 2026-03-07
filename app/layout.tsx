@@ -46,7 +46,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${nunito.variable} ${inter.variable} font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${nunito.variable} ${inter.variable} font-sans antialiased overflow-x-hidden`}
       >
         {children}
       </body>

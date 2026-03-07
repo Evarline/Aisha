@@ -153,15 +153,15 @@ export default function Header() {
           </button>
         </div>
 
-        {/* ── Mobile Hamburger ── */}
+        {/* ── Mobile Hamburger — Electric Lime on deep-forest pill ── */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex md:hidden flex-col justify-center items-center w-10 h-10 gap-[6px] cursor-pointer"
+          className="flex md:hidden flex-col justify-center items-center w-10 h-10 gap-[6px] cursor-pointer bg-[#001407] rounded-xl shrink-0"
           aria-label="Toggle menu"
         >
           <motion.span
             animate={mobileOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-            className="block w-6 h-[2px] bg-[#001407] rounded-full origin-center"
+            className="block w-5 h-[2px] bg-[#D4FF00] rounded-full origin-center"
             transition={{ duration: 0.3 }}
           />
           <motion.span
@@ -170,14 +170,14 @@ export default function Header() {
                 ? { opacity: 0, scaleX: 0 }
                 : { opacity: 1, scaleX: 1 }
             }
-            className="block w-6 h-[2px] bg-[#001407] rounded-full origin-center"
+            className="block w-5 h-[2px] bg-[#D4FF00] rounded-full origin-center"
             transition={{ duration: 0.2 }}
           />
           <motion.span
             animate={
               mobileOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }
             }
-            className="block w-6 h-[2px] bg-[#001407] rounded-full origin-center"
+            className="block w-5 h-[2px] bg-[#D4FF00] rounded-full origin-center"
             transition={{ duration: 0.3 }}
           />
         </button>
