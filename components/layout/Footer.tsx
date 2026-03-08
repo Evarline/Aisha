@@ -15,11 +15,11 @@ export default function Footer() {
         <div className="w-full max-w-[1360px] h-[4px] bg-[#D2FF00] shadow-[0_0_4px_#D2FF00]" />
       </div>
 
-      <div className="w-full max-w-[1360px] mx-auto px-6 md:px-10 pb-16 flex flex-col gap-10 md:gap-16 lg:flex-row lg:justify-center lg:items-start lg:gap-32 z-10">
+      <div className="relative z-10 w-full max-w-[1360px] mx-auto px-6 md:px-10 pb-16 flex flex-col gap-10 md:gap-16 lg:flex-row lg:justify-center lg:items-start lg:gap-32">
         
         {/* Left Section (Brand & Socials) */}
-        <div className="flex flex-col justify-start items-start gap-8 w-full lg:w-fit shrink-0 max-w-[368px]">
-          <div className="flex flex-col gap-3">
+        <div className="flex flex-col justify-start items-center lg:items-start gap-8 w-full lg:w-fit shrink-0 lg:max-w-[368px]">
+          <div className="flex flex-col gap-3 text-center lg:text-left">
             <h2 className="text-white text-4xl font-bold font-['Nunito'] drop-shadow-[0_0_10px_rgba(255,255,255,0.80)]">
               Aisha
             </h2>
@@ -31,22 +31,22 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex flex-wrap items-center gap-6 mt-4">
             <a href="#" className="w-6 h-6 relative hover:opacity-80 transition-opacity flex justify-center items-center">
-              <Image src="/Icons/Vector.svg" alt="Instagram" width={20} height={20} className="invert brightness-0" />
+              <Image src="/Icons/Vector.svg" alt="Instagram" width={20} height={20} style={{ filter: "brightness(0) invert(1)" }} />
             </a>
             <a href="#" className="w-6 h-6 relative hover:opacity-80 transition-opacity flex justify-center items-center">
-              <Image src="/Icons/Vector-1.svg" alt="X / Twitter" width={20} height={20} className="invert brightness-0" />
+              <Image src="/Icons/Vector-1.svg" alt="X / Twitter" width={20} height={20} style={{ filter: "brightness(0) invert(1)" }} />
             </a>
             <a href="#" className="w-6 h-6 relative hover:opacity-80 transition-opacity flex justify-center items-center">
-              <Image src="/Icons/Vector-2.svg" alt="Social 3" width={20} height={20} className="invert brightness-0" />
+              <Image src="/Icons/Vector-2.svg" alt="Social 3" width={20} height={20} style={{ filter: "brightness(0) invert(1)" }} />
             </a>
             <a href="#" className="w-6 h-6 relative hover:opacity-80 transition-opacity flex justify-center items-center">
-              <Image src="/Icons/FacebookLogo.svg" alt="Facebook" width={20} height={20} className="invert brightness-0" />
+              <Image src="/Icons/FacebookLogo.svg" alt="Facebook" width={20} height={20} style={{ filter: "brightness(0) invert(1)" }} />
             </a>
             <a href="#" className="w-6 h-6 relative hover:opacity-80 transition-opacity flex justify-center items-center">
-              <Image src="/Icons/LinkedinLogo.svg" alt="LinkedIn" width={20} height={20} className="invert brightness-0" />
+              <Image src="/Icons/LinkedinLogo.svg" alt="LinkedIn" width={20} height={20} style={{ filter: "brightness(0) invert(1)" }} />
             </a>
             <a href="#" className="w-6 h-6 relative hover:opacity-80 transition-opacity flex justify-center items-center">
-              <Image src="/Icons/GithubLogo.svg" alt="Github" width={20} height={20} className="invert brightness-0" />
+              <Image src="/Icons/GithubLogo.svg" alt="Github" width={20} height={20} style={{ filter: "brightness(0) invert(1)" }} />
             </a>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function Footer() {
           
           {/* Column 1: Data logs */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-[#D2FF00] text-sm font-medium font-['Roboto'] leading-[30px]">
+            <h3 className="text-white text-sm font-medium font-['Roboto'] leading-[30px]">
               Data logs
             </h3>
             <ul className="flex flex-col gap-2">
@@ -69,7 +69,7 @@ export default function Footer() {
 
           {/* Column 2: Solution */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-[#D2FF00] text-sm font-medium font-['Roboto'] leading-[30px]">
+            <h3 className="text-white text-sm font-medium font-['Roboto'] leading-[30px]">
               Solution
             </h3>
             <ul className="flex flex-col gap-2">
@@ -83,7 +83,7 @@ export default function Footer() {
 
           {/* Column 3: Company */}
           <div className="flex flex-col gap-4 w-[128px]">
-            <h3 className="text-[#D2FF00] text-sm font-medium font-['Roboto'] leading-[30px]">
+            <h3 className="text-white text-sm font-medium font-['Roboto'] leading-[30px]">
               Company
             </h3>
             <ul className="flex flex-col gap-2">
@@ -96,7 +96,7 @@ export default function Footer() {
           {/* Column 4: System Status */}
           <div className="flex flex-col w-[227px] pl-0 lg:pl-4">
             <div className="flex items-center gap-[15px] mb-4">
-              <h3 className="text-[#D2FF00] text-sm font-medium font-['Roboto'] leading-[30px]">
+              <h3 className="text-white text-sm font-medium font-['Roboto'] leading-[30px]">
                 System Status
               </h3>
               <div className="w-5 h-5 bg-[#D2FF00] rounded-full shadow-[0_0_10px_#D2FF00] border-2 border-[#D2FF00] animate-pulse" />

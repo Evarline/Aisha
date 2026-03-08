@@ -223,9 +223,9 @@ export default function DashboardDemo() {
                   width: 942,
                   height: 70,
                   paddingLeft: 24,
-                  paddingRight: 70,
+                  paddingRight: 24,
                   background: "#001407",
-                  gap: 63,
+                  gap: 24,
                   outline: "1px rgba(255,255,255,0.05) solid",
                   outlineOffset: "-1px",
                 }}
@@ -234,10 +234,11 @@ export default function DashboardDemo() {
                   &ldquo;Hi Sharleen! 👋<br />
                   <span className="whitespace-nowrap">Aisha handled 15 chats in your absence. Karibu!&rdquo;</span>
                 </p>
+                {/* Search Bar */}
                 <div
                   className="relative shrink-0 overflow-hidden"
                   style={{
-                    width: 340,
+                    width: 300,
                     height: 36,
                     background: "#001407",
                     borderRadius: 15,
@@ -252,7 +253,16 @@ export default function DashboardDemo() {
                     <img src="/Icons/MagnifyingGlass.svg" alt="Search" className="w-[24px] h-[24px] object-contain" style={{ filter: "brightness(0) invert(1)" }} />
                   </div>
                 </div>
-                <div className="shrink-0 flex items-center justify-center" style={{ width: 40, height: 40 }}>
+                {/* Notification Bell */}
+                <div className="relative shrink-0 flex items-center justify-center" style={{ width: 36, height: 36 }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <div className="absolute top-0 right-0 w-[8px] h-[8px] bg-[#D2FF00] rounded-full" />
+                </div>
+                {/* User Avatar */}
+                <div className="shrink-0 flex items-center justify-center" style={{ width: 36, height: 36 }}>
                   <img src="/Icons/UserCircle.svg" alt="User" className="w-full h-full object-contain" style={{ filter: "brightness(0) invert(1)" }} />
                 </div>
               </div>

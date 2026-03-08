@@ -76,7 +76,7 @@ export default function Hero() {
         {/* Visual Ecosystem */}
         <ScrollReveal variant="zoomIn" delay={0.3} duration={1} className="w-full lg:flex-1 -mt-4 md:mt-0">
         <div className="w-full mx-auto flex flex-col items-center justify-center h-[300px] sm:h-[360px] lg:h-[440px] pointer-events-none select-none overflow-hidden">
-          <div className="relative shrink-0 w-[480px] sm:w-[580px] lg:w-[680px] h-[300px] sm:h-[360px] lg:h-[440px] origin-center scale-[0.52] sm:scale-[0.62] md:scale-[0.68] lg:scale-[0.7]">
+          <div className="relative shrink-0 w-[680px] h-[440px] origin-center scale-[0.52] sm:scale-[0.62] md:scale-[0.68] lg:scale-[0.7]">
 
           {/* Vector 14 — single thin data path with lime glow */}
           <svg
