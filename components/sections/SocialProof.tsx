@@ -64,7 +64,7 @@ export default function SocialProof() {
 
       {/* Headline */}
       <p
-        className="font-bold leading-normal text-[15px] text-[rgba(0,20,7,0.7)] tracking-[3px] text-center px-[40px]"
+        className="font-bold leading-normal text-[11px] sm:text-[13px] md:text-[15px] text-[rgba(0,20,7,0.7)] tracking-[1px] sm:tracking-[2px] md:tracking-[3px] text-center px-4 sm:px-8 md:px-[40px]"
         style={{ fontFamily: "'Inter', sans-serif" }}
       >
         AISHA: EMPOWERING 500+ MODERN BUSINESSES ACROSS AFRICA

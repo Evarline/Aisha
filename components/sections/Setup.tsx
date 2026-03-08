@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const steps = [
   {
-    image: "/Images/Register Business.png",
+    image: "/Images/Register Business(1).png",
     imageWidth: 100,
     imageHeight: 117,
     number: "01",
@@ -14,7 +14,7 @@ const steps = [
       "Full legal registration ensures you can focus on growing your business",
   },
   {
-    image: "/Images/Connect.png",
+    image: "/Images/Connect(1).png",
     imageWidth: 176,
     imageHeight: 117,
     number: "02",
@@ -23,7 +23,7 @@ const steps = [
       "Link your WhatsApp Business & customize Aisha\u2019s features",
   },
   {
-    image: "/Images/Automate(1).png",
+    image: "/Images/Automate(3).png",
     imageWidth: 108,
     imageHeight: 117,
     number: "03",
@@ -32,7 +32,7 @@ const steps = [
       "Let Aisha do the heavy lifting. It manages logistics while you create",
   },
   {
-    image: "/Images/Focus and grow.png",
+    image: "/Images/Focus and grow(1).png",
     imageWidth: 150,
     imageHeight: 117,
     number: "04",
@@ -82,12 +82,15 @@ export default function Setup() {
               delay={i * 0.12}
               className="w-full max-w-[300px] md:max-w-[250px]"
             >
-              <div className="w-full h-auto md:h-[450px] p-6 md:p-[30px] rounded-[24px] border border-[rgba(4,52,14,0.10)] flex flex-col items-center gap-6 md:gap-[30px] hover:shadow-[0_8px_40px_-8px_rgba(0,20,7,0.12)] transition-shadow duration-500">
+              <div className="w-full h-auto md:min-h-[450px] p-6 md:p-[30px] rounded-[24px] border border-[rgba(4,52,14,0.10)] flex flex-col items-center gap-6 md:gap-[30px] hover:shadow-[0_8px_40px_-8px_rgba(0,20,7,0.12)] transition-shadow duration-500">
                 <Image
                   src={step.image}
                   alt={step.title}
                   width={step.imageWidth}
                   height={step.imageHeight}
+                  quality={100}
+                  unoptimized
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain"
                 />
                 <div className="w-[91px] h-[30px] p-5 bg-[#001407] rounded-full flex items-center justify-center">

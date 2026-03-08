@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const testimonials = [
   {
-    avatar: "/Images/Client.png",
+    avatar: "/Images/Client(3).png",
     name: "Eve Mipata",
     role: "CEO,Tech Company",
     rating: 4.5,
@@ -13,7 +13,7 @@ const testimonials = [
       "As an Independent Product Engineer, Aisha manages client inquiries, project timelines, and milestone payments. I've reduced administrative time by 80% and doubled my client capacity",
   },
   {
-    avatar: "/Images/Client.png",
+    avatar: "/Images/Client(3).png",
     name: "John Doe",
     role: "Product Engineer",
     rating: 5,
@@ -21,7 +21,7 @@ const testimonials = [
       "As an Independent Product Engineer, Aisha manages client inquiries, project timelines, and milestone payments. I've reduced administrative time by 80% and doubled my client capacity",
   },
   {
-    avatar: "/Images/Client.png",
+    avatar: "/Images/Client(3).png",
     name: "Sarah Chen",
     role: "Product Manager",
     rating: 4.5,
@@ -58,7 +58,7 @@ function TestimonialCard({
   return (
     <div className="w-full max-w-[332px] min-h-[420px] md:min-h-[494px] p-6 md:p-[30px] rounded-[24px] border-[1.5px] border-[rgba(4,52,14,0.15)] flex flex-col items-start gap-5 md:gap-6 shrink-0 hover:shadow-[0_8px_40px_-8px_rgba(0,20,7,0.12)] transition-shadow duration-500">
       {/* Avatar */}
-      <Image src={avatar} alt={name} width={100} height={103} className="shrink-0" />
+      <Image src={avatar} alt={name} width={100} height={103} quality={100} unoptimized sizes="(max-width: 768px) 100vw, 50vw" className="shrink-0" />
 
       {/* Name & role */}
       <div className="flex flex-col gap-1.5 w-full">

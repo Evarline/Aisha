@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
 
           {/* Social Icons */}
-          <div className="flex flex-wrap items-center gap-6 mt-4">
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mt-4">
             <a href="#" className="w-6 h-6 relative hover:opacity-80 transition-opacity flex justify-center items-center">
               <Image src="/Icons/Vector.svg" alt="Instagram" width={20} height={20} style={{ filter: "brightness(0) invert(1)" }} />
             </a>
@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
 
         {/* Right Section (Links Grid) — 2×2 on mobile, row on md+ */}
-        <div className="grid grid-cols-2 gap-x-4 gap-y-10 w-full md:flex md:flex-row md:flex-wrap lg:flex-nowrap md:justify-start lg:justify-center md:items-start md:gap-14 shrink-0">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-10 w-full lg:w-auto md:flex md:flex-row md:flex-wrap lg:flex-nowrap md:justify-start lg:justify-center md:items-start md:gap-14 shrink-0">
           
           {/* Column 1: Data logs */}
           <div className="flex flex-col gap-4">

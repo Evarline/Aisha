@@ -74,9 +74,9 @@ export default function Hero() {
         </ScrollReveal>
 
         {/* Visual Ecosystem */}
-        <ScrollReveal variant="zoomIn" delay={0.3} duration={1} className="w-full lg:flex-1 -mt-4 md:mt-0">
-        <div className="w-full mx-auto flex flex-col items-center justify-center h-[300px] sm:h-[360px] lg:h-[440px] pointer-events-none select-none overflow-hidden">
-          <div className="relative shrink-0 w-[680px] h-[440px] origin-center scale-[0.52] sm:scale-[0.62] md:scale-[0.68] lg:scale-[0.7]">
+        <ScrollReveal variant="zoomIn" delay={0.3} duration={1} className="w-full lg:flex-1 mt-0">
+        <div className="relative w-full min-h-[560px] lg:h-[440px] py-12 lg:py-0 pointer-events-none select-none overflow-visible">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] h-[440px] overflow-visible origin-center lg:scale-[0.7]">
 
           {/* Vector 14 — single thin data path with lime glow */}
           <svg
@@ -314,11 +314,11 @@ export default function Hero() {
 
           {/* Client card (top right) */}
           <div className="absolute border-[#b8c4b9] border-[1.526px] border-solid h-[170px] left-[460px] overflow-clip rounded-[36.613px] top-[33px] w-[175px]">
-            <img alt="Client" className="absolute inset-0 w-full h-full object-cover" src="/Images/Client(1).png" />
+            <img alt="Client" className="absolute inset-0 w-full h-full object-cover" src="/Images/Client(2).png" />
           </div>
 
           {/* AI Logo (bottom left) — 4 concentric rings + Aisha image + blinking data packets */}
-          <div className="absolute h-[288.328px] left-[-6.1px] top-[176.2px] w-[221.204px]">
+          <div className="absolute overflow-visible h-[288.328px] left-[-6.1px] top-[176.2px] w-[221.204px]">
             {/* Deep forest backdrop so rings are visible on white page */}
             <div className="absolute bg-[#001407] h-[175px] left-[23px] rounded-full shadow-[0px_0px_28.6px_20px_rgba(0,20,7,1)] top-[56px] w-[175px]" />
             
