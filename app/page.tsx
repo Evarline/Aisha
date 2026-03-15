@@ -11,7 +11,7 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import Footer from "@/components/layout/Footer";
 export default function Home() {
   return (
-    /* 
+    /*
       Landing Page Container from Figma:
       - Background: #f5f5f5 (off-white)
       - Auto Layout: Vertical (flex-col)
@@ -19,15 +19,15 @@ export default function Home() {
       - Alignment: items-start
     */
     <div className="flex min-h-screen flex-col items-start bg-[#f5f5f5] overflow-x-hidden w-full">
-      
+
       {/* Header Section - 90px height, full width */}
       <Header />
-      
+
       {/* Main Content Area - Vertical Auto Layout, 0 gap between sections */}
       <div className="flex w-full flex-col items-start pt-[90px]">
-        
+
         <Hero />
-        
+
         <SocialProof />
         <ValueContrast />
         <Features />
@@ -39,6 +39,6 @@ export default function Home() {
         <Footer />
     </div>
     </div>
-  
+
   );
 }

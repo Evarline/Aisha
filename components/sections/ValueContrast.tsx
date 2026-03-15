@@ -17,12 +17,12 @@ export default function ValueContrast() {
       </ScrollReveal>
 
       <StaggerContainer
-        className="self-stretch p-4 md:p-[30px] overflow-visible flex flex-col md:flex-row justify-center items-center md:items-start relative gap-6 md:gap-0"
+        className="self-stretch p-4 md:p-[30px] overflow-visible flex flex-col lg:flex-row justify-center items-center lg:items-start relative gap-6 lg:gap-0"
         stagger={0.2}
       >
         {/* Traditional card */}
-        <StaggerItem variant="fadeLeft" className="w-full md:w-[680px]">
-          <div className="w-full md:w-[680px] min-h-[320px] md:h-[370px] p-6 md:p-[30px] bg-white overflow-hidden flex flex-col justify-start items-center gap-[5px] rounded-t-2xl md:rounded-t-none md:rounded-l-none">
+        <StaggerItem variant="fadeLeft" className="w-full max-w-[600px]">
+          <div className="w-full min-h-[280px] p-6 md:p-[30px] bg-white overflow-hidden flex flex-col justify-start items-center gap-[5px] rounded-t-2xl lg:rounded-t-none lg:rounded-l-none">
             <div className="w-full md:w-[318px]">
               <span className="text-[#001407] text-[24px] md:text-[32px] font-medium font-[family-name:var(--font-roboto)] leading-[45px]">
                 Traditional secretary<br />
@@ -44,8 +44,8 @@ export default function ValueContrast() {
         </StaggerItem>
 
         {/* Aisha card */}
-        <StaggerItem variant="fadeRight" className="w-full md:w-[680px]">
-          <div className="w-full md:w-[680px] min-h-[320px] md:h-[370px] p-6 md:p-[30px] bg-[#001407] overflow-hidden flex flex-col justify-start items-center gap-[5px] rounded-b-2xl md:rounded-b-none md:rounded-r-none">
+        <StaggerItem variant="fadeRight" className="w-full max-w-[600px]">
+          <div className="w-full min-h-[280px] p-6 md:p-[30px] bg-[#001407] overflow-hidden flex flex-col justify-start items-center gap-[5px] rounded-b-2xl lg:rounded-b-none lg:rounded-r-none">
             <div>
               <span className="text-white text-[24px] md:text-[32px] font-medium font-[family-name:var(--font-roboto)] leading-[48px]">
                 Aisha AI Assistant<br />

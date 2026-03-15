@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 export default function Pricing() {
@@ -53,7 +54,7 @@ export default function Pricing() {
       </div>
 
       {/* Pricing Cards */}
-      <div className="flex flex-col md:flex-row md:items-stretch items-center justify-center gap-8 w-full max-w-6xl mb-16">
+      <div className="flex flex-col lg:flex-row lg:items-stretch items-center justify-center gap-8 w-full max-w-6xl mb-16">
         
         {/* Basic Plan */}
         <div className="flex flex-col w-full md:w-[360px] max-w-sm rounded-[24px] border border-white/20 bg-white/40 backdrop-blur-md p-8 pt-10 text-center relative hover:shadow-lg transition-all duration-300 pb-8 hover:-translate-y-1">
@@ -70,14 +71,14 @@ export default function Pricing() {
             <li className="flex items-start gap-3"><span>✓</span> WhatsApp integration</li>
             <li className="flex items-start gap-3"><span>✓</span> Email support</li>
           </ul>
-          <button className="w-full py-4 rounded-full bg-[#001407] text-[#D2FF00] font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 mt-auto hover:shadow-[0_0_10px_3px_rgba(210,255,0,0.45)]">
+          <Link href="/get-started" className="w-full py-4 rounded-full bg-[#001407] text-[#D2FF00] font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 mt-auto hover:shadow-[0_0_10px_3px_rgba(210,255,0,0.45)] flex items-center justify-center">
             Start free trial
-          </button>
+          </Link>
         </div>
 
         {/* Premium Plan */}
         <div
-          className="flex flex-col w-full md:w-[360px] max-w-sm rounded-[24px]  bg-[#001407] p-8 pt-10 text-center relative shadow-lg transform md:-translate-y-4 pb-8 transition-all duration-300 hover:shadow-[0_0_18px_5px_rgba(210,255,0,0.35),0_4px_20px_rgba(0,0,0,0.2)]"
+          className="flex flex-col w-full lg:w-[360px] max-w-sm rounded-[24px]  bg-[#001407] p-8 pt-10 text-center relative shadow-lg transform lg:-translate-y-4 pb-8 transition-all duration-300 hover:shadow-[0_0_18px_5px_rgba(210,255,0,0.35),0_4px_20px_rgba(0,0,0,0.2)]"
         >
           <div className="absolute top-0 right-0 overflow-hidden w-[120px] h-[120px] rounded-tr-[24px]">
             <div className="absolute top-[25px] -right-[35px] w-[160px] bg-[#D2FF00] text-[#001407] font-bold py-1 px-4 transform rotate-45 text-center text-[10px] sm:text-xs tracking-wider border-y-2 border-[#D2FF00]">
@@ -101,9 +102,9 @@ export default function Pricing() {
             <li className="flex items-start gap-3"><span className="text-[#D2FF00]">✓</span> Phone & email support</li>
             <li className="flex items-start gap-3"><span className="text-[#D2FF00]">✓</span> Custom response templates</li>
           </ul>
-          <button className="w-full py-4 rounded-full bg-[#D2FF00] text-[#001407] font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 mt-auto hover:shadow-[0_0_12px_4px_rgba(210,255,0,0.65)]">
+          <Link href="/get-started" className="w-full py-4 rounded-full bg-[#D2FF00] text-[#001407] font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 mt-auto hover:shadow-[0_0_12px_4px_rgba(210,255,0,0.65)] flex items-center justify-center">
             Get premium
-          </button>
+          </Link>
         </div>
 
         {/* Enterprise Plan */}

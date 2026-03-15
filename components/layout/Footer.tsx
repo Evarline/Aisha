@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { Instagram } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -30,14 +31,13 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mt-4">
-            <a href="#" className="w-6 h-6 relative hover:opacity-80 transition-opacity flex justify-center items-center">
-              <Image src="/Icons/Vector.svg" alt="Instagram" width={20} height={20} style={{ filter: "brightness(0) invert(1)" }} />
+            <a href="#" className="w-6 h-6 relative hover:opacity-80 transition-opacity flex justify-center items-center" aria-label="Instagram">
+              <Instagram size={20} className="text-white" />
             </a>
-            <a href="#" className="w-6 h-6 relative hover:opacity-80 transition-opacity flex justify-center items-center">
-              <Image src="/Icons/Vector-1.svg" alt="X / Twitter" width={20} height={20} style={{ filter: "brightness(0) invert(1)" }} />
-            </a>
-            <a href="#" className="w-6 h-6 relative hover:opacity-80 transition-opacity flex justify-center items-center">
-              <Image src="/Icons/Vector-2.svg" alt="Social 3" width={20} height={20} style={{ filter: "brightness(0) invert(1)" }} />
+            <a href="#" className="w-6 h-6 relative hover:opacity-80 transition-opacity flex justify-center items-center" aria-label="X (Twitter)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor" className="text-white"/>
+              </svg>
             </a>
             <a href="#" className="w-6 h-6 relative hover:opacity-80 transition-opacity flex justify-center items-center">
               <Image src="/Icons/FacebookLogo.svg" alt="Facebook" width={20} height={20} style={{ filter: "brightness(0) invert(1)" }} />
@@ -94,7 +94,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4: System Status */}
-          <div className="flex flex-col w-[227px] pl-0 lg:pl-4">
+          <div className="flex flex-col w-full lg:w-auto lg:pl-4">
             <div className="flex items-center gap-[15px] mb-4">
               <h3 className="text-white text-sm font-medium font-['Roboto'] leading-[30px]">
                 System Status

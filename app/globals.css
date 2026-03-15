@@ -63,7 +63,20 @@ img {
    KEYFRAMES — Marquee, Pulse, Glow, Breathe
    ═══════════════════════════════════════════════════ */
 
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  to { transform: rotate(-360deg); }
+}
+
 @keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-slow {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
@@ -86,6 +99,41 @@ img {
 @keyframes breathe {
   0%, 100% { opacity: 0.6; transform: scale(1); }
   50%      { opacity: 1; transform: scale(1.02); }
+}
+
+@keyframes typing-wave {
+  0%, 60%, 100% {
+    transform: translateY(0px);
+    opacity: 0.35;
+  }
+  30% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+@keyframes ring-pop {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes core-pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+    box-shadow: 0 0 18px 8px rgba(210,255,0,0.35), 0 0 50px 20px rgba(210,255,0,0.15);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+    box-shadow: 0 0 32px 14px rgba(210,255,0,0.65), 0 0 80px 36px rgba(210,255,0,0.28);
+  }
 }
 
 /* ═══════════════════════════════════════════════════
@@ -120,10 +168,17 @@ img {
 
   /* --- ANIMATIONS --- */
   --animate-marquee: marquee 18s linear infinite;
+  --animate-marquee-slow: marquee 40s linear infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
   --animate-shimmer: shimmer 2.5s ease-in-out infinite;
   --animate-breathe: breathe 4s ease-in-out infinite;
+  --animate-typing-wave: typing-wave 1.4s ease-in-out infinite;
+  --animate-ring-pop: ring-pop 3s ease-in-out infinite;
+  --animate-core-pulse: core-pulse 2.8s ease-in-out infinite;
+  --animate-spin-slow: spin 55s linear infinite;
+  --animate-spin-medium: spin 70s linear infinite;
+  --animate-spin-slow-reverse: spin-reverse 90s linear infinite;
 }
 
 /* ═══════════════════════════════════════════════════

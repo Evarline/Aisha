@@ -37,7 +37,7 @@ const features = [
     icon: "/Icons/ClockClockwise.svg",
     title: "24/7 Availability",
     description:
-      "Never miss a customer inquiry, even when you&apos;re sleeping or taking personal time",
+      "Never miss a customer inquiry, even when you're sleeping or taking personal time",
   },
 ];
 

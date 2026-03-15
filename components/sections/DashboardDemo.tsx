@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const navItems = [
@@ -143,11 +144,11 @@ export default function DashboardDemo() {
               <p className="text-white/90 text-center text-sm sm:text-base font-[family-name:var(--font-roboto)] max-w-sm">
                 Start your free trial to access the complete Aisha dashboard
               </p>
-              <button className="flex items-center justify-center px-8 py-3 bg-[#D2FF00] rounded-[20px] hover:opacity-90 transition-opacity cursor-pointer">
+              <Link href="/get-started" className="flex items-center justify-center px-8 py-3 bg-[#D2FF00] rounded-[20px] hover:opacity-90 transition-opacity cursor-pointer">
                 <span className="text-[#04340E] text-base sm:text-lg font-medium font-[family-name:var(--font-roboto)]">
                   Start free trial
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -305,14 +306,15 @@ export default function DashboardDemo() {
               </p>
 
               {/* ── CTA Button ── */}
-              <button
+              <Link
+                href="/get-started"
                 className="absolute flex items-center justify-center overflow-hidden hover:opacity-90 transition-opacity cursor-pointer"
                 style={{ left: 542, top: 442, paddingLeft: 32, paddingRight: 32, paddingTop: 13, paddingBottom: 13, background: "#D2FF00", borderRadius: 20, gap: 10 }}
               >
                 <span style={{ color: "#04340E", fontSize: 20, fontFamily: "'Roboto', sans-serif", fontWeight: 500 }}>
                   Start free trial
                 </span>
-              </button>
+              </Link>
 
               </div>
             </div>

@@ -143,14 +143,17 @@ export default function Header() {
           >
             Login
           </Link>
-          <button className="flex h-[44px] lg:h-[50px] w-[160px] lg:w-[200px] shrink-0 items-center justify-center overflow-clip rounded-[24px] bg-[#001407] px-6 lg:px-[38px] py-[15px] hover:opacity-90 transition-opacity cursor-pointer">
+          <Link
+            href="/get-started"
+            className="flex h-[44px] lg:h-[50px] w-[160px] lg:w-[200px] shrink-0 items-center justify-center overflow-clip rounded-[24px] bg-[#001407] px-6 lg:px-[38px] py-[15px] hover:opacity-90 transition-opacity cursor-pointer"
+          >
             <span
               className="font-medium leading-normal text-white text-[18px] lg:text-[24px] font-[family-name:var(--font-roboto)]"
               style={{ fontVariationSettings: "'wdth' 100" }}
             >
               Get started
             </span>
-          </button>
+          </Link>
         </div>
 
         {/* ── Mobile Hamburger — Electric Lime on deep-forest pill ── */}
@@ -242,14 +245,15 @@ export default function Header() {
                 >
                   Login
                 </Link>
-                <button
+                <Link
+                  href="/get-started"
                   onClick={() => setMobileOpen(false)}
                   className="w-full max-w-[280px] h-[48px] flex items-center justify-center rounded-[24px] bg-[#001407] hover:opacity-90 transition-opacity cursor-pointer"
                 >
                   <span className="font-medium text-white text-[18px] font-[family-name:var(--font-roboto)]">
                     Get started
                   </span>
-                </button>
+                </Link>
               </motion.div>
             </nav>
           </motion.div>

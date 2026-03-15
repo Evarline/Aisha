@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -74,13 +75,13 @@ export default function Setup() {
         </div>
 
         {/* Step cards */}
-        <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 lg:gap-[50px] px-0 md:px-4 py-5">
+        <div className="w-full flex flex-col md:flex-row items-stretch gap-6 md:gap-4 xl:gap-6 px-0 md:px-4 py-5">
           {steps.map((step, i) => (
             <ScrollReveal
               key={step.number}
               variant="popUp"
               delay={i * 0.12}
-              className="w-full max-w-[300px] md:max-w-[250px]"
+              className="w-full md:flex-1"
             >
               <div className="w-full h-auto md:min-h-[450px] p-6 md:p-[30px] rounded-[24px] border border-[rgba(4,52,14,0.10)] flex flex-col items-center gap-6 md:gap-[30px] hover:shadow-[0_8px_40px_-8px_rgba(0,20,7,0.12)] transition-shadow duration-500">
                 <Image
@@ -93,7 +94,7 @@ export default function Setup() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain"
                 />
-                <div className="w-[91px] h-[30px] p-5 bg-[#001407] rounded-full flex items-center justify-center">
+                <div className="w-[91px] h-[30px] bg-[#001407] rounded-full flex items-center justify-center">
                   <span className="text-[#D2FF00] text-base font-semibold font-[family-name:var(--font-roboto-slab)]">
                     {step.number}
                   </span>
@@ -124,11 +125,11 @@ export default function Setup() {
 
         {/* CTA Button */}
         <ScrollReveal variant="fadeUp" delay={0.5}>
-          <button className="w-[230px] h-[60px] px-10 py-4 bg-[#001407] rounded-[24px] flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity">
+          <Link href="/get-started" className="w-[230px] h-[60px] px-10 py-4 bg-[#001407] rounded-[24px] flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity">
             <span className="text-[#D2FF00] text-xl md:text-2xl font-medium font-[family-name:var(--font-roboto)]">
               Start free trial
             </span>
-          </button>
+          </Link>
         </ScrollReveal>
       </div>
     </section>
