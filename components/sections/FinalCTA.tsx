@@ -6,7 +6,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function FinalCTA() {
   return (
-    <section className="w-full py-24 px-4 md:px-8 bg-white border-t border-[rgba(4,52,14,0.1)] flex flex-col justify-center items-center gap-8">
+    <section className="w-full py-24 px-6 md:px-10 lg:px-16 bg-white border-t border-[rgba(4,52,14,0.1)] flex flex-col justify-center items-center gap-8">
       {/* Header Content */}
       <ScrollReveal variant="fadeUp">
       <div className="flex flex-col items-center gap-4 w-full text-center px-4">
@@ -21,7 +21,7 @@ export default function FinalCTA() {
 
       {/* Buttons */}
       <ScrollReveal variant="fadeUp" delay={0.2}>
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-[70px] px-[10px] py-[5px] mt-4 w-full">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-[70px] px-6 md:px-10 py-[5px] mt-4 w-full max-w-4xl">
         {/* See plans button */}
         <button className="w-full sm:w-[286px] h-[60px] bg-[#001407] rounded-[24px] flex justify-center items-center hover:bg-opacity-90 transition-colors">
           <span className="text-[#D2FF00] text-[20px] md:text-[24px] font-medium font-['Roboto']">

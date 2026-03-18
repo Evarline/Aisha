@@ -84,16 +84,18 @@ export default function Setup() {
               className="w-full md:flex-1"
             >
               <div className="w-full h-auto md:min-h-[450px] p-6 md:p-[30px] rounded-[24px] border border-[rgba(4,52,14,0.10)] flex flex-col items-center gap-6 md:gap-[30px] hover:shadow-[0_8px_40px_-8px_rgba(0,20,7,0.12)] transition-shadow duration-500">
-                <Image
-                  src={step.image}
-                  alt={step.title}
-                  width={step.imageWidth}
-                  height={step.imageHeight}
-                  quality={100}
-                  unoptimized
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain"
-                />
+                <div className="w-full max-w-[150px] h-[117px] flex items-center justify-center">
+                  <Image
+                    src={step.image}
+                    alt={step.title}
+                    width={step.imageWidth}
+                    height={step.imageHeight}
+                    quality={100}
+                    unoptimized
+                    sizes="(max-width: 768px) 150px, 50vw"
+                    className="object-contain w-auto h-auto max-w-full max-h-full"
+                  />
+                </div>
                 <div className="w-[91px] h-[30px] bg-[#001407] rounded-full flex items-center justify-center">
                   <span className="text-[#D2FF00] text-base font-semibold font-[family-name:var(--font-roboto-slab)]">
                     {step.number}

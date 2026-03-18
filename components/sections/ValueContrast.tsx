@@ -23,7 +23,7 @@ export default function ValueContrast() {
         {/* Traditional card */}
         <StaggerItem variant="fadeLeft" className="w-full max-w-[600px]">
           <div className="w-full min-h-[280px] p-6 md:p-[30px] bg-white overflow-hidden flex flex-col justify-start items-center gap-[5px] rounded-t-2xl lg:rounded-t-none lg:rounded-l-none">
-            <div className="w-full md:w-[318px]">
+            <div className="w-full md:w-[318px] text-center">
               <span className="text-[#001407] text-[24px] md:text-[32px] font-medium font-[family-name:var(--font-roboto)] leading-[45px]">
                 Traditional secretary<br />
               </span>
@@ -46,7 +46,7 @@ export default function ValueContrast() {
         {/* Aisha card */}
         <StaggerItem variant="fadeRight" className="w-full max-w-[600px]">
           <div className="w-full min-h-[280px] p-6 md:p-[30px] bg-[#001407] overflow-hidden flex flex-col justify-start items-center gap-[5px] rounded-b-2xl lg:rounded-b-none lg:rounded-r-none">
-            <div>
+            <div className="text-center">
               <span className="text-white text-[24px] md:text-[32px] font-medium font-[family-name:var(--font-roboto)] leading-[48px]">
                 Aisha AI Assistant<br />
               </span>

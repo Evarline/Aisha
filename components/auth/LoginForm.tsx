@@ -46,7 +46,7 @@ export default function LoginForm() {
       </div>
 
       {/* ── RIGHT COLUMN ── */}
-      <div className="flex items-center justify-center p-5 sm:p-8 lg:p-12 relative min-h-screen lg:min-h-0 pt-20 lg:pt-0">
+      <div className="flex items-center justify-center p-5 sm:p-8 lg:p-12 relative min-h-screen pt-20 lg:pt-12">
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.03]"
           style={{

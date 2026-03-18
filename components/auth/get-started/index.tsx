@@ -40,7 +40,7 @@ export default function GetStarted() {
       </div>
 
       {/* ── RIGHT COLUMN: Form ── */}
-      <div className="relative flex items-center justify-center p-5 pt-20 sm:p-8 sm:pt-20 lg:p-12 min-h-screen lg:min-h-0">
+      <div className="relative flex items-center justify-center p-5 pt-20 sm:p-8 sm:pt-20 lg:p-12 min-h-screen lg:pt-12">
 
         {/* Top-left logo — mobile only */}
         <div className="absolute top-6 left-6 lg:hidden">
