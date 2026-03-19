@@ -56,32 +56,34 @@ function TestimonialCard({
   avatar: string; name: string; role: string; rating: number; quote: string;
 }) {
   return (
-    <div className="w-full max-w-[332px] md:max-w-none min-h-[420px] md:min-h-[494px] p-6 md:p-[30px] rounded-[24px] border-[1.5px] border-[rgba(4,52,14,0.15)] flex flex-col items-start gap-5 md:gap-6 hover:shadow-[0_8px_40px_-8px_rgba(0,20,7,0.12)] transition-shadow duration-500 mx-auto md:mx-0">
-      {/* Avatar */}
-      <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden shrink-0 border border-[rgba(0,20,7,0.15)]">
-        <Image src={avatar} alt={name} fill sizes="64px" className="object-cover rounded-full" />
-      </div>
-
-      {/* Name & role */}
-      <div className="flex flex-col gap-1.5 w-full">
-        <div className="text-[#001407] text-lg md:text-xl font-semibold font-[family-name:var(--font-roboto)]">
-          {name}
+    <div className="w-full h-full min-h-[420px] md:min-h-[494px] p-6 md:p-[30px] rounded-[24px] border-[1.5px] border-[rgba(4,52,14,0.15)] flex flex-col items-start justify-center hover:shadow-[0_8px_40px_-8px_rgba(0,20,7,0.12)] transition-shadow duration-500">
+      <div className="w-full flex flex-col items-start gap-5 md:gap-6">
+        {/* Avatar */}
+        <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden shrink-0 border border-[rgba(0,20,7,0.15)]">
+          <Image src={avatar} alt={name} fill sizes="64px" className="object-cover rounded-full" />
         </div>
-        <div className="text-[#001407] text-lg md:text-xl font-semibold font-[family-name:var(--font-roboto)]">
-          {role}
+
+        {/* Name & role */}
+        <div className="flex flex-col items-start gap-1.5 w-full text-left">
+          <div className="text-[#001407] text-lg md:text-xl font-semibold font-[family-name:var(--font-roboto)] text-left">
+            {name}
+          </div>
+          <div className="text-[#001407] text-lg md:text-xl font-semibold font-[family-name:var(--font-roboto)] text-left">
+            {role}
+          </div>
         </div>
-      </div>
 
-      {/* Stars */}
-      <StarRating rating={rating} />
+        {/* Stars */}
+        <StarRating rating={rating} />
 
-      {/* Quote */}
-      <div className="text-[#001407] text-sm md:text-base font-normal font-[family-name:var(--font-roboto)] leading-relaxed">
-        {quote}
+        {/* Quote */}
+        <div className="w-full text-[#001407] text-sm md:text-base font-normal font-[family-name:var(--font-roboto)] leading-relaxed text-left">
+          {quote}
+        </div>
       </div>
 
       {/* Badge */}
-      <div className="px-2 py-2 bg-[#001407] rounded-[7px] border-2 border-[rgba(210,255,0,0.20)] inline-flex items-center justify-center">
+      <div className="mt-5 md:mt-6 px-2 py-2 bg-[#001407] rounded-[7px] border-2 border-[rgba(210,255,0,0.20)] inline-flex items-center justify-center">
         <span className="text-[#D2FF00] text-[11px] font-semibold font-[family-name:var(--font-roboto)]">
           SYSTEM VERIFIED
         </span>
@@ -109,7 +111,7 @@ export default function PerformanceProof() {
       {/* Cards */}
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-10 py-5 max-w-[1200px] mx-auto">
         {testimonials.map((t, i) => (
-          <ScrollReveal key={i} variant="popUp" delay={i * 0.15} className="w-full">
+          <ScrollReveal key={i} variant="popUp" delay={i * 0.15} className="w-full h-full">
             <TestimonialCard
               avatar={t.avatar}
               name={t.name}

@@ -1,8 +1,17 @@
 "use client";
 
+import { FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import { Globe, ChevronDown, ArrowRight } from "lucide-react";
 
 export default function BusinessForm() {
+  const router = useRouter();
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    router.push("/");
+  };
+
   return (
     <main className="min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-[#020A05] text-white font-sans antialiased">
 
@@ -58,7 +67,7 @@ export default function BusinessForm() {
           </h2>
 
           {/* Form */}
-          <form className="space-y-4" autoComplete="off">
+          <form className="space-y-4" autoComplete="off" onSubmit={handleSubmit}>
 
             {/* Business Name */}
             <div>
