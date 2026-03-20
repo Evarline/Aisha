@@ -79,7 +79,7 @@ export default function Setup() {
           {steps.map((step, i) => (
             <ScrollReveal
               key={step.number}
-              variant="popUp"
+              variant="revealScale"
               delay={i * 0.12}
               className="w-full md:flex-1"
             >

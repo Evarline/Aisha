@@ -3,9 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Mail, Eye, EyeOff, ArrowRight } from "lucide-react";
 
 export default function LoginForm() {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
 
@@ -72,7 +74,7 @@ export default function LoginForm() {
             <p className="text-sm text-gray-400">Enter your details to access your workspace</p>
           </div>
 
-          <form noValidate className="flex flex-col gap-4 sm:gap-5">
+          <form noValidate onSubmit={(e) => { e.preventDefault(); router.push("/dashboard/conversations"); }} className="flex flex-col gap-4 sm:gap-5">
 
             <div>
               <label className="block text-[10px] text-gray-400 uppercase tracking-widest mb-2 font-semibold">Work Email</label>

@@ -18,7 +18,7 @@ export default function ValueContrast() {
 
       <StaggerContainer
         className="self-stretch p-4 md:p-[30px] overflow-visible flex flex-col lg:flex-row justify-center items-center lg:items-start relative gap-6 lg:gap-0"
-        stagger={0.2}
+        staggerChildren={0.2}
       >
         {/* Traditional card */}
         <StaggerItem variant="fadeLeft" className="w-full max-w-[600px]">
@@ -68,7 +68,7 @@ export default function ValueContrast() {
 
         {/* VS badge */}
         <ScrollReveal
-          variant="popUp"
+          variant="revealScale"
           delay={0.5}
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
         >

@@ -111,7 +111,7 @@ export default function PerformanceProof() {
       {/* Cards */}
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-10 py-5 max-w-[1200px] mx-auto">
         {testimonials.map((t, i) => (
-          <ScrollReveal key={i} variant="popUp" delay={i * 0.15} className="w-full h-full">
+          <ScrollReveal key={i} variant="revealScale" delay={i * 0.15} className="w-full h-full">
             <TestimonialCard
               avatar={t.avatar}
               name={t.name}

@@ -62,10 +62,10 @@ export default function Features() {
       {/* Cards Grid — responsive: 1 col mobile, 2 col tablet, 3 col desktop */}
       <StaggerContainer
         className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-x-5 md:gap-y-10 max-w-[1300px] mx-auto"
-        stagger={0.1}
+        staggerChildren={0.1}
       >
         {features.map((feature) => (
-          <StaggerItem key={feature.title} variant="zoomIn">
+          <StaggerItem key={feature.title} variant="fadeUp">
             <FeatureCard {...feature} />
           </StaggerItem>
         ))}

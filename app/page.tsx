@@ -9,6 +9,7 @@ import PerformanceProof from "@/components/sections/PerformanceProof";
 import Pricing from "@/components/sections/Pricing";
 import FinalCTA from "@/components/sections/FinalCTA";
 import Footer from "@/components/layout/Footer";
+
 export default function Home() {
   return (
     /*
