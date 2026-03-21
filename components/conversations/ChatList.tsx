@@ -16,9 +16,9 @@ export function ChatList() {
   ];
 
   return (
-    <div className="w-full md:w-[320px] lg:w-[22%] lg:min-w-[280px] h-full bg-[#F5F5F5] border-r border-[#E5E5E5] flex flex-col shrink-0 overflow-hidden transition-all duration-300 ease-in-out">
+    <div className="w-full md:w-[320px] lg:w-[22%] lg:min-w-[280px] h-full bg-[#f7f6f2] border-r border-[#E5E5E5] flex flex-col shrink-0 overflow-hidden transition-all duration-300 ease-in-out">
       {/* Header Container */}
-      <div className="w-full shrink-0 flex items-center justify-start px-5 h-[56px] border-b border-[#E5E5E5] bg-[#F5F5F5]">
+      <div className="w-full shrink-0 flex items-center justify-start px-5 h-[56px] border-b border-[#E5E5E5] bg-[#f7f6f2]">
         <h2 className="text-[16px] font-medium text-[#001407] font-['Inter']">Manage Customer Chats</h2>
       </div>
       
@@ -33,7 +33,7 @@ export function ChatList() {
       </div>
 
       {/* Chat List Scrollable Area */}
-      <div className="flex-1 overflow-y-auto w-full flex flex-col items-center bg-[#F5F5F5] [&::-webkit-scrollbar]:w-[4px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full">
+      <div className="flex-1 overflow-y-auto w-full flex flex-col items-center bg-[#f7f6f2] [&::-webkit-scrollbar]:w-[4px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full">
          <div className="flex flex-col w-full">
              {chats.map((chat, idx) => (
                <div key={chat.id} className="flex flex-col justify-center items-center h-[68px] cursor-pointer hover:bg-white hover:shadow-sm transition-all duration-200 ease-in-out px-4 border-b border-gray-200/50">

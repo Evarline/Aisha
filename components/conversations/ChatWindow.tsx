@@ -6,7 +6,7 @@ export function ChatWindow() {
       {/* Top Header Group */}
       <div className="w-full flex flex-col shrink-0 border-b border-gray-200/60 bg-[#FFFFFF]">
          {/* Top Info Header */}
-         <div className="bg-[#F5F5F5] w-full py-2 px-6 flex items-center justify-between border-b border-[#E5E5E5] h-[56px]">
+         <div className="bg-[#f7f6f2] w-full py-2 px-6 flex items-center justify-between border-b border-[#E5E5E5] h-[56px]">
                <div className="flex flex-col justify-center">
                   <h2 className="text-[16px] text-[#001407] font-['Inter'] font-medium">Select Chat</h2>
                   <div className="flex gap-1.5 items-center">
@@ -27,7 +27,7 @@ export function ChatWindow() {
 
          {/* AI Banner */}
          <div className="w-full flex justify-center bg-[#FFFFFF] py-2">
-            <div className="bg-[#F5F5F5] border border-gray-200/60 shadow-sm rounded-[16px] w-full mx-6 h-[48px] flex items-center gap-4 px-3">
+            <div className="bg-[#f7f6f2] border border-gray-200/60 shadow-sm rounded-[16px] w-full mx-6 h-[48px] flex items-center gap-4 px-3">
                <div className="bg-[#FFFFFF] shadow-sm rounded-[12px] px-4 h-[36px] flex items-center justify-center">
                   <span className="text-[#001407] font-['Inter'] text-[12px] font-semibold tracking-wide">AI Mode</span>
                </div>
@@ -38,7 +38,7 @@ export function ChatWindow() {
       
       {/* Scrollable Chat Area */}
       <div className="flex-1 w-full overflow-y-auto flex flex-col items-center bg-[#FFFFFF] p-6 [&::-webkit-scrollbar]:w-[4px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full">
-         <div className="bg-[#F5F5F5] border border-gray-200/60 rounded-2xl w-full max-w-2xl h-full min-h-[300px] flex items-center justify-center p-6 shadow-sm">
+         <div className="bg-[#f7f6f2] border border-gray-200/60 rounded-2xl w-full max-w-2xl h-full min-h-[300px] flex items-center justify-center p-6 shadow-sm">
             <div className="bg-[#FFFFFF] shadow-sm rounded-xl py-4 px-6 flex justify-center items-center">
                 <span className="text-[12px] text-gray-500 font-['Roboto'] text-center max-w-[300px] leading-relaxed">
                    Start by selecting a conversation on the left. New WhatsApp chats will appear automatically when AI detects them.

@@ -1,13 +1,17 @@
 "use client";
 
-export function TopNav() {
+interface TopNavProps {
+  title?: string;
+}
+
+export function TopNav({ title = "Conversation" }: TopNavProps) {
   return (
     <div className="py-2 bg-[#FFFFFF] border-b border-gray-200/60 shadow-sm flex items-center justify-between px-4 md:px-10 shrink-0 select-none">
       <div className="flex justify-start items-center gap-3">
          <button className="md:hidden p-2 -ml-2 text-[#001407] hover:bg-gray-100 rounded-lg transition-colors">
             <img src="/Icons/List.svg" alt="Menu" className="w-[24px] h-[24px]" style={{ filter: 'brightness(0)' }} onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-5 h-[2px] bg-black mb-1"></div><div class="w-5 h-[2px] bg-black mb-1"></div><div class="w-5 h-[2px] bg-black"></div>'; }} />
          </button>
-         <h1 className="text-[20px] md:text-[24px] text-[#001407] font-medium tracking-tight whitespace-nowrap font-['Roboto']">Conversation</h1>
+         <h1 className="text-[20px] md:text-[24px] text-[#001407] font-medium tracking-tight whitespace-nowrap font-['Roboto']">{title}</h1>
       </div>
       
       <div className="flex justify-center flex-1 px-4 md:px-8">
