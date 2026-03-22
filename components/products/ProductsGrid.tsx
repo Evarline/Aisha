@@ -64,7 +64,7 @@ function ProductCard({
   onToggleStock: () => void;
 }) {
   return (
-    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-200 hover:-translate-y-0.5 shadow-sm">
+    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg flex flex-col min-w-0">
       <div className="w-full h-40 bg-[#F5F5F5] flex items-center justify-center relative overflow-hidden">
         {product.img ? (
           <img src={product.img} alt={product.name} className="w-full h-full object-cover" />
@@ -84,9 +84,9 @@ function ProductCard({
         </span>
       </div>
 
-      <div className="p-3.5">
+      <div className="p-3.5 flex flex-col flex-1 min-w-0">
         <span
-          className="inline-block text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide mb-2"
+          className="inline-block text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide mb-2 self-start truncate max-w-full"
           style={{ backgroundColor: "#001407", color: "#D2FF00" }}
         >
           {product.category}
@@ -100,12 +100,12 @@ function ProductCard({
           {product.desc}
         </p>
 
-        <p className="text-[17px] font-extrabold text-gray-900 mb-3">
+        <p className="text-[17px] font-extrabold text-gray-900 mb-3 truncate">
           KES {product.price.toLocaleString()}
           <span className="text-[10px] font-normal text-gray-400 ml-1">/ unit</span>
         </p>
 
-        <div className="flex items-center justify-between pt-3 border-t border-gray-200">
+        <div className="flex items-center justify-between pt-3 border-t border-gray-200 mt-auto flex-wrap gap-2">
           <StockToggle on={product.inStock} onChange={onToggleStock} showLabel />
           <div className="flex gap-1.5">
             <button
@@ -144,11 +144,14 @@ function EmptyState({ onAdd }: { onAdd: () => void }) {
       </p>
       <button
         onClick={onAdd}
-        className="flex items-center gap-2 mt-2 px-5 py-2.5 rounded-xl text-[13px] font-bold hover:opacity-85 transition-opacity"
+        className="relative group flex items-center gap-2 mt-2 px-5 py-2.5 rounded-xl text-[13px] font-bold transition-opacity hover:opacity-90 mt-4"
         style={{ backgroundColor: "#001407", color: "#D2FF00" }}
       >
-        <Image src="/icons/plus.svg" alt="" width={14} height={14} />
-        Add Your First Product
+        <div className="absolute -inset-0.5 bg-[#D2FF00] blur-md opacity-30 group-hover:opacity-60 transition-opacity rounded-xl"></div>
+        <div className="relative flex items-center gap-2">
+          <Image src="/icons/plus.svg" alt="" width={14} height={14} />
+          Add Your First Product
+        </div>
       </button>
     </div>
   );

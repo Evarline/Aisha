@@ -11,22 +11,22 @@ export function AnalyticsPanel() {
 
          <div className="flex-1 w-full flex flex-col gap-3 px-5 py-4 overflow-y-auto [&::-webkit-scrollbar]:w-[4px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full">
             {/* Metrics Cards */}
-            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm">
+            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
                <span className="text-[#D2FF00] text-[12px] font-['Roboto'] font-normal text-center leading-tight">Messages handled</span>
                <span className="text-white text-[15px] font-medium font-['Inter'] text-center leading-none">30</span>
             </div>
 
-            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm">
+            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
                <span className="text-[#D2FF00] text-[12px] font-['Roboto'] font-normal text-center leading-tight">Customer satisfaction</span>
                <span className="text-white text-[15px] font-medium font-['Inter'] text-center leading-none">4.9/5.0</span>
             </div>
 
-            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm">
+            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
                <span className="text-[#D2FF00] text-[12px] font-['Roboto'] font-normal text-center leading-tight">Avg response time</span>
                <span className="text-white text-[15px] font-medium font-['Inter'] text-center leading-none">1.2sec</span>
             </div>
 
-            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm">
+            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
                <span className="text-[#D2FF00] text-[12px] font-['Roboto'] font-normal text-center leading-tight">Today's revenue</span>
                <span className="text-white text-[16px] font-semibold font-['Inter'] text-center leading-none">KES 23,750</span>
             </div>

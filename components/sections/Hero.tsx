@@ -21,7 +21,15 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 w-full flex flex-col items-center justify-center text-center max-w-4xl mx-auto gap-8 md:gap-10">
+      <div className="relative z-10 w-full flex flex-col items-center justify-center text-center max-w-4xl mx-auto gap-6 md:gap-8">
+        
+        {/* Release Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/10 bg-white/60 backdrop-blur-md shadow-sm cursor-pointer hover:bg-white/80 transition-all group">
+          <span className="text-[#001407] text-sm md:text-base font-medium font-[family-name:var(--font-inter)]">
+            ✨ <span className="font-bold">Aisha 1.0 is Live</span> — See what&apos;s new <span className="inline-block transition-transform group-hover:translate-x-0.5">→</span>
+          </span>
+        </div>
+
         <h1 className="text-[#001407] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-[1.05] text-center mx-auto">
           Your 24/7 WhatsApp sales Assistant
         </h1>

@@ -82,8 +82,12 @@ export default function DashboardDemo() {
             </div>
 
             {/* Greeting */}
-            <div className="px-5 sm:px-6 pt-4 pb-2">
-              <p className="text-white/80 text-sm sm:text-base font-[family-name:var(--font-roboto)]">
+            <div className="px-5 sm:px-6 pt-4 pb-2 flex items-center gap-2 min-w-0">
+              <span className="relative flex h-3 w-3 shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D2FF00] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#a8cc00]"></span>
+              </span>
+              <p className="text-white/80 text-sm sm:text-base font-[family-name:var(--font-roboto)] truncate">
                 &ldquo;Hi Sharleen! 👋 Aisha handled 15 chats in your absence. Karibu!&rdquo;
               </p>
             </div>
@@ -231,10 +235,15 @@ export default function DashboardDemo() {
                   outlineOffset: "-1px",
                 }}
               >
-                <p className="flex-1" style={{ color: "white", fontSize: 16, fontFamily: "'Roboto', sans-serif", fontWeight: 400 }}>
-                  &ldquo;Hi Sharleen! 👋<br />
-                  <span className="whitespace-nowrap">Aisha handled 15 chats in your absence. Karibu!&rdquo;</span>
-                </p>
+                <div className="flex items-center gap-3 flex-1 min-w-0">
+                  <span className="relative flex h-3 w-3 shrink-0">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D2FF00] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-[#a8cc00]"></span>
+                  </span>
+                  <p className="flex-1 truncate" style={{ color: "white", fontSize: 16, fontFamily: "'Roboto', sans-serif", fontWeight: 400 }}>
+                    &ldquo;Hi Sharleen! 👋 <span className="whitespace-nowrap">Aisha handled 15 chats in your absence. Karibu!&rdquo;</span>
+                  </p>
+                </div>
                 {/* Search Bar */}
                 <div
                   className="relative shrink-0 overflow-hidden"

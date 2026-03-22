@@ -17,12 +17,12 @@ export default function ValueContrast() {
       </ScrollReveal>
 
       <StaggerContainer
-        className="self-stretch p-4 md:p-[30px] overflow-visible flex flex-col lg:flex-row justify-center items-center lg:items-start relative gap-6 lg:gap-0"
+        className="self-stretch p-4 md:p-[30px] overflow-visible flex flex-col lg:flex-row justify-center items-center lg:items-stretch relative gap-6 lg:gap-8"
         staggerChildren={0.2}
       >
         {/* Traditional card */}
-        <StaggerItem variant="fadeLeft" className="w-full max-w-[600px]">
-          <div className="w-full min-h-[280px] p-6 md:p-[30px] bg-white overflow-hidden flex flex-col justify-start items-center gap-[5px] rounded-t-2xl lg:rounded-t-none lg:rounded-l-none">
+        <StaggerItem variant="fadeLeft" className="w-full max-w-[600px] flex">
+          <div className="w-full min-h-[280px] p-6 md:p-[30px] bg-white overflow-hidden flex flex-col justify-start items-center gap-[5px] rounded-[24px] shadow-sm">
             <div className="w-full md:w-[318px] text-center">
               <span className="text-[#001407] text-[24px] md:text-[32px] font-medium font-[family-name:var(--font-roboto)] leading-[45px]">
                 Traditional secretary<br />
@@ -44,9 +44,14 @@ export default function ValueContrast() {
         </StaggerItem>
 
         {/* Aisha card */}
-        <StaggerItem variant="fadeRight" className="w-full max-w-[600px]">
-          <div className="w-full min-h-[280px] p-6 md:p-[30px] bg-[#001407] overflow-hidden flex flex-col justify-start items-center gap-[5px] rounded-b-2xl lg:rounded-b-none lg:rounded-r-none">
-            <div className="text-center">
+        <StaggerItem variant="fadeRight" className="w-full max-w-[600px] flex">
+          <div className="w-full min-h-[280px] p-6 md:p-[30px] bg-[#001407] overflow-hidden flex flex-col justify-start items-center gap-[5px] rounded-[24px] shadow-[0px_10px_30px_rgba(0,0,0,0.15)] relative">
+            
+            {/* Soft background glow for the Aisha card */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#D2FF00] opacity-10 blur-3xl rounded-full"></div>
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#D2FF00] opacity-10 blur-3xl rounded-full"></div>
+
+            <div className="text-center relative z-10">
               <span className="text-white text-[24px] md:text-[32px] font-medium font-[family-name:var(--font-roboto)] leading-[48px]">
                 Aisha AI Assistant<br />
               </span>

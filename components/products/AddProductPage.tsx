@@ -69,7 +69,7 @@ export default function AddProductPage({
   };
 
   return (
-    <div className="flex flex-col gap-5 max-w-[680px] pb-10">
+    <div className="flex flex-col gap-5 max-w-[680px] pb-10 min-w-0">
 
       {/* ── UPLOAD IMAGE ───────────────────── */}
       <FormSection
@@ -127,9 +127,9 @@ export default function AddProductPage({
         title="Basic Info"
         subtitle="Core product details your AI will use"
       >
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-          <div className="col-span-2">
+          <div className="col-span-1 sm:col-span-2">
             <FieldLabel required>Product Name</FieldLabel>
             <input
               className={inputCls}
@@ -168,7 +168,7 @@ export default function AddProductPage({
             </div>
           </div>
 
-          <div className="col-span-2">
+          <div className="col-span-1 sm:col-span-2">
             <FieldLabel required>Short Description</FieldLabel>
             <textarea
               className={`${inputCls} resize-none min-h-[80px] leading-relaxed`}
@@ -293,13 +293,16 @@ export default function AddProductPage({
 
       {/* ── ACTION BUTTONS ─────────────────── */}
       <div className="flex items-center gap-3">
-        <button
-          onClick={() => { if (validate()) onSave(form); }}
-          className="px-7 py-3 rounded-xl text-[13px] font-bold hover:opacity-85 transition-opacity shadow-sm"
-          style={{ backgroundColor: "#001407", color: "#D2FF00" }}
-        >
-          {isEdit ? "Save Changes" : "Save Product"}
-        </button>
+        <div className="relative group">
+          <div className="absolute -inset-0.5 bg-[#D2FF00] blur-md opacity-30 group-hover:opacity-60 transition-opacity rounded-xl"></div>
+          <button
+            onClick={() => { if (validate()) onSave(form); }}
+            className="relative px-7 py-3 rounded-xl text-[13px] font-bold hover:opacity-90 hover:-translate-y-0.5 transition-all shadow-sm"
+            style={{ backgroundColor: "#001407", color: "#D2FF00" }}
+          >
+            {isEdit ? "Save Changes" : "Save Product"}
+          </button>
+        </div>
         <button
           onClick={onCancel}
           className="px-5 py-3 rounded-xl text-[13px] font-medium border border-gray-200 bg-white text-gray-500 hover:bg-[#F5F5F5] hover:text-gray-800 transition-all shadow-sm"

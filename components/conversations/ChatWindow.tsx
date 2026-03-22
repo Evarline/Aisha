@@ -2,20 +2,20 @@
 
 export function ChatWindow() {
   return (
-    <div className="hidden md:flex flex-1 min-w-[300px] h-full bg-[#FFFFFF] flex-col shrink-0 relative overflow-hidden transition-all duration-300 ease-in-out">
+    <div className="hidden lg:flex flex-1 min-w-0 h-full bg-[#FFFFFF] flex-col shrink-0 relative overflow-hidden transition-all duration-300 ease-in-out">
       {/* Top Header Group */}
       <div className="w-full flex flex-col shrink-0 border-b border-gray-200/60 bg-[#FFFFFF]">
          {/* Top Info Header */}
-         <div className="bg-[#f7f6f2] w-full py-2 px-6 flex items-center justify-between border-b border-[#E5E5E5] h-[56px]">
-               <div className="flex flex-col justify-center">
-                  <h2 className="text-[16px] text-[#001407] font-['Inter'] font-medium">Select Chat</h2>
-                  <div className="flex gap-1.5 items-center">
-                     <div className="w-[6px] h-[6px] rounded-full bg-[#D2FF00]" />
-                     <span className="text-[11px] text-gray-500 font-['Inter']">Choose Conversation from the left</span>
+         <div className="bg-[#f7f6f2] w-full py-2 px-6 flex items-center justify-between border-b border-[#E5E5E5] h-[56px] min-w-0">
+               <div className="flex flex-col justify-center min-w-0">
+                  <h2 className="text-[16px] text-[#001407] font-['Inter'] font-medium truncate">Select Chat</h2>
+                  <div className="flex gap-1.5 items-center min-w-0">
+                     <span className="relative flex h-2 w-2 shrink-0"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D2FF00] opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-[#a8cc00]"></span></span>
+                     <span className="text-[11px] text-gray-500 font-['Inter'] truncate">Choose Conversation from the left</span>
                   </div>
                </div>
 
-               <div className="bg-white rounded-full ring-1 ring-gray-200 shadow-sm w-[180px] h-[36px] flex items-center p-1">
+               <div className="bg-white rounded-full ring-1 ring-gray-200 shadow-sm w-[180px] h-[36px] flex items-center p-1 shrink-0 ml-4">
                   <div className="bg-[#001407] flex items-center justify-center rounded-full flex-1 h-full shadow-sm cursor-pointer">
                      <span className="text-[#D2FF00] font-['Inter'] text-[12px] font-medium">Assign to AI</span>
                   </div>
@@ -26,12 +26,12 @@ export function ChatWindow() {
          </div>
 
          {/* AI Banner */}
-         <div className="w-full flex justify-center bg-[#FFFFFF] py-2">
-            <div className="bg-[#f7f6f2] border border-gray-200/60 shadow-sm rounded-[16px] w-full mx-6 h-[48px] flex items-center gap-4 px-3">
-               <div className="bg-[#FFFFFF] shadow-sm rounded-[12px] px-4 h-[36px] flex items-center justify-center">
+         <div className="w-full flex justify-center bg-[#FFFFFF] py-2 min-w-0">
+            <div className="bg-[#f7f6f2] border border-gray-200/60 shadow-sm rounded-[16px] w-full mx-6 h-[48px] flex items-center gap-4 px-3 min-w-0">
+               <div className="bg-[#FFFFFF] shadow-sm rounded-[12px] px-4 h-[36px] flex items-center justify-center shrink-0">
                   <span className="text-[#001407] font-['Inter'] text-[12px] font-semibold tracking-wide">AI Mode</span>
                </div>
-               <span className="text-gray-500 font-['Inter'] text-[12px] font-medium">AI is handling the conversation automatically</span>
+               <span className="text-gray-500 font-['Inter'] text-[12px] font-medium truncate">AI is handling the conversation automatically</span>
             </div>
          </div>
       </div>

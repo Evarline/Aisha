@@ -21,11 +21,11 @@ export default function Home() {
     */
     <div className="flex min-h-screen flex-col items-start bg-[#f5f5f5] overflow-x-hidden w-full">
 
-      {/* Header Section - 90px height, full width */}
+      {/* Header Section - fixed, doesn't occupy flow */}
       <Header />
 
       {/* Main Content Area - Vertical Auto Layout, 0 gap between sections */}
-      <div className="flex w-full flex-col items-start pt-[90px]">
+      <div className="flex w-full flex-col items-start pt-[70px] md:pt-[90px]">
 
         <Hero />
 

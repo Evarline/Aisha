@@ -68,7 +68,7 @@ export default function Header() {
   /* ── Close mobile menu on resize ── */
   useEffect(() => {
     const onResize = () => {
-      if (window.innerWidth >= 768) setMobileOpen(false);
+      if (window.innerWidth >= 1024) setMobileOpen(false);
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
@@ -86,11 +86,11 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 flex h-[70px] md:h-[90px] w-full items-center justify-center transition-all duration-300 ${
         scrolled
-          ? "bg-[#f5f5f5]/95 backdrop-blur-md shadow-[0px_4px_20px_-2px_rgba(0,20,7,0.08)]"
-          : "bg-[#f5f5f5] shadow-[0px_4px_4px_0px_rgba(0,20,7,0.02)]"
-      } border-b-2 border-[rgba(245,245,245,0.02)]`}
+          ? "bg-white/70 backdrop-blur-lg border-b border-gray-200/50 shadow-sm"
+          : "bg-transparent border-b border-transparent"
+      }`}
     >
-      <div className="flex w-full max-w-[1360px] items-center justify-between px-5 md:px-[40px]">
+      <div className="flex w-full max-w-7xl mx-auto items-center justify-between px-4 sm:px-6 lg:px-8 min-w-0">
         {/* ── Logo — clickable to home ── */}
         <Link href="/" className="flex items-center no-underline">
           <span className="text-[28px] md:text-[43.689px] font-bold font-[family-name:var(--font-nunito)] tracking-tight text-[#001407] transition-opacity hover:opacity-80">
@@ -99,7 +99,7 @@ export default function Header() {
         </Link>
 
         {/* ── Desktop Navigation ── */}
-        <nav className="hidden md:flex items-center gap-8 text-[18px] lg:text-[20px] font-normal font-[family-name:var(--font-inter)] text-[#001407]">
+        <nav className="hidden lg:flex items-center gap-8 text-[18px] lg:text-[20px] font-normal font-[family-name:var(--font-inter)] text-[#001407] min-w-0">
           {navLinks.map((link) => {
             const isActive =
               link.sectionId === activeSection ||
@@ -135,31 +135,33 @@ export default function Header() {
         </nav>
 
         {/* ── CTA Buttons (Desktop) ── */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4 min-w-0">
           <Link
             href="/login"
-            className="flex items-center justify-center px-5 py-3 text-[20px] lg:text-[24px] font-medium font-[family-name:var(--font-roboto)] text-[#001407] hover:bg-black/5 rounded-full transition-colors"
+            className="flex items-center justify-center px-5 py-3 text-[20px] lg:text-[24px] font-medium font-[family-name:var(--font-roboto)] text-[#001407] hover:bg-black/5 rounded-full transition-colors whitespace-nowrap"
             style={{ fontVariationSettings: "'wdth' 100" }}
           >
             Login
           </Link>
-          <Link
-            href="/get-started"
-            className="flex h-[44px] lg:h-[50px] w-[160px] lg:w-[200px] shrink-0 items-center justify-center overflow-clip rounded-[24px] bg-[#001407] px-6 lg:px-[38px] py-[15px] hover:opacity-90 transition-opacity cursor-pointer"
-          >
-            <span
-              className="font-medium leading-normal text-white text-[18px] lg:text-[24px] font-[family-name:var(--font-roboto)]"
-              style={{ fontVariationSettings: "'wdth' 100" }}
+          <div className="relative group">
+            <Link
+              href="/get-started"
+              className="relative flex h-[44px] lg:h-[50px] w-[160px] lg:w-[200px] shrink-0 items-center justify-center overflow-clip rounded-[24px] bg-[#001407] px-6 lg:px-[38px] py-[15px] hover:opacity-90 transition-opacity cursor-pointer"
             >
-              Get started
-            </span>
-          </Link>
+              <span
+                className="font-medium leading-normal text-white text-[18px] lg:text-[24px] font-[family-name:var(--font-roboto)] whitespace-nowrap"
+                style={{ fontVariationSettings: "'wdth' 100" }}
+              >
+                Get started
+              </span>
+            </Link>
+          </div>
         </div>
 
         {/* ── Mobile Hamburger — Electric Lime on deep-forest pill ── */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex md:hidden flex-col justify-center items-center w-10 h-10 gap-[6px] cursor-pointer bg-[#001407] rounded-xl shrink-0"
+          className="flex lg:hidden flex-col justify-center items-center w-10 h-10 gap-[6px] cursor-pointer bg-[#001407] rounded-xl shrink-0"
           aria-label="Toggle menu"
         >
           <motion.span
@@ -194,7 +196,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="absolute top-[70px] left-0 right-0 bg-[#f5f5f5]/98 backdrop-blur-xl shadow-[0_20px_40px_-10px_rgba(0,20,7,0.15)] border-t border-[rgba(0,20,7,0.05)] md:hidden"
+            className="absolute top-[70px] md:top-[90px] left-0 right-0 bg-white/95 backdrop-blur-xl shadow-[0_20px_40px_-10px_rgba(0,20,7,0.15)] border-t border-[rgba(0,20,7,0.05)] lg:hidden"
           >
             <nav className="flex flex-col items-center gap-2 py-6 px-6">
               {navLinks.map((link, i) => {
@@ -236,7 +238,7 @@ export default function Header() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.3 }}
-                className="flex flex-col items-center gap-3 pt-4 w-full"
+                className="flex flex-col items-center gap-3 pt-4 w-full min-w-0"
               >
                 <Link
                   href="/login"
@@ -245,15 +247,17 @@ export default function Header() {
                 >
                   Login
                 </Link>
-                <Link
-                  href="/get-started"
-                  onClick={() => setMobileOpen(false)}
-                  className="w-full max-w-[280px] h-[48px] flex items-center justify-center rounded-[24px] bg-[#001407] hover:opacity-90 transition-opacity cursor-pointer"
-                >
-                  <span className="font-medium text-white text-[18px] font-[family-name:var(--font-roboto)]">
-                    Get started
-                  </span>
-                </Link>
+                <div className="relative group w-full max-w-[280px]">
+                  <Link
+                    href="/get-started"
+                    onClick={() => setMobileOpen(false)}
+                    className="relative w-full h-[48px] flex items-center justify-center rounded-[24px] bg-[#001407] hover:opacity-90 transition-opacity cursor-pointer"
+                  >
+                    <span className="font-medium text-white text-[18px] font-[family-name:var(--font-roboto)]">
+                      Get started
+                    </span>
+                  </Link>
+                </div>
               </motion.div>
             </nav>
           </motion.div>

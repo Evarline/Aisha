@@ -19,9 +19,9 @@ export function Sidebar() {
   ];
 
   return (
-    <aside className="hidden md:flex md:w-[200px] lg:w-[15%] lg:min-w-[200px] h-full bg-[#001407] flex-col py-6 px-6 overflow-y-auto shrink-0 select-none transition-all duration-300 ease-in-out [&::-webkit-scrollbar]:w-[4px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/10 hover:[&::-webkit-scrollbar-thumb]:bg-white/20 [&::-webkit-scrollbar-thumb]:rounded-full">
+    <aside className="hidden lg:flex lg:w-[256px] h-full bg-[#001407] flex-col py-6 px-6 overflow-y-auto shrink-0 select-none transition-all duration-300 ease-in-out [&::-webkit-scrollbar]:w-[4px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/10 hover:[&::-webkit-scrollbar-thumb]:bg-white/20 [&::-webkit-scrollbar-thumb]:rounded-full">
       <div className="mb-4 mt-2 px-0 flex flex-col items-start justify-center pb-2">
-        <h1 className="text-[32px] font-bold text-white tracking-wide font-['Roboto']">Aisha AI</h1>
+        <h1 className="text-[32px] font-bold text-white tracking-wide font-['Roboto'] truncate min-w-0 w-full">Aisha AI</h1>
       </div>
       
       <div className="text-[16px] font-normal text-white mb-4 mt-2 font-['Roboto']">MAIN</div>
@@ -36,8 +36,8 @@ export function Sidebar() {
             <Link
               key={item.name}
               href={item.href}
-              className={`flex items-center gap-5 px-[14px] py-[7px] h-[44px] rounded-[15px] transition-colors cursor-pointer ${
-                isActive ? "bg-[#D2FF00]" : "hover:bg-white/5"
+              className={`flex items-center gap-5 px-[14px] py-[7px] h-[44px] rounded-[15px] transition-all duration-300 ease-out hover:-translate-y-1 cursor-pointer min-w-0 ${
+                isActive ? "bg-[#D2FF00] shadow-md" : "hover:bg-white/5 hover:shadow-lg"
               }`}
             >
               <div className="w-[24px] h-[24px] flex justify-center items-center relative shrink-0">
@@ -52,7 +52,7 @@ export function Sidebar() {
                   }}
                 />
               </div>
-              <span className={`text-[16px] font-['Roboto'] ${isActive ? "text-[#04340e] font-normal" : "text-white font-normal"}`}>
+              <span className={`text-[16px] font-['Roboto'] truncate min-w-0 ${isActive ? "text-[#04340e] font-normal" : "text-white font-normal"}`}>
                 {item.name}
               </span>
             </Link>

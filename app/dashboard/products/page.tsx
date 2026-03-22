@@ -56,17 +56,20 @@ export default function ProductsPage() {
       <div className="flex-1 flex flex-col h-screen overflow-hidden min-w-0">
       <TopNav title={view === "list" ? "Products" : view === "edit" ? "Edit Product" : "Add Product"} />
 
-      <main className="flex-1 overflow-y-auto px-6 max-w-[1200px] w-full mx-auto py-6">
+      <main className="flex-1 overflow-y-auto px-4 sm:px-6 w-full mx-auto py-6 min-w-0">
         {view === "list" && (
           <div className="flex justify-end mb-6">
-            <button
-              onClick={handleAdd}
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-bold transition-opacity hover:opacity-85 whitespace-nowrap shadow-sm"
-              style={{ backgroundColor: "#001407", color: "#D2FF00" }}
-            >
-              +
-              Add New Product
-            </button>
+            <div className="relative group">
+              <div className="absolute -inset-0.5 bg-[#D2FF00] blur-md opacity-30 group-hover:opacity-60 transition-opacity rounded-xl"></div>
+              <button
+                onClick={handleAdd}
+                className="relative flex items-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-bold transition-all hover:opacity-90 hover:-translate-y-0.5 whitespace-nowrap shadow-sm"
+                style={{ backgroundColor: "#001407", color: "#D2FF00" }}
+              >
+                +
+                Add New Product
+              </button>
+            </div>
           </div>
         )}
         
