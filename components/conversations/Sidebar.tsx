@@ -9,12 +9,9 @@ export function Sidebar() {
   const menuItems = [
     { name: "Dashboard", href: "/dashboard", icon: "/Icons/SquaresFour.svg" },
     { name: "Conversations", href: "/dashboard/conversations", icon: "/Icons/ChatsCircle.svg" },
-    { name: "Products", href: "/dashboard/products", icon: "/Icons/Package.svg" },
-    { name: "Orders", href: "/dashboard/orders", icon: "/Icons/ShoppingCartSimple.svg" },
-    { name: "Transactions", href: "/dashboard/transactions", icon: "/Icons/HandCoins.svg" },
     { name: "Analytics", href: "/dashboard/analytics", icon: "/Icons/ChartBar.svg" },
+    { name: "Products", href: "/dashboard/products", icon: "/Icons/Package.svg" },
     { name: "Settings", href: "/dashboard/settings", icon: "/Icons/GearSix.svg" },
-    { name: "Security", href: "/dashboard/security", icon: "/Icons/ShieldCheck.svg" },
     { name: "Help", href: "/dashboard/help", icon: "/Icons/Question.svg" },
   ];
 

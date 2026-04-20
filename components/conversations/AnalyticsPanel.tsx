@@ -1,6 +1,33 @@
 "use client";
 
-export function AnalyticsPanel() {
+import type { Chat } from "./data";
+
+interface AnalyticsPanelProps {
+  currentChat?: Chat;
+}
+
+export function AnalyticsPanel({ currentChat }: AnalyticsPanelProps) {
+  // Determine VIP insight
+  const getVipInsight = () => {
+    if (currentChat?.badge === "VIP") {
+      return `${currentChat.name} is a VIP with strong buying signals`;
+    }
+    return "Jane Doe is a VIP with strong buying signals";
+  };
+
+  // Determine frustration insight
+  const getFrustrationInsight = () => {
+    if (currentChat && currentChat.id === 4) {
+      return "Customer David Kipchoge seems frustrated.";
+    }
+    if (currentChat && currentChat.messages.some(msg => 
+      msg.sender === "user" && (msg.text.toLowerCase().includes("frustrated") || msg.text.toLowerCase().includes("ridiculous") || msg.text.toLowerCase().includes("wrong"))
+    )) {
+      return `Customer ${currentChat.name} seems frustrated.`;
+    }
+    return "Customer David Kipchoge seems frustrated.";
+  };
+
   return (
     <div className="hidden lg:flex lg:w-[20%] lg:min-w-[240px] h-full bg-[#FFFFFF] border-l border-gray-200/60 flex-col shrink-0 transition-all duration-300 ease-in-out">
          {/* Header */}
@@ -10,25 +37,25 @@ export function AnalyticsPanel() {
          </div>
 
          <div className="flex-1 w-full flex flex-col gap-3 px-5 py-4 overflow-y-auto [&::-webkit-scrollbar]:w-[4px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full">
-            {/* Metrics Cards */}
-            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
+            {/* Metrics Cards - Dark Mode with Neon Lime Green Numbers */}
+            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-[#D2FF00]/20">
                <span className="text-[#D2FF00] text-[12px] font-['Roboto'] font-normal text-center leading-tight">Messages handled</span>
-               <span className="text-white text-[15px] font-medium font-['Inter'] text-center leading-none">30</span>
+               <span className="text-[#D2FF00] text-[18px] font-bold font-['Inter'] text-center leading-none">30</span>
             </div>
 
-            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
+            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-[#D2FF00]/20">
                <span className="text-[#D2FF00] text-[12px] font-['Roboto'] font-normal text-center leading-tight">Customer satisfaction</span>
-               <span className="text-white text-[15px] font-medium font-['Inter'] text-center leading-none">4.9/5.0</span>
+               <span className="text-[#D2FF00] text-[18px] font-bold font-['Inter'] text-center leading-none">4.9/5.0</span>
             </div>
 
-            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
+            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-[#D2FF00]/20">
                <span className="text-[#D2FF00] text-[12px] font-['Roboto'] font-normal text-center leading-tight">Avg response time</span>
-               <span className="text-white text-[15px] font-medium font-['Inter'] text-center leading-none">1.2sec</span>
+               <span className="text-[#D2FF00] text-[18px] font-bold font-['Inter'] text-center leading-none">1.2sec</span>
             </div>
 
-            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
+            <div className="bg-[#001407] rounded-[12px] w-full min-h-[64px] flex flex-col items-center justify-center gap-1 py-3 px-3 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-[#D2FF00]/20">
                <span className="text-[#D2FF00] text-[12px] font-['Roboto'] font-normal text-center leading-tight">Today's revenue</span>
-               <span className="text-white text-[16px] font-semibold font-['Inter'] text-center leading-none">KES 23,750</span>
+               <span className="text-[#D2FF00] text-[18px] font-bold font-['Inter'] text-center leading-none">KES 23,750</span>
             </div>
 
             {/* Smart Insights Panel */}
@@ -37,17 +64,17 @@ export function AnalyticsPanel() {
                   <h3 className="text-[14px] text-[#001407] font-medium font-['Inter']">Smart Insights</h3>
                </div>
                
-               <div className="w-full flex items-start gap-2 justify-between bg-gray-50/50 p-2 rounded-lg border border-gray-100">
-                  <p className="text-[12px] text-gray-600 font-['Roboto'] flex-1 leading-snug">Jane Doe is showing strong buying signals</p>
+               <div className="w-full flex items-start gap-2 justify-between bg-gray-50/50 p-2 rounded-lg border border-gray-100 hover:bg-gray-100/50 transition-colors">
+                  <p className="text-[12px] text-gray-600 font-['Roboto'] flex-1 leading-snug">{getVipInsight()}</p>
                   <div className="bg-[#001407] shadow-sm rounded-md shrink-0 flex justify-center items-center h-[20px] px-2">
                      <span className="text-[#D2FF00] text-[10px] font-['Roboto'] font-medium text-center">VIP</span>
                   </div>
                </div>
 
-               <div className="w-full flex items-start gap-2 justify-between bg-red-50/30 p-2 rounded-lg border border-red-50">
+               <div className="w-full flex items-start gap-2 justify-between bg-red-50/30 p-2 rounded-lg border border-red-100 hover:bg-red-100/30 transition-colors">
                   <p className="text-[12px] text-gray-600 font-['Roboto'] flex-1 flex flex-col leading-snug">
-                    <span>Aisha AI is rude to customer Sarah Chen.</span>
-                    <span className="text-[#E94235] font-medium mt-1">Human agent needed.</span>
+                    <span>{getFrustrationInsight()}</span>
+                    <span className="text-[#E94235] font-medium mt-1">Human agent recommended.</span>
                   </p>
                  <div className="w-[20px] h-[20px] shrink-0 relative flex justify-center items-center mt-0.5">
                     <img src="/Icons/Siren.svg" alt="Alert" className="w-[16px] h-[16px]"
