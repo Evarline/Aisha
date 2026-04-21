@@ -98,7 +98,7 @@ export function ChatList({ chats, onSelectChat, selectedChatId }: ChatListProps)
 
                   {/* Content */}
                   <div className="flex flex-col gap-0.5 flex-1 min-w-0 justify-center h-full">
-                    <div className="flex items-center gap-2 w-full">
+                    <div className="flex items-center gap-2 w-full min-w-0">
                       <h3 className="text-[14px] font-medium text-[#001407] font-['Roboto'] truncate">{chat.name}</h3>
                       {selectedChatId === chat.id && <div className="w-[6px] h-[6px] bg-[#D2FF00] rounded-full shrink-0 shadow-[0_0_4px_rgba(210,255,0,0.6)]"></div>}
                     </div>
