@@ -11,6 +11,7 @@ interface ChatListProps {
 
 export function ChatList({ chats, onSelectChat, selectedChatId }: ChatListProps) {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const tabs = [
     { name: "All", count: 19 },
@@ -24,50 +25,69 @@ export function ChatList({ chats, onSelectChat, selectedChatId }: ChatListProps)
     : chats.filter((chat) => chat.status === activeFilter);
 
   return (
-    <div className="w-full md:w-[320px] md:min-w-[320px] h-full bg-[#f7f6f2] border-r border-[#E5E5E5] flex flex-col shrink-0 overflow-hidden transition-all duration-300 ease-in-out">
+    <div className="w-full md:w-[320px] md:min-w-[320px] h-full bg-white border-r border-gray-200/60 flex flex-col shrink-0 overflow-hidden transition-all duration-300 ease-in-out">
       {/* Header Container */}
-      <div className="w-full shrink-0 flex items-center justify-start px-5 h-[56px] border-b border-[#E5E5E5] bg-[#f7f6f2]">
+      <div className="w-full shrink-0 flex items-center justify-start px-4 h-[56px] border-b border-gray-200/60 bg-white">
         <h2 className="text-[16px] font-medium text-[#001407] font-['Inter']">Manage Customer Chats</h2>
       </div>
       
-      {/* Tabs Container - Dark Background with White Text - Center Aligned */}
-      <div className="w-full shrink-0 bg-[#001407] h-[48px] flex items-center justify-center px-4 border-b border-gray-700 gap-8">
+      {/* Search Bar - Mobile: Prominent and Full Width */}
+      <div className="w-full shrink-0 px-4 py-3 bg-white border-b border-gray-200/60">
+        <div className="flex bg-gray-100 rounded-full items-center px-4 py-2.5 transition-all hover:ring-1 hover:ring-gray-300 focus-within:ring-1 focus-within:ring-gray-400">
+          <input 
+            type="text" 
+            placeholder="Search chats..." 
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="text-[14px] text-gray-900 flex-1 font-['Inter'] font-normal bg-transparent outline-none w-full"
+          />
+          <img 
+            src="/Icons/MagnifyingGlass.svg" 
+            alt="Search" 
+            className="w-[18px] h-[18px] shrink-0"
+            style={{ filter: 'brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(500%) hue-rotate(0deg) brightness(95%) contrast(90%)' }}
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+        </div>
+      </div>
+      
+      {/* Filter Tabs Container - Light Mode Pills with Horizontal Scroll */}
+      <div className="w-full shrink-0 bg-white h-auto flex items-center px-4 py-3 border-b border-gray-200/60 gap-2 overflow-x-auto no-scrollbar scroll-smooth">
         {tabs.map((tab) => (
-          <div 
-            key={tab.name} 
+          <button
+            key={tab.name}
             onClick={() => setActiveFilter(tab.name)}
-            className={`flex flex-col items-center justify-center h-full cursor-pointer relative transition-all duration-200 group`}
+            className={`flex flex-col items-center justify-center px-4 py-2 rounded-full whitespace-nowrap shrink-0 transition-all duration-200 ${
+              activeFilter === tab.name 
+                ? "bg-[#001407] text-white shadow-sm" 
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
           >
-            <span className={`text-[12px] font-semibold font-['Inter'] leading-tight ${
-              activeFilter === tab.name ? "text-white" : "text-white/70 group-hover:text-white"
-            }`}>
+            <span className="text-[13px] font-semibold font-['Inter']">
               {tab.name}
             </span>
-            <span className={`text-[10px] font-['Inter'] leading-tight ${
-              activeFilter === tab.name ? "text-[#D2FF00]" : "text-white/50"
+            <span className={`text-[11px] font-['Inter'] font-medium ${
+              activeFilter === tab.name ? "text-white" : "text-gray-600"
             }`}>
               {tab.count}
             </span>
-            {/* Neon Green Bottom Border for Active Tab */}
-            {activeFilter === tab.name && (
-              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D2FF00] shadow-[0_0_8px_rgba(210,255,0,0.6)]"></div>
-            )}
-          </div>
+          </button>
         ))}
       </div>
 
+
       {/* Chat List Scrollable Area */}
-      <div className="flex-1 overflow-y-auto w-full flex flex-col items-center bg-[#f7f6f2] [&::-webkit-scrollbar]:w-[4px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full">
+      <div className="flex-1 overflow-y-auto w-full flex flex-col items-center bg-white [&::-webkit-scrollbar]:w-[4px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full">
         <div className="flex flex-col w-full">
           {filteredChats.length > 0 ? (
             filteredChats.map((chat) => (
               <div 
                 key={chat.id} 
                 onClick={() => onSelectChat?.(chat.id)}
-                className={`flex flex-col justify-center items-center h-[68px] cursor-pointer transition-all duration-300 ease-out px-4 border-b border-gray-200/50 min-w-0 ${
+                className={`flex flex-col justify-center items-center h-[68px] cursor-pointer transition-all duration-300 ease-out px-4 border-b border-gray-100 min-w-0 ${
                   selectedChatId === chat.id 
-                    ? "bg-[#f0f6f0] shadow-sm" 
-                    : "hover:bg-white hover:shadow-sm"
+                    ? "bg-gray-50 shadow-sm" 
+                    : "hover:bg-gray-50"
                 }`}
               >
                 <div className="flex gap-[12px] w-full items-center h-full min-w-0">

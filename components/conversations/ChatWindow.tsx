@@ -5,51 +5,62 @@ import type { Chat } from "./data";
 
 interface ChatWindowProps {
   currentChat?: Chat;
+  onBackClick?: () => void;
 }
 
-export function ChatWindow({ currentChat }: ChatWindowProps) {
+export function ChatWindow({ currentChat, onBackClick }: ChatWindowProps) {
   const [isAiMode, setIsAiMode] = useState(true);
 
   return (
     <div className="flex md:flex-1 min-w-0 h-full bg-[#FFFFFF] flex-col shrink-0 relative overflow-hidden transition-all duration-300 ease-in-out">
       {/* Top Header Group */}
       <div className="w-full flex flex-col shrink-0 border-b border-gray-200/60 bg-[#FFFFFF]">
-        {/* Top Info Header */}
-        <div className="bg-[#f7f6f2] w-full py-2 px-4 md:px-6 flex items-center justify-between border-b border-[#E5E5E5] h-[56px] min-w-0">
-          <div className="flex flex-col justify-center min-w-0">
-            <div className="flex items-center gap-2">
-              <h2 className="text-[16px] text-[#001407] font-['Inter'] font-medium truncate">
-                {currentChat ? currentChat.name : "Select Chat"}
-              </h2>
-              {currentChat && currentChat.status === "Urgent" && (
-                <div className="bg-[#E94235] flex items-center justify-center rounded-[6px] px-2 py-0.5 shrink-0">
-                  <span className="text-white text-[10px] font-medium font-['Roboto']">URGENT</span>
-                </div>
-              )}
-            </div>
-            <div className="flex gap-1.5 items-center min-w-0">
-              {currentChat && (
-                <>
-                  <span className="relative flex h-2 w-2 shrink-0">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D2FF00] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a8cc00]"></span>
-                  </span>
-                  <span className="text-[11px] text-gray-500 font-['Inter'] truncate">
-                    {isAiMode ? "AI is handling the conversation automatically" : "You are replying"}
-                  </span>
-                </>
-              )}
-              {!currentChat && (
-                <>
-                  <span className="relative flex h-2 w-2 shrink-0">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-300 opacity-50"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-gray-300"></span>
-                  </span>
-                  <span className="text-[11px] text-gray-500 font-['Inter'] truncate">
-                    Choose a conversation from the left
-                  </span>
-                </>
-              )}
+        {/* Top Info Header - With Back Button on Mobile */}
+        <div className="bg-white w-full py-2 px-4 md:px-6 flex items-center justify-between border-b border-gray-200/60 h-[56px] min-w-0">
+          <div className="flex items-center gap-2 min-w-0 flex-1">
+            {onBackClick && (
+              <button
+                onClick={onBackClick}
+                className="md:hidden p-1.5 -ml-1.5 text-[#001407] hover:bg-gray-100 rounded-lg transition-colors flex-shrink-0"
+              >
+                <span className="text-[18px] leading-none">←</span>
+              </button>
+            )}
+            <div className="flex flex-col justify-center min-w-0 flex-1">
+              <div className="flex items-center gap-2 min-w-0">
+                <h2 className="text-[16px] text-[#001407] font-['Inter'] font-medium truncate">
+                  {currentChat ? currentChat.name : "Select Chat"}
+                </h2>
+                {currentChat && currentChat.status === "Urgent" && (
+                  <div className="bg-[#E94235] flex items-center justify-center rounded-[6px] px-2 py-0.5 shrink-0">
+                    <span className="text-white text-[10px] font-medium font-['Roboto']">URGENT</span>
+                  </div>
+                )}
+              </div>
+              <div className="flex gap-1.5 items-center min-w-0">
+                {currentChat && (
+                  <>
+                    <span className="relative flex h-2 w-2 shrink-0">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D2FF00] opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a8cc00]"></span>
+                    </span>
+                    <span className="text-[11px] text-gray-500 font-['Inter'] truncate">
+                      {isAiMode ? "AI is handling the conversation automatically" : "You are replying"}
+                    </span>
+                  </>
+                )}
+                {!currentChat && (
+                  <>
+                    <span className="relative flex h-2 w-2 shrink-0">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-300 opacity-50"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-gray-300"></span>
+                    </span>
+                    <span className="text-[11px] text-gray-500 font-['Inter'] truncate">
+                      Choose a conversation from the left
+                    </span>
+                  </>
+                )}
+              </div>
             </div>
           </div>
 
@@ -112,16 +123,16 @@ export function ChatWindow({ currentChat }: ChatWindowProps) {
           )}
         </div>
 
-        {/* AI Banner */}
+        {/* AI Banner - Fixed Text Wrapping */}
         {currentChat && (
-          <div className="w-full flex justify-center bg-[#FFFFFF] py-2 min-w-0">
-            <div className="bg-[#f7f6f2] border border-gray-200/60 shadow-sm rounded-[16px] w-[calc(100%-32px)] md:w-[calc(100%-48px)] mx-auto h-[48px] flex items-center gap-4 px-3 min-w-0">
-              <div className="bg-[#FFFFFF] shadow-sm rounded-[12px] px-4 h-[36px] flex items-center justify-center shrink-0">
-                <span className="text-[#001407] font-['Inter'] text-[12px] font-semibold tracking-wide">
+          <div className="w-full flex justify-center bg-white py-2 min-w-0">
+            <div className="bg-gray-50 border border-gray-200/60 shadow-sm rounded-[16px] w-[calc(100%-32px)] md:w-[calc(100%-48px)] mx-auto flex items-center justify-center px-3 py-2.5 min-w-0">
+              <div className="bg-white shadow-sm rounded-[8px] px-3 py-1 flex items-center justify-center shrink-0 mr-2">
+                <span className="text-[#001407] font-['Inter'] text-[11px] font-semibold tracking-wide whitespace-nowrap">
                   {isAiMode ? "AI Mode" : "Human Mode"}
                 </span>
               </div>
-              <span className="text-gray-500 font-['Inter'] text-[12px] font-medium truncate">
+              <span className="text-gray-600 font-['Inter'] text-sm font-medium whitespace-normal text-center">
                 {isAiMode ? "AI is handling the conversation automatically" : "You are now handling this conversation"}
               </span>
             </div>
@@ -171,71 +182,59 @@ export function ChatWindow({ currentChat }: ChatWindowProps) {
         <>
           {isAiMode ? (
             // AI Mode Banner
-            <div className="w-full shrink-0 bg-white p-4 border-t border-gray-200/60 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.02)] flex justify-center">
+            <div className="w-full shrink-0 bg-white p-3 md:p-4 border-t border-gray-200/60 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.02)] flex justify-center">
               <div className="w-full max-w-2xl">
-                <div className="bg-gradient-to-r from-green-50 to-gray-50 border border-gray-200/60 rounded-[12px] p-6 flex flex-col items-center justify-center min-h-[90px]">
-                  <p className="text-[16px] text-center text-gray-600 font-['Roboto'] font-medium">
+                <div className="bg-gray-50 border border-gray-200/60 rounded-[12px] p-4 flex flex-col items-center justify-center">
+                  <p className="text-sm md:text-[16px] text-center text-gray-700 font-['Roboto'] font-medium">
                     Aisha AI is currently managing this conversation.
                   </p>
-                  <p className="text-[12px] text-center text-gray-500 font-['Roboto'] mt-1">
+                  <p className="text-xs md:text-[12px] text-center text-gray-500 font-['Roboto'] mt-2">
                     Click 'Take Over' to reply manually.
                   </p>
                 </div>
               </div>
             </div>
           ) : (
-            // Human Mode Input
-            <div className="w-full shrink-0 bg-white p-4 border-t border-gray-200/60 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.02)] flex justify-center">
-              <div className="w-full max-w-2xl flex items-center">
-                <div className="bg-[#FFFFFF] ring-1 ring-gray-200 shadow-sm rounded-[12px] w-full h-[90px] flex flex-col p-3 relative justify-between focus-within:ring-2 focus-within:ring-[#001407] transition-all">
-                  <textarea
-                    className="text-[13px] text-[#001407] font-medium font-['Roboto'] w-full bg-transparent resize-none outline-none placeholder:text-gray-400 placeholder:font-normal"
-                    placeholder="Type your message..."
-                    rows={2}
-                  ></textarea>
-
-                  <div className="flex w-full justify-between items-end">
-                    <div className="flex gap-4 px-1 items-center">
-                      <img
-                        src="/Icons/Plus.svg"
-                        className="w-[16px] h-[16px] cursor-pointer hover:opacity-70 transition-opacity"
-                        style={{
-                          filter:
-                            "brightness(0) saturate(100%) invert(3%) sepia(34%) saturate(6007%) hue-rotate(130deg) brightness(84%) contrast(107%)",
-                        }}
-                      />
-                      <img
-                        src="/Icons/SmileyWink.svg"
-                        className="w-[16px] h-[16px] cursor-pointer hover:opacity-70 transition-opacity"
-                        style={{
-                          filter:
-                            "brightness(0) saturate(100%) invert(3%) sepia(34%) saturate(6007%) hue-rotate(130deg) brightness(84%) contrast(107%)",
-                        }}
-                      />
-                    </div>
-
-                    <div className="flex gap-4 items-center">
-                      <img
-                        src="/Icons/Microphone.svg"
-                        className="w-[16px] h-[16px] cursor-pointer hover:opacity-70 transition-opacity"
-                        style={{
-                          filter:
-                            "brightness(0) saturate(100%) invert(3%) sepia(34%) saturate(6007%) hue-rotate(130deg) brightness(84%) contrast(107%)",
-                        }}
-                      />
-                      <div className="w-[32px] h-[32px] bg-[#001407] rounded-full shadow-sm flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity">
-                        <img
-                          src="/Icons/ArrowCircleUp.svg"
-                          className="w-[18px] h-[18px]"
-                          style={{
-                            filter:
-                              "brightness(0) saturate(100%) invert(98%) sepia(85%) saturate(3018%) hue-rotate(342deg) brightness(98%) contrast(97%)",
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
+            // Human Mode Input - Compact Pill-Shaped
+            <div className="w-full shrink-0 bg-white p-2.5 md:p-4 border-t border-gray-200/60 shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.05)] flex justify-center">
+              <div className="w-full max-w-2xl flex items-end gap-2">
+                {/* Compact Input Pill */}
+                <div className="flex-1 bg-gray-100 rounded-full px-4 py-2.5 flex items-center focus-within:ring-2 focus-within:ring-[#001407] focus-within:bg-white transition-all">
+                  <input
+                    type="text"
+                    className="text-[13px] md:text-[14px] text-[#001407] font-['Roboto'] w-full bg-transparent outline-none placeholder:text-gray-500 placeholder:font-normal"
+                    placeholder="Type message..."
+                  />
+                  <img
+                    src="/Icons/SmileyWink.svg"
+                    className="w-[18px] h-[18px] cursor-pointer hover:opacity-70 transition-opacity ml-2 flex-shrink-0"
+                    style={{
+                      filter: "brightness(0) saturate(100%) invert(50%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(95%)",
+                    }}
+                  />
                 </div>
+
+                {/* Action Icons - Tight */}
+                <button className="flex-shrink-0 flex items-center justify-center w-9 h-9 hover:opacity-70 transition-opacity">
+                  <img
+                    src="/Icons/Microphone.svg"
+                    className="w-[18px] h-[18px]"
+                    style={{
+                      filter: "brightness(0) saturate(100%) invert(20%) sepia(80%) saturate(800%) hue-rotate(130deg) brightness(100%) contrast(100%)",
+                    }}
+                  />
+                </button>
+
+                {/* Send Button */}
+                <button className="flex-shrink-0 w-9 h-9 bg-[#001407] rounded-full shadow-sm flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity">
+                  <img
+                    src="/Icons/ArrowCircleUp.svg"
+                    className="w-[18px] h-[18px]"
+                    style={{
+                      filter: "brightness(0) saturate(100%) invert(98%) sepia(85%) saturate(3018%) hue-rotate(342deg) brightness(98%) contrast(97%)",
+                    }}
+                  />
+                </button>
               </div>
             </div>
           )}
