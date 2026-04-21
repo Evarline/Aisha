@@ -5,12 +5,10 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 interface BottomNavProps {
-  activeView: "inbox" | "chat";
-  onViewChange: (view: "inbox" | "chat") => void;
   selectedChat: number | null;
 }
 
-export function BottomNav({ activeView, onViewChange, selectedChat }: BottomNavProps) {
+export function BottomNav({ selectedChat }: BottomNavProps) {
   const pathname = usePathname();
   const [showMore, setShowMore] = useState(false);
 

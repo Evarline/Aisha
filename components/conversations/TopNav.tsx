@@ -29,17 +29,11 @@ export function TopNav({ title = "Conversations", onBackClick, onNotificationCli
       </div>
       
       <div className="flex items-center gap-4 md:gap-6 justify-end shrink-0">
-        <button className="hidden text-[13px] font-medium text-[#001407] hover:text-[#001407]/70 transition-colors px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50">
-          View Analytics
-        </button>
         <button 
           onClick={onNotificationClick}
-          className="relative cursor-pointer w-[40px] h-[40px] flex items-center justify-center shrink-0 transition-transform duration-300 ease-out hover:-translate-y-1"
+          className="md:hidden text-sm font-semibold text-[#001407] hover:text-[#001407]/70 transition-colors px-2 py-1 rounded-lg hover:bg-gray-100"
         >
-          <img src="/Icons/Bell.svg" alt="Notifications" className="w-[24px] h-[24px] object-contain"
-               style={{ filter: 'brightness(0)' }}
-               onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-          <div className="absolute top-[8px] right-[8px] w-[8px] h-[8px] bg-[#D2FF00] rounded-full z-10 animate-pulse"></div>
+          Live Analytics
         </button>
         <div className="w-[36px] h-[36px] rounded-full overflow-hidden flex items-center justify-center shrink-0 transition-transform duration-300 ease-out hover:-translate-y-1 hidden md:flex">
           <img src="/Icons/UserCircle.svg" alt="User" className="w-[28px] h-[28px] object-contain"

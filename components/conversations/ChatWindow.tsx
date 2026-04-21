@@ -6,17 +6,18 @@ import type { Chat } from "./data";
 interface ChatWindowProps {
   currentChat?: Chat;
   onBackClick?: () => void;
+  isMobileOverlay?: boolean;
 }
 
-export function ChatWindow({ currentChat, onBackClick }: ChatWindowProps) {
+export function ChatWindow({ currentChat, onBackClick, isMobileOverlay }: ChatWindowProps) {
   const [isAiMode, setIsAiMode] = useState(true);
 
   return (
-    <div className="w-full h-[100dvh] md:h-full flex flex-col bg-white md:bg-[#FFFFFF] overflow-hidden">
+    <div className={`w-full flex flex-col ${isMobileOverlay ? "h-[100dvh]" : "h-full md:h-full"} bg-white overflow-hidden`}>
       {/* Top Header Group - flex-none */}
       <div className="flex-none w-full border-b border-gray-200/60 bg-white">
         {/* Top Info Header - With Back Button on Mobile */}
-        <div className="w-full px-2 sm:px-4 md:px-6 py-2 flex items-center justify-between border-b border-gray-200/60 h-[56px]">
+        <div className="w-full px-4 md:px-6 pt-4 md:pt-2 pb-3 flex items-center justify-between border-b border-gray-200/60 min-h-[56px]">
           <div className="flex items-center gap-1 sm:gap-2 min-w-0 flex-1">
             {onBackClick && (
               <button
@@ -125,8 +126,8 @@ export function ChatWindow({ currentChat, onBackClick }: ChatWindowProps) {
 
         {/* AI Banner - Fixed Text Wrapping */}
         {currentChat && (
-          <div className="w-full flex justify-center bg-white py-2 px-4">
-            <div className="bg-gray-50 border border-gray-200/60 shadow-sm rounded-[12px] flex items-center justify-center px-3 py-2 min-w-0 w-full">
+          <div className="w-full flex justify-center bg-white py-2 px-4 md:px-6">
+            <div className="bg-gray-50 border border-gray-200/60 shadow-sm rounded-[12px] flex items-center justify-center px-3 py-2 w-full">
               <div className="bg-white shadow-sm rounded-[6px] px-2 py-1 flex items-center justify-center shrink-0 mr-2">
                 <span className="text-[#001407] font-['Inter'] text-[10px] font-semibold tracking-wide whitespace-nowrap">
                   {isAiMode ? "AI" : "Human"}
@@ -142,7 +143,7 @@ export function ChatWindow({ currentChat, onBackClick }: ChatWindowProps) {
 
       {/* Message List Area - flex-1 with scroll */}
       {!currentChat ? (
-        <div className="flex-1 w-full overflow-y-auto flex items-center justify-center bg-white p-2 sm:p-4 md:p-6">
+        <div className="flex-1 w-full overflow-y-auto flex items-center justify-center bg-white px-4 md:px-6 py-4">
           <div className="bg-gray-100 border border-gray-200 rounded-2xl w-full max-w-2xl flex items-center justify-center p-4 md:p-6 shadow-sm">
             <span className="text-xs sm:text-[12px] text-gray-600 font-['Roboto'] text-center leading-relaxed">
               Select a conversation to start messaging
@@ -150,7 +151,7 @@ export function ChatWindow({ currentChat, onBackClick }: ChatWindowProps) {
           </div>
         </div>
       ) : (
-        <div className="flex-1 w-full overflow-y-auto flex flex-col bg-white p-2 sm:p-4 md:p-6 space-y-2 sm:space-y-4 [&::-webkit-scrollbar]:w-[4px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full">
+        <div className="flex-1 w-full overflow-y-auto flex flex-col bg-white px-4 md:px-6 py-4 gap-4 [&::-webkit-scrollbar]:w-[4px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full">
           {currentChat.messages.map((message) => (
             <div
               key={message.id}
@@ -180,8 +181,23 @@ export function ChatWindow({ currentChat, onBackClick }: ChatWindowProps) {
         <div className="flex-none w-full bg-white border-t border-gray-200/60 shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.05)]">
           {isAiMode ? (
             // AI Mode Banner
-            <div className="w-full px-2 sm:px-4 py-2 sm:py-3">
-              <div className="bg-gray-50 border border-gray-200/60 rounded-[10px] p-2 sm:p-3 flex flex-col items-center justify-center">
+            <div className="w-full px-4 md:px-6 py-3 pb-6">
+              <div className="bg-gray-50 border border-gray-200/60 rounded-[10px] p-3 flex flex-col items-center justify-center">
+                <div className="flex items-center justify-center mb-2">
+                  <div
+                    className="w-5 sm:w-6 h-5 sm:h-6 bg-[#001407]"
+                    style={{
+                      WebkitMaskImage: `url('/Icons/Robot.svg')`,
+                      WebkitMaskSize: "contain",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskPosition: "center",
+                      maskImage: `url('/Icons/Robot.svg')`,
+                      maskSize: "contain",
+                      maskRepeat: "no-repeat",
+                      maskPosition: "center",
+                    }}
+                  />
+                </div>
                 <p className="text-xs sm:text-sm text-center text-gray-700 font-['Roboto'] font-medium whitespace-normal">
                   Aisha AI managing this conversation
                 </p>
@@ -192,8 +208,8 @@ export function ChatWindow({ currentChat, onBackClick }: ChatWindowProps) {
             </div>
           ) : (
             // Human Mode Input - Compact Pill-Shaped
-            <div className="w-full px-2 sm:px-4 py-2 sm:py-3">
-              <div className="flex items-end gap-1 sm:gap-2 w-full">
+            <div className="w-full px-4 md:px-6 py-3 pb-6">
+              <div className="flex items-end gap-2 w-full">
                 {/* Paperclip Icon */}
                 <button className="flex-shrink-0 flex items-center justify-center w-8 sm:w-9 h-8 sm:h-9 hover:opacity-70 transition-opacity">
                   <img
@@ -206,7 +222,7 @@ export function ChatWindow({ currentChat, onBackClick }: ChatWindowProps) {
                 </button>
 
                 {/* Compact Input Pill */}
-                <div className="flex-1 bg-gray-100 rounded-full px-3 sm:px-4 py-2 flex items-center focus-within:ring-2 focus-within:ring-[#001407] focus-within:bg-white transition-all min-w-0">
+                <div className="flex-1 bg-gray-100 rounded-full px-4 py-2 flex items-center focus-within:ring-2 focus-within:ring-[#001407] focus-within:bg-white transition-all min-w-0">
                   <input
                     type="text"
                     className="text-xs sm:text-[13px] text-[#001407] font-['Roboto'] w-full bg-transparent outline-none placeholder:text-gray-500 placeholder:font-normal"
