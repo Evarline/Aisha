@@ -102,11 +102,11 @@ export function ChatList({ chats, onSelectChat, selectedChatId }: ChatListProps)
                       <h3 className="text-[14px] font-medium text-[#001407] font-['Roboto'] truncate">{chat.name}</h3>
                       {selectedChatId === chat.id && <div className="w-[6px] h-[6px] bg-[#D2FF00] rounded-full shrink-0 shadow-[0_0_4px_rgba(210,255,0,0.6)]"></div>}
                     </div>
-                    <p className="text-xs text-gray-500 font-normal font-['Roboto'] w-full truncate">{chat.sub}</p>
+                    <p className="truncate w-full text-sm text-gray-500 font-normal font-['Roboto']">{chat.sub}</p>
                   </div>
 
                   {/* Metadata (Time/Status) */}
-                  <div className="flex flex-col items-end justify-center h-full shrink-0 gap-1">
+                  <div className="flex-shrink-0 flex flex-col items-end whitespace-nowrap ml-3 gap-1">
                     <span className="text-[10px] text-gray-500 font-medium font-['Roboto'] whitespace-nowrap">{chat.time}</span>
                     <div className="flex items-center justify-end gap-1">
                       {chat.status === "Urgent" && (
