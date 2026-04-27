@@ -216,7 +216,7 @@ export function ChatWindow({ currentChat, onBackClick, isMobileOverlay }: ChatWi
                     src="/Icons/Plus.svg"
                     className="w-4 sm:w-5 h-4 sm:h-5"
                     style={{
-                      filter: "brightness(0) saturate(100%) invert(20%) sepia(80%) saturate(800%) hue-rotate(130deg) brightness(100%) contrast(100%)",
+                      filter: "brightness(0) saturate(100%) invert(8%) sepia(75%) saturate(1222%) hue-rotate(116deg) brightness(98%) contrast(107%)",
                     }}
                   />
                 </button>
@@ -243,7 +243,7 @@ export function ChatWindow({ currentChat, onBackClick, isMobileOverlay }: ChatWi
                     src="/Icons/Microphone.svg"
                     className="w-4 sm:w-5 h-4 sm:h-5"
                     style={{
-                      filter: "brightness(0) saturate(100%) invert(20%) sepia(80%) saturate(800%) hue-rotate(130deg) brightness(100%) contrast(100%)",
+                      filter: "brightness(0) saturate(100%) invert(8%) sepia(75%) saturate(1222%) hue-rotate(116deg) brightness(98%) contrast(107%)",
                     }}
                   />
                 </button>
