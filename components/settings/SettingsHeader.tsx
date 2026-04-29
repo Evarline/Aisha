@@ -14,19 +14,10 @@ export function SettingsHeader() {
         />
       </div>
 
-      <div className="flex items-center gap-4">
-        <button className="relative rounded-lg p-2 transition-colors hover:bg-gray-100">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M23.25 11.6249C23.249 10.6314 22.9667 9.65858 22.4358 8.81891C21.9049 7.97923 21.147 7.30706 20.25 6.88019V6.74988C20.2491 5.78352 19.9372 4.84311 19.3603 4.0678C18.7835 3.29248 17.9724 2.72345 17.0471 2.4449C16.1217 2.16635 15.1313 2.19308 14.2223 2.52114C13.3134 2.84919 12.5341 3.46114 12 4.26644C11.4658 3.46114 10.6866 2.84919 9.7776 2.52114C8.86863 2.19308 7.8782 2.16635 6.95286 2.4449C6.02752 2.72345 5.21643 3.29248 4.63959 4.0678C4.06276 4.84311 3.75084 5.78352 3.74997 6.74988V6.88019C2.85216 7.3059 2.09359 7.97764 1.56242 8.81737C1.03124 9.65709 0.749268 10.6303 0.749268 11.6239C0.749268 12.6176 1.03124 13.5908 1.56242 14.4305C2.09359 15.2702 2.85216 15.942 3.74997 16.3677V16.4999C3.75084 17.4662 4.06276 18.4066 4.63959 19.182C5.21643 19.9573 6.02752 20.5263 6.95286 20.8049C7.8782 21.0834 8.86863 21.0567 9.7776 20.7286C10.6866 20.4006 11.4658 19.7886 12 18.9833C12.5341 19.7886 13.3134 20.4006 14.2223 20.7286C15.1313 21.0567 16.1217 21.0834 17.0471 20.8049C17.9724 20.5263 18.7835 19.9573 19.3603 19.182C19.9372 18.4066 20.2491 17.4662 20.25 16.4999V16.3677C21.1469 15.9411 21.9046 15.2693 22.4356 14.4299C22.9665 13.5906 23.2488 12.618 23.25 11.6249Z" fill="#001407"/>
-          </svg>
-          <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-red-500" />
-        </button>
-
-        <div className="w-[36px] h-[36px] rounded-full overflow-hidden flex items-center justify-center shrink-0">
-          <img src="/Icons/User.png" alt="Profile" className="w-[28px] h-[28px] object-contain"
-               style={{ filter: 'brightness(0)' }}
-               onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-        </div>
+      <div className="w-[36px] h-[36px] rounded-full overflow-hidden flex items-center justify-center shrink-0">
+        <img src="/Icons/Vector(2).svg" alt="Profile" className="w-[28px] h-[28px] object-contain"
+             style={{ filter: 'brightness(0)' }}
+             onError={(e) => { e.currentTarget.style.display = 'none'; }} />
       </div>
     </header>
   );

@@ -27,6 +27,7 @@ export function BottomNav({ selectedChat }: BottomNavProps) {
     menuItems[0], // Dashboard
     menuItems[1], // Conversations
     menuItems[2], // Analytics
+    menuItems[3], // Products
   ];
 
   // 5 items for slightly wider mobile (min-[400px])
@@ -91,7 +92,7 @@ export function BottomNav({ selectedChat }: BottomNavProps) {
           })}
         </div>
 
-        {/* 3 items for very narrow mobile (< 400px) */}
+        {/* 4 items for very narrow mobile (< 400px) */}
         <div className="flex min-[400px]:hidden items-center justify-around w-full">
           {mobileItems.map((item) => {
             const active = isActive(item.href);

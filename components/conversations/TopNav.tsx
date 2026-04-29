@@ -37,7 +37,7 @@ export function TopNav({ title = "Conversations", onBackClick, onNotificationCli
           <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-red-500" />
         </button>
         <div className="w-[36px] h-[36px] rounded-full overflow-hidden flex items-center justify-center shrink-0 transition-transform duration-300 ease-out hover:-translate-y-1 hidden md:flex">
-          <img src="/Icons/UserCircle.svg" alt="User" className="w-[28px] h-[28px] object-contain"
+          <img src="/Icons/Vector(2).svg" alt="User" className="w-[28px] h-[28px] object-contain"
                style={{ filter: 'brightness(0)' }}
                onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full bg-black/20"></div>' }} />
         </div>
