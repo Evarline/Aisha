@@ -63,7 +63,7 @@ export default function BusinessForm() {
 
           {/* Header */}
           <h2 className="text-3xl font-bold text-center tracking-tight mb-8 text-white">
-            Complete Business Profile
+            Business Details
           </h2>
 
           {/* Form */}
@@ -81,97 +81,6 @@ export default function BusinessForm() {
                   autoComplete="off"
                   className="flex-1 bg-transparent text-white text-sm placeholder-gray-600 outline-none"
                 />
-              </div>
-            </div>
-
-            {/* Website URL */}
-            <div>
-              <label className="text-[11px] text-gray-300 capitalize mb-1.5 block font-medium">
-                Website URL
-              </label>
-              <div className="relative flex items-center h-12 bg-black/40 border border-white/10 rounded-lg transition-all duration-300 focus-within:border-[#D4FF00] focus-within:ring-1 focus-within:ring-[#D4FF00]/50 px-4">
-                <input
-                  type="text"
-                  placeholder="https://acme.com"
-                  autoComplete="off"
-                  className="flex-1 bg-transparent text-white text-sm placeholder-gray-600 outline-none pr-3"
-                />
-                <Globe size={16} className="text-gray-500 shrink-0" />
-              </div>
-            </div>
-
-            {/* Business Email */}
-            <div>
-              <label className="text-[11px] text-gray-300 capitalize mb-1.5 block font-medium">
-                Business email
-              </label>
-              <div className="relative flex items-center h-12 bg-black/40 border border-white/10 rounded-lg transition-all duration-300 focus-within:border-[#D4FF00] focus-within:ring-1 focus-within:ring-[#D4FF00]/50 px-4">
-                <input
-                  type="email"
-                  placeholder="contact@acme.com"
-                  autoComplete="off"
-                  className="flex-1 bg-transparent text-white text-sm placeholder-gray-600 outline-none"
-                />
-              </div>
-            </div>
-
-            {/* Phone Number */}
-            <div>
-              <label className="text-[11px] text-gray-300 capitalize mb-1.5 block font-medium">
-                Phone number
-              </label>
-              <div className="relative flex items-center h-12 bg-black/40 border border-white/10 rounded-lg transition-all duration-300 focus-within:border-[#D4FF00] focus-within:ring-1 focus-within:ring-[#D4FF00]/50 px-4">
-                <input
-                  type="tel"
-                  placeholder="+1 (555) 000-0000"
-                  autoComplete="off"
-                  className="flex-1 bg-transparent text-white text-sm placeholder-gray-600 outline-none"
-                />
-              </div>
-            </div>
-
-            {/* Business Type */}
-            <div>
-              <label className="text-[11px] text-gray-300 capitalize mb-1.5 block font-medium">
-                Business type
-              </label>
-              <div className="relative flex items-center h-12 bg-black/40 border border-white/10 rounded-lg transition-all duration-300 focus-within:border-[#D4FF00] focus-within:ring-1 focus-within:ring-[#D4FF00]/50 px-4">
-                <select
-                  className="flex-1 bg-transparent text-white text-sm appearance-none outline-none pr-3 cursor-pointer"
-                  defaultValue=""
-                >
-                  <option value="" disabled className="bg-[#111914] text-gray-600">
-                    Select business type
-                  </option>
-                  <option value="technology" className="bg-[#111914] text-white">
-                    Technology
-                  </option>
-                  <option value="finance" className="bg-[#111914] text-white">
-                    Finance
-                  </option>
-                  <option value="healthcare" className="bg-[#111914] text-white">
-                    Healthcare
-                  </option>
-                  <option value="retail" className="bg-[#111914] text-white">
-                    Retail
-                  </option>
-                  <option value="manufacturing" className="bg-[#111914] text-white">
-                    Manufacturing
-                  </option>
-                  <option value="consulting" className="bg-[#111914] text-white">
-                    Consulting
-                  </option>
-                  <option value="education" className="bg-[#111914] text-white">
-                    Education
-                  </option>
-                  <option value="real-estate" className="bg-[#111914] text-white">
-                    Real Estate
-                  </option>
-                  <option value="other" className="bg-[#111914] text-white">
-                    Other
-                  </option>
-                </select>
-                <ChevronDown size={16} className="text-gray-500 shrink-0 pointer-events-none" />
               </div>
             </div>
 

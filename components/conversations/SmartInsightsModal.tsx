@@ -42,7 +42,7 @@ export function SmartInsightsModal({ currentChat, isOpen, onClose }: SmartInsigh
         {/* Header */}
         <div className="sticky top-0 bg-white border-b border-gray-200/60 px-4 md:px-6 py-4 flex items-center justify-between">
           <h2 className="text-[18px] md:text-[20px] font-medium text-[#001407] font-['Inter']">
-            Smart Insights
+            Live Analytics
           </h2>
           <button
             onClick={onClose}
@@ -79,7 +79,7 @@ export function SmartInsightsModal({ currentChat, isOpen, onClose }: SmartInsigh
 
           {/* Smart Insights */}
           <div className="border-t border-gray-200/60 pt-4">
-            <h3 className="text-[14px] text-[#001407] font-medium font-['Inter'] mb-3">Actionable Insights</h3>
+            <h3 className="text-[14px] text-[#001407] font-medium font-['Inter'] mb-3">Smart Insights</h3>
             
             <div className="space-y-2">
               {/* VIP Insight */}

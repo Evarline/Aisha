@@ -14,10 +14,17 @@ export function SettingsHeader() {
         />
       </div>
 
-      <div className="w-[36px] h-[36px] rounded-full overflow-hidden flex items-center justify-center shrink-0">
-        <img src="/Icons/Vector(2).svg" alt="Profile" className="w-[28px] h-[28px] object-contain"
-             style={{ filter: 'brightness(0)' }}
-             onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+      <div className="flex items-center gap-4">
+        <button className="hidden md:flex relative rounded-lg p-2 transition-colors hover:bg-gray-100">
+          <img src="/Icons/notification.svg" alt="Notifications" className="w-[20px] h-[20px] object-contain"
+               style={{ filter: 'brightness(0)' }}
+               onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+        </button>
+        <div className="w-[36px] h-[36px] rounded-full overflow-hidden flex items-center justify-center shrink-0">
+          <img src="/Icons/profile.svg" alt="Profile" className="w-[28px] h-[28px] object-contain"
+               style={{ filter: 'brightness(0)' }}
+               onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+        </div>
       </div>
     </header>
   );

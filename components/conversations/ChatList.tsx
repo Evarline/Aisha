@@ -35,28 +35,28 @@ export function ChatList({ chats, onSelectChat, selectedChatId }: ChatListProps)
   return (
     <div className="w-full md:w-[320px] md:min-w-[320px] h-full bg-white border-r border-gray-200/60 flex flex-col shrink-0 overflow-hidden transition-all duration-300 ease-in-out">
       {/* Header Container */}
-      <div className="w-full shrink-0 flex items-center justify-start px-4 h-[56px] border-b border-gray-200/60 bg-white">
-        <h2 className="text-[16px] font-medium text-[#001407] font-['Inter']">Manage Customer Chats</h2>
+      <div className="w-full min-w-0 shrink-0 flex items-center justify-start px-4 md:px-6 h-[56px] border-b border-gray-200/60 bg-white overflow-hidden">
+        <h2 className="text-[16px] font-medium text-[#001407] font-['Inter'] truncate">Manage Customer Chats</h2>
       </div>
       
       {/* Search Bar - WhatsApp Style */}
-      <div className="w-full shrink-0 px-4 py-2 bg-white">
+      <div className="w-full min-w-0 shrink-0 px-4 md:px-6 py-2 bg-white overflow-hidden">
         <input 
           type="text" 
           placeholder="Search..." 
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full bg-gray-100 rounded-full px-4 py-2 text-sm outline-none focus:ring-0 border-none"
+          className="w-full min-w-0 bg-gray-100 rounded-full px-4 py-2 text-sm outline-none focus:ring-0 border-none"
         />
       </div>
       
       {/* Filter Pills - WhatsApp Style */}
-      <div className="flex gap-2 px-4 py-2 overflow-x-auto no-scrollbar">
+      <div className="flex w-full min-w-0 overflow-x-auto gap-2 hide-scrollbar pb-1 px-4 md:px-6 shrink-0">
         {tabs.map((tab) => (
           <button
             key={tab.name}
             onClick={() => setActiveFilter(tab.name)}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 ${
+            className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap shrink-0 transition-all duration-200 ${
               activeFilter === tab.name 
                 ? "bg-[#001407] text-[#D2FF00]" 
                 : "bg-gray-100 text-gray-600"
@@ -71,15 +71,15 @@ export function ChatList({ chats, onSelectChat, selectedChatId }: ChatListProps)
       {/* Chat List Scrollable Area */}
       <div 
         ref={scrollContainerRef}
-        className="flex-1 overflow-y-auto w-full flex flex-col items-center bg-white [&::-webkit-scrollbar]:w-[4px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full"
+        className="flex-1 overflow-y-auto w-full min-w-0 flex flex-col bg-white [&::-webkit-scrollbar]:w-[4px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full"
       >
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full min-w-0">
           {filteredChats.length > 0 ? (
             filteredChats.map((chat) => (
               <div 
                 key={chat.id} 
                 onClick={() => onSelectChat?.(chat.id)}
-                className="flex items-center w-full px-4 py-2 gap-3 cursor-pointer active:bg-gray-50 [-webkit-tap-highlight-color:transparent]"
+                className="flex items-center w-full min-w-0 px-4 md:px-6 py-2 gap-3 cursor-pointer active:bg-gray-50 [-webkit-tap-highlight-color:transparent] overflow-hidden"
               >
                 {/* Avatar - Left Column */}
                 <div className="w-12 h-12 rounded-full flex-shrink-0 bg-[#001407] overflow-hidden flex items-center justify-center">
@@ -87,17 +87,17 @@ export function ChatList({ chats, onSelectChat, selectedChatId }: ChatListProps)
                 </div>
 
                 {/* Content Wrapper - Right Column (HAS THE BORDER) */}
-                <div className="flex-1 min-w-0 flex flex-col justify-center border-b border-gray-100 py-2">
+                <div className="flex-1 min-w-0 flex flex-col justify-center border-b border-gray-100 py-2 overflow-hidden">
                   {/* Top Line: Name & Time */}
-                  <div className="flex justify-between items-center w-full mb-0.5">
-                    <h3 className="font-semibold text-gray-900 text-base truncate pr-2">{chat.name}</h3>
-                    <span className="text-xs text-gray-500 flex-shrink-0">{chat.time}</span>
+                  <div className="flex justify-between items-center w-full min-w-0 mb-0.5 gap-2">
+                    <h3 className="font-semibold text-gray-900 text-base truncate">{chat.name}</h3>
+                    <span className="text-xs text-gray-500 flex-shrink-0 whitespace-nowrap">{chat.time}</span>
                   </div>
 
                   {/* Bottom Line: Message & Status/Badge */}
-                  <div className="flex justify-between items-center w-full">
-                    <p className="text-sm text-gray-500 truncate pr-2 flex-1 min-w-0">{chat.sub}</p>
-                    <div className="flex-shrink-0 flex items-center justify-end">
+                  <div className="flex justify-between items-center w-full min-w-0 gap-2">
+                    <p className="text-sm text-gray-500 truncate flex-1 min-w-0">{chat.sub}</p>
+                    <div className="flex-shrink-0 flex items-center justify-end whitespace-nowrap">
                       {chat.status === "Urgent" && (
                         <div className="bg-[#E94235] rounded px-1.5 py-0.5">
                           <span className="text-white text-xs font-medium">URGENT</span>

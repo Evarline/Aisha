@@ -13,17 +13,29 @@ const DAY_LABELS: Record<(typeof DAYS)[number], string> = {
   sunday: "Sunday",
 };
 
+// Generate time options (00:00 to 23:30 in 30-minute increments)
+const TIME_OPTIONS = Array.from({ length: 48 }, (_, i) => {
+  const hours = Math.floor(i / 2);
+  const minutes = (i % 2) * 30;
+  return `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
+});
+
 const INPUT_CLASSES = "w-full rounded-lg border border-gray-300 px-4 py-2 text-[#001407] focus:outline-none focus:ring-2 focus:ring-[#D2FF00]";
 const LABEL_CLASSES = "block text-sm font-medium text-[#001407]";
 
-function TimeInput({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+function TimeSelect({ value, onChange }: { value: string; onChange: (v: string) => void }) {
   return (
-    <input
-      type="time"
+    <select
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="rounded border border-gray-300 px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#D2FF00]"
-    />
+      className="flex-1 md:w-[120px] p-2 border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-[#D2FF00] bg-white text-[#001407] text-sm shrink min-w-0"
+    >
+      {TIME_OPTIONS.map((time) => (
+        <option key={time} value={time}>
+          {time}
+        </option>
+      ))}
+    </select>
   );
 }
 
@@ -34,7 +46,7 @@ function OperatingToggle({ isOpen, onChange }: { isOpen: boolean; onChange: () =
       role="switch"
       aria-checked={isOpen}
       onClick={onChange}
-      className={`relative inline-flex h-[17px] w-[36px] shrink-0 cursor-pointer items-center rounded-[20px] px-[6px] py-[2px] transition-colors duration-200 ease-in-out focus:outline-none ${
+      className={`relative inline-flex h-[15px] w-[36px] shrink-0 cursor-pointer items-center rounded-[20px] px-[6px] py-[1px] transition-colors duration-200 ease-in-out focus:outline-none ${
         isOpen ? "bg-[#001407]" : "bg-gray-300"
       }`}
     >
@@ -150,27 +162,63 @@ export function BusinessProfileTab() {
       <section className="mb-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
         <h2 className="mb-4 text-lg font-semibold text-[#001407]">Operating Hours</h2>
 
-        <div className="space-y-3">
-          {DAYS.map((day) => (
-            <div key={day} className="flex items-center justify-between border-b border-gray-100 pb-3 last:border-0">
-              <span className="w-20 text-sm font-medium text-[#001407]">{DAY_LABELS[day]}</span>
+        <div className="space-y-0">
+          {DAYS.map((day) => {
+            const dayName = DAY_LABELS[day];
+            const isOpen = !operatingHours[day].closed;
 
-              {operatingHours[day].closed ? (
-                <span className="text-sm text-gray-500">Closed</span>
-              ) : (
-                <div className="flex items-center gap-2">
-                  <TimeInput value={operatingHours[day].open} onChange={(open) => updateHours(day, { open })} />
-                  <span className="text-gray-400">to</span>
-                  <TimeInput value={operatingHours[day].close} onChange={(close) => updateHours(day, { close })} />
+            return (
+              <div
+                key={day}
+                className="flex flex-col md:flex-row md:items-center justify-between gap-3 py-4 border-b border-gray-100 last:border-0"
+              >
+                {/* Top Row (Mobile): Day + Mobile Toggle */}
+                <div className="flex items-center justify-between w-full md:w-1/4">
+                  <div>
+                    {/* Full name on desktop */}
+                    <span className="hidden md:inline font-medium text-[#001407]">{dayName}</span>
+                    {/* 3-letter abbreviation on mobile */}
+                    <span className="md:hidden font-medium text-[#001407]">{dayName.slice(0, 3)}</span>
+                  </div>
+
+                  {/* Mobile Toggle (Hidden on Desktop) */}
+                  <div className="md:hidden">
+                    <OperatingToggle
+                      isOpen={isOpen}
+                      onChange={() => updateHours(day, { closed: !operatingHours[day].closed })}
+                    />
+                  </div>
                 </div>
-              )}
 
-              <OperatingToggle
-                isOpen={!operatingHours[day].closed}
-                onChange={() => updateHours(day, { closed: !operatingHours[day].closed })}
-              />
-            </div>
-          ))}
+                {/* Bottom Row (Mobile) / Middle (Desktop): Time Inputs */}
+                <div className="flex items-center w-full md:w-auto md:flex-1 md:justify-end">
+                  {isOpen ? (
+                    <div className="flex items-center justify-between gap-2 w-full md:w-auto">
+                      <TimeSelect
+                        value={operatingHours[day].open}
+                        onChange={(open) => updateHours(day, { open })}
+                      />
+                      <span className="text-gray-400 text-sm shrink-0">to</span>
+                      <TimeSelect
+                        value={operatingHours[day].close}
+                        onChange={(close) => updateHours(day, { close })}
+                      />
+                    </div>
+                  ) : (
+                    <span className="text-gray-500 italic w-full text-left md:text-right text-sm">Closed</span>
+                  )}
+                </div>
+
+                {/* Desktop Toggle (Hidden on Mobile) */}
+                <div className="hidden md:block md:w-16 md:flex md:justify-end">
+                  <OperatingToggle
+                    isOpen={isOpen}
+                    onChange={() => updateHours(day, { closed: !operatingHours[day].closed })}
+                  />
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
