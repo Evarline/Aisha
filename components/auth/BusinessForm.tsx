@@ -9,7 +9,7 @@ export default function BusinessForm() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    router.push("/dashboard/conversations");
+    router.push("/conversations");
   };
 
   return (

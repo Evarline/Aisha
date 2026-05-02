@@ -84,29 +84,37 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="w-full h-auto min-h-[200px] md:min-h-[235px] px-6 md:px-[30px] py-12 md:py-[72px] bg-[#001407] shadow-[0px_4px_0.5px_1px_white_inset] overflow-hidden rounded-[30px] outline-2 outline-white -outline-offset-2 flex flex-col justify-center items-start gap-5 md:gap-[21px] hover:scale-[1.02] transition-transform duration-300">
-      {/* Icon Box */}
-      <div className="w-10 h-10 relative bg-[#D2FF00] overflow-hidden rounded-[10px] flex items-center justify-center shrink-0">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={icon}
-          alt={title}
-          width={24}
-          height={24}
-          className="object-contain"
+    <div className="relative group rounded-xl p-5 md:p-6 bg-[#001407] text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#D2FF00]/20 h-full flex flex-col">
+      {/* Hover Glow Effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#D2FF00]/0 via-[#D2FF00]/10 to-[#D2FF00]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      
+      {/* Soft Background Glow */}
+      <div className="absolute top-0 right-0 w-20 h-20 bg-[#D2FF00] opacity-5 blur-2xl rounded-full group-hover:opacity-15 transition-all duration-300" />
+
+      <div className="relative z-10 flex flex-col h-full gap-3 md:gap-4">
+        {/* Icon Box */}
+        <div className="w-10 h-10 relative bg-[#D2FF00] overflow-hidden rounded-lg flex items-center justify-center shrink-0 shadow-md group-hover:shadow-lg group-hover:shadow-[#D2FF00]/30 transition-all duration-300">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={icon}
+            alt={title}
+            width={20}
+            height={20}
+            className="object-contain"
+          />
+        </div>
+
+        {/* Title */}
+        <h3 className="text-left text-white text-[16px] md:text-[18px] font-semibold font-[family-name:var(--font-roboto)] leading-tight">
+          {title}
+        </h3>
+
+        {/* Description */}
+        <p
+          className="self-stretch text-gray-300 text-[13px] md:text-[14px] font-medium font-[family-name:var(--font-roboto)] leading-relaxed group-hover:text-gray-200 transition-colors duration-300"
+          dangerouslySetInnerHTML={{ __html: description }}
         />
       </div>
-
-      {/* Title */}
-      <h3 className="text-left text-white text-[20px] md:text-[24px] font-semibold font-[family-name:var(--font-roboto)]">
-        {title}
-      </h3>
-
-      {/* Description */}
-      <p
-        className="self-stretch text-white text-[14px] md:text-[16px] font-semibold font-[family-name:var(--font-roboto)] leading-relaxed"
-        dangerouslySetInnerHTML={{ __html: description }}
-      />
     </div>
   );
 }

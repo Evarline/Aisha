@@ -160,9 +160,10 @@ export function ChatWindow({ currentChat, onBackClick, isMobileOverlay }: ChatWi
               <div
                 className={`rounded-[12px] sm:rounded-[16px] px-3 sm:px-4 py-2 max-w-[75%] sm:max-w-[70%] md:max-w-[60%] shadow-sm ${
                   message.sender === "user"
-                    ? "bg-gray-100 text-black"
+                    ? "bg-gray-100"
                     : "bg-[#001407] text-white"
                 }`}
+                style={message.sender === "user" ? { color: '#001407' } : {}}
               >
                 <p className="text-xs sm:text-[13px] font-['Roboto'] leading-relaxed">{message.text}</p>
                 <span className={`text-[10px] mt-1 block ${

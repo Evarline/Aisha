@@ -11,8 +11,8 @@ export function SettingsTabBar({ activeTab, setActiveTab }: SettingsTabBarProps)
   ] as const;
 
   return (
-    <div className="sticky top-[56px] z-20 w-full bg-[#001407] border-b border-gray-800">
-      <div className="flex items-center px-6 overflow-x-auto">
+    <div className="w-full bg-[#001407] border-b border-gray-800\">
+      <div className="flex items-center px-6 overflow-x-auto\">
         {tabs.map((tab) => (
           <button
             key={tab.id}

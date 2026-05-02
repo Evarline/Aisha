@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { TopNav } from "@/components/conversations/TopNav";
+
 import Image from "next/image";
 import ProductsGrid from "@/components/products/ProductsGrid";
 import AddProductPage from "@/components/products/AddProductPage";
 import type { Product, ProductView } from "@/types/product";
-import { Sidebar } from "@/components/conversations/Sidebar";
+
 
 const MOCK_PRODUCTS: Product[] = [
   { id: 1, name: "Organic Honey 500g",   category: "Food & Beverages",       price: 1200, desc: "Pure raw organic honey harvested from highland bees. No additives, no preservatives.",   delivery: "2–3 days", inStock: true,  img: null },
@@ -51,14 +51,19 @@ export default function ProductsPage() {
   const handleCancel = () => { setView("list"); setEditTarget(null); };
 
   return (
-    <div className="flex h-screen w-full overflow-hidden text-sm bg-[#F5F5F5] font-sans text-black">
-      <Sidebar />
-      <div className="flex-1 flex flex-col h-screen overflow-hidden min-w-0">
-      <TopNav title={view === "list" ? "Products" : view === "edit" ? "Edit Product" : "Add Product"} />
+    <div className="flex flex-col w-full min-h-full p-6 md:p-8 gap-6 max-w-7xl mx-auto">
+      <div>
+        <h1 className="text-3xl font-bold text-[#001407] tracking-tight">
+          Products
+        </h1>
+        <p className="text-gray-600 text-sm mt-1">
+          Manage your product catalog and inventory
+        </p>
+      </div>
 
-      <main className="flex-1 overflow-y-auto px-4 sm:px-6 w-full mx-auto py-6 min-w-0">
+      <div className="flex flex-col gap-6">
         {view === "list" && (
-          <div className="flex justify-end mb-6">
+          <div className="flex justify-end">
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-[#D2FF00] blur-md opacity-30 group-hover:opacity-60 transition-opacity rounded-xl"></div>
               <button
@@ -74,7 +79,7 @@ export default function ProductsPage() {
         )}
         
         {view !== "list" && (
-          <div className="flex items-center gap-1.5 text-[11px] text-[#001407]/60 mb-6">
+          <div className="flex items-center gap-1.5 text-[11px] text-[#001407]/60">
             <button onClick={handleCancel} className="hover:text-[#001407] transition-colors">Products</button>
             <Image src="/icons/chevron-right.svg" alt="chevron" width={10} height={10} className="opacity-40" />
             <span className="font-semibold text-[#001407]">
@@ -106,8 +111,8 @@ export default function ProductsPage() {
             />
           </div>
         )}
-      </main>
       </div>
     </div>
   );
+
 }

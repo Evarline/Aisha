@@ -45,13 +45,16 @@ export default function ValueContrast() {
 
         {/* Aisha card */}
         <StaggerItem variant="fadeRight" className="w-full max-w-[600px] flex">
-          <div className="w-full min-h-[280px] p-6 md:p-[30px] bg-[#001407] overflow-hidden flex flex-col justify-start items-center gap-[5px] rounded-[24px] shadow-[0px_10px_30px_rgba(0,0,0,0.15)] relative">
+          <div className="relative group w-full min-h-[280px] p-6 md:p-[30px] bg-[#001407] overflow-hidden flex flex-col justify-center items-center gap-[5px] rounded-2xl shadow-lg shadow-[#D2FF00]/20 transition-all duration-300 hover:shadow-xl hover:shadow-[#D2FF00]/30">
+            
+            {/* Hover Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#D2FF00]/0 via-[#D2FF00]/10 to-[#D2FF00]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
             {/* Soft background glow for the Aisha card */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#D2FF00] opacity-10 blur-3xl rounded-full"></div>
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#D2FF00] opacity-10 blur-3xl rounded-full"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#D2FF00] opacity-10 blur-3xl rounded-full group-hover:opacity-20 transition-all duration-300" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#D2FF00] opacity-10 blur-3xl rounded-full group-hover:opacity-20 transition-all duration-300\" />
 
-            <div className="text-center relative z-10">
+            <div className="text-center relative z-10 group-hover:scale-105 transition-transform duration-300">
               <span className="text-white text-[24px] md:text-[32px] font-medium font-[family-name:var(--font-roboto)] leading-[48px]">
                 Aisha AI Assistant<br />
               </span>
@@ -61,7 +64,7 @@ export default function ValueContrast() {
               <span className="text-[#D2FF00] text-[18px] md:text-[24px] font-medium font-[family-name:var(--font-roboto)] leading-[48px]">
                 {" "}month<br />
               </span>
-              <span className="text-white text-[16px] md:text-[20px] font-normal font-[family-name:var(--font-roboto)] leading-[48px]">
+              <span className="text-gray-200 text-[16px] md:text-[20px] font-normal font-[family-name:var(--font-roboto)] leading-[48px] group-hover:text-gray-100 transition-colors duration-300">
                 24/7 availability<br />
                 No training needed<br />
                 instant setup<br />

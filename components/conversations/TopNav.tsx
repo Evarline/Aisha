@@ -1,45 +1,90 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
-interface TopNavProps {
-  title?: string;
-  onBackClick?: () => void;
-  onNotificationClick?: () => void;
-}
+export function TopNav() {
+  const [searchValue, setSearchValue] = useState('');
+  const pathname = usePathname();
 
-export function TopNav({ title = "Conversations", onBackClick, onNotificationClick }: TopNavProps) {
+  // Get the current page name from pathname
+  const getPageName = () => {
+    if (pathname === '/dashboard') return 'Dashboard';
+    if (pathname?.startsWith('/conversations')) return 'Conversations';
+    if (pathname?.startsWith('/analytics')) return 'Analytics';
+    if (pathname?.startsWith('/products')) return 'Products';
+    if (pathname?.startsWith('/settings')) return 'Settings';
+    if (pathname?.startsWith('/help')) return 'Help';
+    return '';
+  };
+
+  const pageName = getPageName();
+
   return (
-    <div className="py-2 sticky top-0 z-40 bg-white/70 backdrop-blur-lg border-b border-gray-200/50 shadow-sm flex items-center justify-between px-4 sm:px-6 lg:px-8 shrink-0 select-none transition-all">
-      <div className="flex justify-start items-center gap-3 min-w-0">
-         {onBackClick && (
-           <button 
-             onClick={onBackClick}
-             className="md:hidden p-2 -ml-2 text-[#001407] hover:bg-gray-100 rounded-lg transition-colors"
-           >
-             <span className="text-[18px]">← Back</span>
-           </button>
-         )}
-         <h1 className="text-[20px] md:text-[24px] text-[#001407] font-medium tracking-tight truncate min-w-0 font-['Roboto']">{title}</h1>
-      </div>
-      
-      <div className="flex items-center gap-4 md:gap-6 justify-end shrink-0">
-        <button 
-          onClick={onNotificationClick}
-          className="md:hidden text-sm font-semibold text-[#001407] hover:text-[#001407]/70 transition-colors px-2 py-1 rounded-lg hover:bg-gray-100"
-        >
-          Live Analytics
-        </button>
-        <button className="hidden md:flex relative rounded-lg p-2 transition-colors hover:bg-gray-100">
-          <img src="/Icons/notification.svg" alt="Notifications" className="w-[20px] h-[20px] object-contain"
-               style={{ filter: 'brightness(0)' }}
-               onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-        </button>
-        <div className="w-[36px] h-[36px] rounded-full overflow-hidden flex items-center justify-center shrink-0 transition-transform duration-300 ease-out hover:-translate-y-1 hidden md:flex">
-          <img src="/Icons/profile.svg" alt="Profile" className="w-[28px] h-[28px] object-contain"
-               style={{ filter: 'brightness(0)' }}
-               onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full bg-black/20"></div>' }} />
+    <div className="sticky top-0 h-[60px] bg-white border-b border-gray-200 z-30 flex items-center px-6 relative">
+      {/* Left: Page Name (Desktop) or Brand Logo (Mobile Only) */}
+      <div className="flex items-center gap-4 min-w-0">
+        <div className="md:hidden">
+          <span className="text-lg font-bold" style={{ color: '#001407' }}>
+            Aisha.ai
+          </span>
         </div>
+        <div className="hidden md:block">
+          <span className="text-lg font-semibold" style={{ color: '#001407' }}>
+            {pageName}
+          </span>
+        </div>
+      </div>
+
+      {/* Center: Global Search (Absolutely centered) */}
+      <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-3">
+        <div className="flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 w-[300px] xl:w-[400px]">
+          {/* Magnifying Glass SVG */}
+          <svg
+            className="w-4 h-4 flex-shrink-0"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            style={{ color: '#001407' }}
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search products, settings, chats..."
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            className="bg-transparent outline-none text-sm w-full placeholder-gray-400"
+            style={{ color: '#001407' }}
+          />
+        </div>
+      </div>
+
+      {/* Right: Notifications & Profile (Margin left auto to push to right) */}
+      <div className="flex items-center gap-6 ml-auto">
+        {/* Notification Button */}
+        <button className="relative flex items-center justify-center w-8 h-8 hover:bg-gray-100 rounded-full transition-colors">
+          <img
+            src="/Icons/Notification.svg"
+            alt="Notifications"
+            className="w-5 h-5 object-contain"
+            style={{ filter: 'brightness(0)' }}
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+        </button>
+
+        {/* Profile Avatar */}
+        <button className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-100 transition-colors overflow-hidden">
+          <img
+            src="/Icons/Profile.svg"
+            alt="Profile"
+            className="w-7 h-7 object-contain"
+            style={{ filter: 'brightness(0)' }}
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+        </button>
       </div>
     </div>
   );
