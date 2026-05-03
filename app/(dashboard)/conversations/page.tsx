@@ -10,6 +10,7 @@ import { DUMMY_CHATS } from "@/components/conversations/data";
 export default function ConversationsDashboardPage() {
   const [selectedChat, setSelectedChat] = useState<number | null>(null);
   const [isInsightsOpen, setIsInsightsOpen] = useState(false);
+  const [showMobileAnalytics, setShowMobileAnalytics] = useState(false);
 
   const handleSelectChat = (chatId: number) => {
     setSelectedChat(chatId);
@@ -29,7 +30,9 @@ export default function ConversationsDashboardPage() {
             <ChatList 
               chats={DUMMY_CHATS}
               onSelectChat={handleSelectChat} 
-              selectedChatId={selectedChat} 
+              selectedChatId={selectedChat}
+              onAnalyticsClick={() => setShowMobileAnalytics(true)}
+              onSmartInsightsClick={() => setIsInsightsOpen(true)}
             />
           </div>
           
@@ -45,7 +48,35 @@ export default function ConversationsDashboardPage() {
       {/* Fixed Overlay Chat View - Mobile Only */}
       {selectedChat !== null && (
         <div className="fixed inset-0 z-50 flex flex-col bg-white md:hidden">
-          <ChatWindow currentChat={currentChat} onBackClick={handleBackToInbox} isMobileOverlay={true} />
+          <ChatWindow 
+            currentChat={currentChat} 
+            onBackClick={handleBackToInbox} 
+            isMobileOverlay={true}
+            onAnalyticsClick={() => setShowMobileAnalytics(true)}
+          />
+        </div>
+      )}
+
+      {/* Mobile Analytics Modal - Mobile Only */}
+      {showMobileAnalytics && (
+        <div className="fixed inset-0 z-[60] flex flex-col bg-white md:hidden overflow-hidden">
+          {/* Mobile Analytics Header */}
+          <div className="flex-none w-full h-[60px] border-b border-gray-200 flex items-center justify-between px-4 gap-3">
+            <div className="flex-1">
+              <h2 className="text-[16px] text-[#001407] font-medium">Live Analytics</h2>
+              <p className="text-[11px] text-gray-500">Real time performance</p>
+            </div>
+            <button
+              onClick={() => setShowMobileAnalytics(false)}
+              className="px-3 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 transition-colors flex-shrink-0 whitespace-nowrap"
+            >
+              <span className="text-xs font-medium text-[#E94235]">Stop</span>
+            </button>
+          </div>
+          {/* Mobile Analytics Panel Content */}
+          <div className="flex-1 overflow-y-auto w-full">
+            <AnalyticsPanel currentChat={currentChat} />
+          </div>
         </div>
       )}
 

@@ -8,9 +8,11 @@ export function RecentActivity() {
   const humanRatio = 100 - aiRatio;
 
   // SVG Donut Chart Data
-  const circumference = 2 * Math.PI * 45; // radius 45
+  const circumference = 2 * Math.PI * 70; // radius 70
+  
+  // FIXED MATH: Calculate exactly how much gap each circle needs
   const aiStrokeDashoffset = circumference * (1 - aiRatio / 100);
-  const humanStrokeDashoffset = circumference - aiStrokeDashoffset;
+  const humanStrokeDashoffset = circumference * (1 - humanRatio / 100);
 
   return (
     <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 w-full">
@@ -22,7 +24,7 @@ export function RecentActivity() {
             {kpiData.revenue.label}
           </p>
           <p className="text-3xl font-bold text-[#001407]">
-            {kpiData.revenue.value}
+           {kpiData.revenue.value}
           </p>
           <p className="text-xs text-gray-400 mt-1">This month</p>
         </div>
@@ -43,7 +45,7 @@ export function RecentActivity() {
           <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
             {kpiData.aiRatio.label}
           </p>
-          <p className="text-3xl font-bold text-[#D2FF00]">
+          <p className="text-3xl font-bold text-[#00]">
             {kpiData.aiRatio.value}
           </p>
           <p className="text-xs text-gray-400 mt-1">Automation rate</p>
@@ -68,43 +70,47 @@ export function RecentActivity() {
             <circle
               cx="100"
               cy="100"
-              r="45"
+              r="70"
               fill="none"
               stroke="#f3f4f6"
               strokeWidth="16"
             />
 
-            {/* AI Segment (Electric Lime) */}
+            {/* Human Segment (Gray) - Drawn FIRST and Rotated! */}
             <circle
               cx="100"
               cy="100"
-              r="45"
+              r="70"
               fill="none"
-              stroke="#D2FF00"
+              stroke="#e5e7eb"
+              strokeWidth="16"
+              strokeDasharray={circumference}
+              strokeDashoffset={humanStrokeDashoffset}
+              style={{
+                transform: `rotate(${(aiRatio / 100) * 360}deg)`,
+                transformOrigin: "50% 50%",
+              }}
+              className="transition-all duration-500"
+            />
+
+            {/* AI Segment (Deep) */}
+            <circle
+              cx="100"
+              cy="100"
+              r="70"
+              fill="none"
+              stroke="#001407"
               strokeWidth="16"
               strokeDasharray={circumference}
               strokeDashoffset={aiStrokeDashoffset}
               strokeLinecap="round"
               className="transition-all duration-500"
             />
-
-            {/* Human Segment (Gray) */}
-            <circle
-              cx="100"
-              cy="100"
-              r="45"
-              fill="none"
-              stroke="#e5e7eb"
-              strokeWidth="16"
-              strokeDasharray={circumference}
-              strokeDashoffset={-aiStrokeDashoffset}
-              className="transition-all duration-500"
-            />
           </svg>
 
           {/* Center Text */}
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <p className="text-4xl font-bold text-[#D2FF00]">{aiRatio}%</p>
+            <p className="text-4xl font-bold text-[#001407]">{aiRatio}%</p>
             <p className="text-xs text-gray-500 font-medium mt-1">Handled by AI</p>
           </div>
         </div>
@@ -112,7 +118,7 @@ export function RecentActivity() {
         {/* Legend */}
         <div className="flex gap-8 mt-8">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#D2FF00]" />
+            <div className="w-3 h-3 rounded-full bg-[#001407]" />
             <span className="text-sm text-gray-700 font-medium">
               AI ({aiRatio}%)
             </span>

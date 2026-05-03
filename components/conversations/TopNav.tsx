@@ -26,7 +26,7 @@ export function TopNav() {
       <div className="flex items-center gap-4 min-w-0">
         <div className="md:hidden">
           <span className="text-lg font-bold" style={{ color: '#001407' }}>
-            Aisha.ai
+            Aisha Ai
           </span>
         </div>
         <div className="hidden md:block">

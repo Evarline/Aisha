@@ -20,7 +20,7 @@ export function Sidebar() {
       {/* Brand Logo Area */}
       <div className="mb-8">
         <h1 className="text-2xl font-bold" style={{ color: 'white' }}>
-          Aisha.ai
+          Aisha AI
         </h1>
       </div>
 

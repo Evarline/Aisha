@@ -22,7 +22,7 @@ export interface ActivityItem {
 export const dashboardMetrics: DashboardMetrics = {
   totalConversations: 1250,
   pending: 12,
-  revenue: 14500,
+  revenue: 50000,
   aiHandledRatio: 78,
   avgResponseTime: "2.3m",
 };
@@ -51,7 +51,7 @@ export const recentActivityFeed: ActivityItem[] = [
 export const kpiData = {
   revenue: {
     label: "Revenue",
-    value: "$14,500",
+    value: "KES 50,000",
     currency: true,
   },
   avgResponseTime: {

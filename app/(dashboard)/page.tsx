@@ -1,30 +1,6 @@
-"use client";
+import { redirect } from "next/navigation";
 
-import { StatCards } from "@/components/Dashboard/StatCards";
-import { RecentActivity } from "@/components/Dashboard/RecentActivity";
-
-export const metadata = {
-  title: 'Dashboard | Aisha AI',
-  description: 'Manage your Aisha AI workspace',
-};
-
-export default function DashboardPage() {
-  return (
-    <div className="flex flex-col w-full min-h-full p-6 md:p-8 gap-6 max-w-7xl mx-auto">
-      <div>
-        <h1 className="text-3xl font-bold text-[#001407] tracking-tight">
-          Main Dashboard
-        </h1>
-        <p className="text-gray-600 text-sm mt-1">
-          Real-time overview of your business conversations and performance
-        </p>
-      </div>
-
-      {/* Stat Cards */}
-      <StatCards />
-
-      {/* Recent Activity & KPIs */}
-      <RecentActivity />
-    </div>
-  );
+export default function Home() {
+  // Instantly sends anyone who lands on your home URL straight to the Dashboard
+  redirect("/dashboard");
 }

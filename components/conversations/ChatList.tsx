@@ -7,9 +7,11 @@ interface ChatListProps {
   chats: Chat[];
   onSelectChat?: (chatId: number) => void;
   selectedChatId?: number | null;
+  onAnalyticsClick?: () => void;
+  onSmartInsightsClick?: () => void;
 }
 
-export function ChatList({ chats, onSelectChat, selectedChatId }: ChatListProps) {
+export function ChatList({ chats, onSelectChat, selectedChatId, onAnalyticsClick, onSmartInsightsClick }: ChatListProps) {
   const [activeFilter, setActiveFilter] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -35,8 +37,21 @@ export function ChatList({ chats, onSelectChat, selectedChatId }: ChatListProps)
   return (
     <div className="w-full md:w-[320px] md:min-w-[320px] h-full bg-white border-r border-gray-200/60 flex flex-col shrink-0 overflow-hidden transition-all duration-300 ease-in-out">
       {/* Header Container */}
-      <div className="w-full min-w-0 shrink-0 flex items-center justify-start px-4 md:px-6 h-[56px] border-b border-gray-200/60 bg-white overflow-hidden">
+      <div className="w-full min-w-0 shrink-0 flex items-center justify-between px-4 md:px-6 h-[56px] border-b border-gray-200/60 bg-white overflow-hidden">
         <h2 className="text-[16px] font-medium text-[#001407] font-['Inter'] truncate">Manage Customer Chats</h2>
+        <div className="flex items-center gap-2 flex-shrink-0 ml-2">
+          {/* Smart Insights Button - Mobile Only */}
+          {onSmartInsightsClick && (
+            <button
+              onClick={onSmartInsightsClick}
+              className="md:hidden px-3 py-1.5 rounded-lg hover:bg-gray-100 transition-colors flex-shrink-0 whitespace-nowrap"
+              title="View Smart Insights"
+            >
+              <span className="text-xs font-medium text-[#001407]">Live Analytics</span>
+            </button>
+          )}
+          
+        </div>
       </div>
       
       {/* Search Bar - WhatsApp Style */}
@@ -51,12 +66,12 @@ export function ChatList({ chats, onSelectChat, selectedChatId }: ChatListProps)
       </div>
       
       {/* Filter Pills - WhatsApp Style */}
-      <div className="flex w-full min-w-0 overflow-x-auto gap-2 hide-scrollbar pb-1 px-4 md:px-6 shrink-0">
+      <div className="flex w-full min-w-0 overflow-x-auto [-webkit-overflow-scrolling:touch] gap-1 md:gap-2 pb-1 px-3 md:px-6 shrink-0 [&::-webkit-scrollbar]:hidden\">
         {tabs.map((tab) => (
           <button
             key={tab.name}
             onClick={() => setActiveFilter(tab.name)}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap shrink-0 transition-all duration-200 ${
+            className={`px-3 md:px-4 py-1.5 rounded-full text-xs md:text-sm font-medium whitespace-nowrap shrink-0 transition-all duration-200 ${
               activeFilter === tab.name 
                 ? "bg-[#001407] text-[#D2FF00]" 
                 : "bg-gray-100 text-gray-600"

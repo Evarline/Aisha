@@ -7,9 +7,10 @@ interface ChatWindowProps {
   currentChat?: Chat;
   onBackClick?: () => void;
   isMobileOverlay?: boolean;
+  onAnalyticsClick?: () => void;
 }
 
-export function ChatWindow({ currentChat, onBackClick, isMobileOverlay }: ChatWindowProps) {
+export function ChatWindow({ currentChat, onBackClick, isMobileOverlay, onAnalyticsClick }: ChatWindowProps) {
   const [isAiMode, setIsAiMode] = useState(true);
 
   return (
@@ -67,8 +68,10 @@ export function ChatWindow({ currentChat, onBackClick, isMobileOverlay }: ChatWi
 
           {/* Pill-shaped Toggle Button - Compact on Mobile */}
           {currentChat && (
-            <div className="bg-transparent flex items-center gap-1 rounded-full ring-1 ring-gray-300 shadow-sm h-[32px] sm:h-[36px] p-0.5 sm:p-1 shrink-0 ml-2 sm:ml-4">
-              <button
+            <div className="flex items-center gap-2 shrink-0 ml-2 sm:ml-4">
+            
+              <div className="bg-transparent flex items-center gap-1 rounded-full ring-1 ring-gray-300 shadow-sm h-[32px] sm:h-[36px] p-0.5 sm:p-1 shrink-0">
+                <button
                 onClick={() => setIsAiMode(true)}
                 className={`flex items-center justify-center gap-1 rounded-full px-2 sm:px-3 h-full shadow-sm cursor-pointer transition-all duration-200 ${
                   isAiMode
@@ -120,6 +123,7 @@ export function ChatWindow({ currentChat, onBackClick, isMobileOverlay }: ChatWi
                   Take Over
                 </span>
               </button>
+            </div>
             </div>
           )}
         </div>
@@ -179,10 +183,10 @@ export function ChatWindow({ currentChat, onBackClick, isMobileOverlay }: ChatWi
 
       {/* Bottom Input Area - flex-none (Always at bottom) */}
       {currentChat && (
-        <div className="flex-none w-full bg-white border-t border-gray-200/60 shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.05)]">
+        <div className="flex-none w-full bg-white border-t border-gray-200/60 shadow-[0_-2px_4px_-1px_rgba(0,0,0,0.05)] relative z-10">
           {isAiMode ? (
             // AI Mode Banner
-            <div className="w-full px-4 md:px-6 py-3 pb-6">
+            <div className="w-full px-4 md:px-6 py-2 md:py-3 pb-3 md:pb-6">
               <div className="bg-gray-50 border border-gray-200/60 rounded-[10px] p-3 flex flex-col items-center justify-center">
                 <div className="flex items-center justify-center mb-2">
                   <div
@@ -209,7 +213,7 @@ export function ChatWindow({ currentChat, onBackClick, isMobileOverlay }: ChatWi
             </div>
           ) : (
             // Human Mode Input - Compact Pill-Shaped
-            <div className="w-full px-4 md:px-6 py-3 pb-6">
+            <div className="w-full px-4 md:px-6 py-2 md:py-3 pb-3 md:pb-6">
               <div className="flex items-end gap-2 w-full">
                 {/* Paperclip Icon */}
                 <button className="flex-shrink-0 flex items-center justify-center w-8 sm:w-9 h-8 sm:h-9 hover:opacity-70 transition-opacity">

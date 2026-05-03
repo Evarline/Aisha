@@ -110,7 +110,7 @@ export function AiVsHumanChart() {
       {/* Footer Info */}
       <div className="mt-8 pt-6 border-t border-gray-200 flex items-center justify-between">
         <p className="text-xs text-gray-500">
-          Data updated daily at 12:00 AM UTC
+          Data updated daily at 12:00 AM EAT
         </p>
         <button className="text-xs font-semibold text-[#001407] hover:text-[#D2FF00] transition-colors">
           Export Report →
